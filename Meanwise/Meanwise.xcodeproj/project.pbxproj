@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810861D6C3BAA005C4658 /* AppDelegate.swift */; };
+		953810891D6C3BAA005C4658 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810881D6C3BAA005C4658 /* ViewController.swift */; };
+		9538108C1D6C3BAA005C4658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9538108A1D6C3BAA005C4658 /* Main.storyboard */; };
+		9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */; };
+		953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953810901D6C3BAA005C4658 /* Assets.xcassets */; };
+		953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953810921D6C3BAA005C4658 /* LaunchScreen.storyboard */; };
+		9538109F1D6C3BAA005C4658 /* MeanwiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538109E1D6C3BAA005C4658 /* MeanwiseTests.swift */; };
+		953810AA1D6C3BAA005C4658 /* MeanwiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810A91D6C3BAA005C4658 /* MeanwiseUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9538109B1D6C3BAA005C4658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9538107B1D6C3BAA005C4658 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 953810821D6C3BAA005C4658;
+			remoteInfo = Meanwise;
+		};
+		953810A61D6C3BAA005C4658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9538107B1D6C3BAA005C4658 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 953810821D6C3BAA005C4658;
+			remoteInfo = Meanwise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		953810831D6C3BAA005C4658 /* Meanwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meanwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		953810861D6C3BAA005C4658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		953810881D6C3BAA005C4658 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9538108B1D6C3BAA005C4658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9538108E1D6C3BAA005C4658 /* Meanwise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meanwise.xcdatamodel; sourceTree = "<group>"; };
+		953810901D6C3BAA005C4658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		953810931D6C3BAA005C4658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		953810951D6C3BAA005C4658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9538109A1D6C3BAA005C4658 /* MeanwiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeanwiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9538109E1D6C3BAA005C4658 /* MeanwiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeanwiseTests.swift; sourceTree = "<group>"; };
+		953810A01D6C3BAA005C4658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953810A51D6C3BAA005C4658 /* MeanwiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeanwiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		953810A91D6C3BAA005C4658 /* MeanwiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeanwiseUITests.swift; sourceTree = "<group>"; };
+		953810AB1D6C3BAA005C4658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		953810801D6C3BAA005C4658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810971D6C3BAA005C4658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810A21D6C3BAA005C4658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9538107A1D6C3BAA005C4658 = {
+			isa = PBXGroup;
+			children = (
+				953810851D6C3BAA005C4658 /* Meanwise */,
+				9538109D1D6C3BAA005C4658 /* MeanwiseTests */,
+				953810A81D6C3BAA005C4658 /* MeanwiseUITests */,
+				953810841D6C3BAA005C4658 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		953810841D6C3BAA005C4658 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				953810831D6C3BAA005C4658 /* Meanwise.app */,
+				9538109A1D6C3BAA005C4658 /* MeanwiseTests.xctest */,
+				953810A51D6C3BAA005C4658 /* MeanwiseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		953810851D6C3BAA005C4658 /* Meanwise */ = {
+			isa = PBXGroup;
+			children = (
+				953810861D6C3BAA005C4658 /* AppDelegate.swift */,
+				953810881D6C3BAA005C4658 /* ViewController.swift */,
+				9538108A1D6C3BAA005C4658 /* Main.storyboard */,
+				953810901D6C3BAA005C4658 /* Assets.xcassets */,
+				953810921D6C3BAA005C4658 /* LaunchScreen.storyboard */,
+				953810951D6C3BAA005C4658 /* Info.plist */,
+				9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */,
+			);
+			path = Meanwise;
+			sourceTree = "<group>";
+		};
+		9538109D1D6C3BAA005C4658 /* MeanwiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				9538109E1D6C3BAA005C4658 /* MeanwiseTests.swift */,
+				953810A01D6C3BAA005C4658 /* Info.plist */,
+			);
+			path = MeanwiseTests;
+			sourceTree = "<group>";
+		};
+		953810A81D6C3BAA005C4658 /* MeanwiseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				953810A91D6C3BAA005C4658 /* MeanwiseUITests.swift */,
+				953810AB1D6C3BAA005C4658 /* Info.plist */,
+			);
+			path = MeanwiseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		953810821D6C3BAA005C4658 /* Meanwise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953810AE1D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "Meanwise" */;
+			buildPhases = (
+				9538107F1D6C3BAA005C4658 /* Sources */,
+				953810801D6C3BAA005C4658 /* Frameworks */,
+				953810811D6C3BAA005C4658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Meanwise;
+			productName = Meanwise;
+			productReference = 953810831D6C3BAA005C4658 /* Meanwise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		953810991D6C3BAA005C4658 /* MeanwiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953810B11D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseTests" */;
+			buildPhases = (
+				953810961D6C3BAA005C4658 /* Sources */,
+				953810971D6C3BAA005C4658 /* Frameworks */,
+				953810981D6C3BAA005C4658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9538109C1D6C3BAA005C4658 /* PBXTargetDependency */,
+			);
+			name = MeanwiseTests;
+			productName = MeanwiseTests;
+			productReference = 9538109A1D6C3BAA005C4658 /* MeanwiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		953810A41D6C3BAA005C4658 /* MeanwiseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953810B41D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseUITests" */;
+			buildPhases = (
+				953810A11D6C3BAA005C4658 /* Sources */,
+				953810A21D6C3BAA005C4658 /* Frameworks */,
+				953810A31D6C3BAA005C4658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				953810A71D6C3BAA005C4658 /* PBXTargetDependency */,
+			);
+			name = MeanwiseUITests;
+			productName = MeanwiseUITests;
+			productReference = 953810A51D6C3BAA005C4658 /* MeanwiseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9538107B1D6C3BAA005C4658 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Squelo;
+				TargetAttributes = {
+					953810821D6C3BAA005C4658 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7QA9FNF2HZ;
+					};
+					953810991D6C3BAA005C4658 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7QA9FNF2HZ;
+						TestTargetID = 953810821D6C3BAA005C4658;
+					};
+					953810A41D6C3BAA005C4658 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 7QA9FNF2HZ;
+						TestTargetID = 953810821D6C3BAA005C4658;
+					};
+				};
+			};
+			buildConfigurationList = 9538107E1D6C3BAA005C4658 /* Build configuration list for PBXProject "Meanwise" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9538107A1D6C3BAA005C4658;
+			productRefGroup = 953810841D6C3BAA005C4658 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				953810821D6C3BAA005C4658 /* Meanwise */,
+				953810991D6C3BAA005C4658 /* MeanwiseTests */,
+				953810A41D6C3BAA005C4658 /* MeanwiseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		953810811D6C3BAA005C4658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */,
+				953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */,
+				9538108C1D6C3BAA005C4658 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810981D6C3BAA005C4658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810A31D6C3BAA005C4658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9538107F1D6C3BAA005C4658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
+				953810891D6C3BAA005C4658 /* ViewController.swift in Sources */,
+				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810961D6C3BAA005C4658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9538109F1D6C3BAA005C4658 /* MeanwiseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		953810A11D6C3BAA005C4658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953810AA1D6C3BAA005C4658 /* MeanwiseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9538109C1D6C3BAA005C4658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 953810821D6C3BAA005C4658 /* Meanwise */;
+			targetProxy = 9538109B1D6C3BAA005C4658 /* PBXContainerItemProxy */;
+		};
+		953810A71D6C3BAA005C4658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 953810821D6C3BAA005C4658 /* Meanwise */;
+			targetProxy = 953810A61D6C3BAA005C4658 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9538108A1D6C3BAA005C4658 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9538108B1D6C3BAA005C4658 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		953810921D6C3BAA005C4658 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				953810931D6C3BAA005C4658 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		953810AC1D6C3BAA005C4658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		953810AD1D6C3BAA005C4658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		953810AF1D6C3BAA005C4658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Meanwise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		953810B01D6C3BAA005C4658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Meanwise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		953810B21D6C3BAA005C4658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeanwiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.MeanwiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meanwise.app/Meanwise";
+			};
+			name = Debug;
+		};
+		953810B31D6C3BAA005C4658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeanwiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.MeanwiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meanwise.app/Meanwise";
+			};
+			name = Release;
+		};
+		953810B51D6C3BAA005C4658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MeanwiseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.MeanwiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Meanwise;
+			};
+			name = Debug;
+		};
+		953810B61D6C3BAA005C4658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MeanwiseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.MeanwiseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Meanwise;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9538107E1D6C3BAA005C4658 /* Build configuration list for PBXProject "Meanwise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953810AC1D6C3BAA005C4658 /* Debug */,
+				953810AD1D6C3BAA005C4658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		953810AE1D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "Meanwise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953810AF1D6C3BAA005C4658 /* Debug */,
+				953810B01D6C3BAA005C4658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		953810B11D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953810B21D6C3BAA005C4658 /* Debug */,
+				953810B31D6C3BAA005C4658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		953810B41D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953810B51D6C3BAA005C4658 /* Debug */,
+				953810B61D6C3BAA005C4658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9538108E1D6C3BAA005C4658 /* Meanwise.xcdatamodel */,
+			);
+			currentVersion = 9538108E1D6C3BAA005C4658 /* Meanwise.xcdatamodel */;
+			path = Meanwise.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9538107B1D6C3BAA005C4658 /* Project object */;
+}
