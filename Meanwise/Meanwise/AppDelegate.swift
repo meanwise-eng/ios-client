@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         setRootViewController()
+        setStatusBarColor()
         return true
     }
 
@@ -115,6 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootViewController = RootViewController(nibName: Constants.Xib.RootViewController, bundle: nil)
         self.window?.rootViewController = rootViewController
         self.window?.makeKeyAndVisible()
+    }
+    
+    func setStatusBarColor() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 
 }

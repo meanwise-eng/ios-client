@@ -30,6 +30,9 @@
 		953810E41D6C5C46005C4658 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953810E31D6C5C46005C4658 /* Login.storyboard */; };
 		953810E61D6C5CC6005C4658 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953810E51D6C5CC6005C4658 /* Home.storyboard */; };
 		953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810E91D6C6AE2005C4658 /* BaseViewController.swift */; };
+		953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */; };
+		953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */; };
+		953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		953810E31D6C5C46005C4658 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		953810E51D6C5CC6005C4658 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		953810E91D6C6AE2005C4658 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
+		953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldTableViewCell.swift; sourceTree = "<group>"; };
+		953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextfieldTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 		953810B91D6C3F3D005C4658 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				953810F51D6C8B4D005C4658 /* TableViewCells */,
+				953810EE1D6C8179005C4658 /* SignupControllers */,
 				953810BC1D6C4285005C4658 /* ViewController.swift */,
 				953810D71D6C5B62005C4658 /* RootViewController.swift */,
 				953810E91D6C6AE2005C4658 /* BaseViewController.swift */,
@@ -192,6 +200,7 @@
 		953810BA1D6C3F3D005C4658 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				953810F11D6C89BD005C4658 /* TableViewCells */,
 				953810DB1D6C5BEA005C4658 /* Storyboards */,
 				953810DC1D6C5BEA005C4658 /* Views */,
 			);
@@ -243,6 +252,30 @@
 				953810DD1D6C5C17005C4658 /* RootViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		953810EE1D6C8179005C4658 /* SignupControllers */ = {
+			isa = PBXGroup;
+			children = (
+				953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */,
+			);
+			path = SignupControllers;
+			sourceTree = "<group>";
+		};
+		953810F11D6C89BD005C4658 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		953810F51D6C8B4D005C4658 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */,
+				953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */,
 				953810D41D6C5077005C4658 /* OpenSans-Light.ttf in Resources */,
 				953810D61D6C5077005C4658 /* OpenSans-Semibold.ttf in Resources */,
 				953810E61D6C5CC6005C4658 /* Home.storyboard in Resources */,
@@ -390,7 +424,9 @@
 			files = (
 				953810BD1D6C4285005C4658 /* ViewController.swift in Sources */,
 				953810CB1D6C4602005C4658 /* Helper.swift in Sources */,
+				953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */,
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
+				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,

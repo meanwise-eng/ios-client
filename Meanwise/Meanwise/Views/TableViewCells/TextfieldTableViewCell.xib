@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextfieldTableViewCell" id="jai-Uy-4To" customClass="TextfieldTableViewCell" customModule="Meanwise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jai-Uy-4To" id="nvb-tB-DAL">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zB9-yp-byW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PartitionLine" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-x2-AWZ">
+                                <rect key="frame" x="28" y="118" width="319" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="gRz-tP-1Fu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-eV-2ge" userLabel="Checkmark">
+                                <rect key="frame" x="324" y="79" width="23" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="AEm-ER-pW1"/>
+                                    <constraint firstAttribute="width" constant="23" id="Hu3-Bc-0Nc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byq-0p-ZCf" userLabel="Title">
+                                <rect key="frame" x="28" y="31" width="319" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ng1-zK-L6q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5p7-TW-nwR" userLabel="Textfield">
+                                <rect key="frame" x="28" y="69" width="125" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="zhc-lN-WuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="GyW-x2-AWZ" secondAttribute="bottom" id="4Ri-iO-kmv"/>
+                            <constraint firstItem="xfc-eV-2ge" firstAttribute="leading" secondItem="5p7-TW-nwR" secondAttribute="trailing" constant="171" id="8U0-RH-ueI"/>
+                            <constraint firstItem="byq-0p-ZCf" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="9t7-VN-PIg"/>
+                            <constraint firstItem="5p7-TW-nwR" firstAttribute="top" secondItem="byq-0p-ZCf" secondAttribute="bottom" constant="18" id="B5M-Cr-fvb"/>
+                            <constraint firstItem="xfc-eV-2ge" firstAttribute="centerY" secondItem="5p7-TW-nwR" secondAttribute="centerY" id="Jkv-k3-LDo"/>
+                            <constraint firstAttribute="trailing" secondItem="byq-0p-ZCf" secondAttribute="trailing" constant="28" id="LEL-mO-W7R"/>
+                            <constraint firstItem="GyW-x2-AWZ" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="NEh-lo-oXN"/>
+                            <constraint firstAttribute="trailing" secondItem="GyW-x2-AWZ" secondAttribute="trailing" constant="28" id="SoO-Jf-ZD9"/>
+                            <constraint firstAttribute="trailing" secondItem="xfc-eV-2ge" secondAttribute="trailing" constant="28" id="aWU-wq-HeC"/>
+                            <constraint firstItem="byq-0p-ZCf" firstAttribute="top" secondItem="zB9-yp-byW" secondAttribute="top" constant="31" id="nvi-Da-JuH"/>
+                            <constraint firstAttribute="height" constant="119" id="tcn-RX-ONd"/>
+                            <constraint firstItem="5p7-TW-nwR" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="tr7-fa-Uoz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="zB9-yp-byW" secondAttribute="bottom" id="2RS-tT-qMl"/>
+                    <constraint firstAttribute="trailing" secondItem="zB9-yp-byW" secondAttribute="trailing" id="3Dp-mG-sD6"/>
+                    <constraint firstItem="zB9-yp-byW" firstAttribute="top" secondItem="nvb-tB-DAL" secondAttribute="top" id="lO1-ND-IHW"/>
+                    <constraint firstItem="zB9-yp-byW" firstAttribute="leading" secondItem="nvb-tB-DAL" secondAttribute="leading" id="u18-RL-mKh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="checkmarkImageView" destination="xfc-eV-2ge" id="sam-CV-AHJ"/>
+                <outlet property="textfield" destination="5p7-TW-nwR" id="c4u-oU-tfL"/>
+                <outlet property="titleLabel" destination="byq-0p-ZCf" id="wTu-Ks-xu0"/>
+            </connections>
+            <point key="canvasLocation" x="127" y="287"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Checkmark" width="12" height="8"/>
+        <image name="PartitionLine" width="159" height="1"/>
+    </resources>
+</document>

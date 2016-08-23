@@ -21,6 +21,10 @@ struct Constants {
         static let RootViewController = "RootViewController"
     }
     
+    struct TableViewCellIdentifier {
+        static let TextfieldTableViewCell = "TextfieldTableViewCell"
+    }
+    
     struct AnimationDurations {
         static let Fast: NSTimeInterval = 1.0
         static let Medium: NSTimeInterval = 3.0

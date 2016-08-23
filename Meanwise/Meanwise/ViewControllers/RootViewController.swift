@@ -9,8 +9,8 @@
 import UIKit
 
 class RootViewController: UIViewController {
-
-    // MARK: - ViewLifecycle -
+ 
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +40,14 @@ class RootViewController: UIViewController {
             let storyboard = UIStoryboard(name: Constants.Storyboard.Home, bundle: nil)
             vc = storyboard.instantiateInitialViewController()
         } else {
-            let storyboard = UIStoryboard(name: Constants.Storyboard.Login, bundle: nil)
+            let storyboard = UIStoryboard(name: Constants.Storyboard.Signup, bundle: nil)
             vc = storyboard.instantiateInitialViewController()
         }
         
         return vc!
     }
     
-    // MARK: - Memory Management -
+    // MARK: - Memory Management
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
