@@ -20,6 +20,11 @@
 		953810C71D6C45DC005C4658 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810C61D6C45DC005C4658 /* User.swift */; };
 		953810C91D6C45F1005C4658 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810C81D6C45F1005C4658 /* Network.swift */; };
 		953810CB1D6C4602005C4658 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810CA1D6C4602005C4658 /* Helper.swift */; };
+		953810D21D6C5077005C4658 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 953810CD1D6C5077005C4658 /* OpenSans-Bold.ttf */; };
+		953810D31D6C5077005C4658 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 953810CE1D6C5077005C4658 /* OpenSans-ExtraBold.ttf */; };
+		953810D41D6C5077005C4658 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 953810CF1D6C5077005C4658 /* OpenSans-Light.ttf */; };
+		953810D51D6C5077005C4658 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 953810D01D6C5077005C4658 /* OpenSans-Regular.ttf */; };
+		953810D61D6C5077005C4658 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 953810D11D6C5077005C4658 /* OpenSans-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		953810C61D6C45DC005C4658 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		953810C81D6C45F1005C4658 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		953810CA1D6C4602005C4658 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		953810CD1D6C5077005C4658 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		953810CE1D6C5077005C4658 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		953810CF1D6C5077005C4658 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		953810D01D6C5077005C4658 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		953810D11D6C5077005C4658 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,7 @@
 		953810851D6C3BAA005C4658 /* Meanwise */ = {
 			isa = PBXGroup;
 			children = (
+				953810CC1D6C5049005C4658 /* Resources */,
 				953810C11D6C4525005C4658 /* Constants */,
 				953810BB1D6C41D3005C4658 /* Networking */,
 				953810B71D6C3F3D005C4658 /* Helpers */,
@@ -189,6 +200,18 @@
 				953810C21D6C453F005C4658 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		953810CC1D6C5049005C4658 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				953810CD1D6C5077005C4658 /* OpenSans-Bold.ttf */,
+				953810CE1D6C5077005C4658 /* OpenSans-ExtraBold.ttf */,
+				953810CF1D6C5077005C4658 /* OpenSans-Light.ttf */,
+				953810D01D6C5077005C4658 /* OpenSans-Regular.ttf */,
+				953810D11D6C5077005C4658 /* OpenSans-Semibold.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,8 +323,13 @@
 			files = (
 				953810C51D6C45BF005C4658 /* View.xib in Resources */,
 				953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */,
+				953810D41D6C5077005C4658 /* OpenSans-Light.ttf in Resources */,
+				953810D61D6C5077005C4658 /* OpenSans-Semibold.ttf in Resources */,
 				953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */,
+				953810D21D6C5077005C4658 /* OpenSans-Bold.ttf in Resources */,
 				9538108C1D6C3BAA005C4658 /* Main.storyboard in Resources */,
+				953810D51D6C5077005C4658 /* OpenSans-Regular.ttf in Resources */,
+				953810D31D6C5077005C4658 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
