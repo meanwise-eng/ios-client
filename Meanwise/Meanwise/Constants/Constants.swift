@@ -10,9 +10,15 @@ import Foundation
 
 struct Constants {
     
-    struct CellIdentifiers {
-        static let Blue = "BlueCellIdentifier"
-        static let Large = "LargeCellIdentifier"
+    struct Storyboard {
+        static let Signup = "Signup"
+        static let Introduction = "Introduction"
+        static let Login = "Login"
+        static let Home = "Home"
+    }
+    
+    struct Xib {
+        static let RootViewController = "RootViewController"
     }
     
     struct AnimationDurations {
@@ -24,6 +30,16 @@ struct Constants {
     struct SegueIdentifiers {
         static let Master = "MasterViewController"
         static let Detail = "DetailViewController"
+    }
+    
+    struct UserDefaults {
+        static let IsFirstTime = "IsFirstTime"
+        static let IsUserLoggedIn = "IsUserLoggedIn"
+    }
+    
+    struct StringConstant {
+        static let True = "True"
+        static let False = "False"
     }
     
 }

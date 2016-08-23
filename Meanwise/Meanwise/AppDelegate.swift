@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setRootViewController()
         return true
     }
 
@@ -105,6 +106,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    // MARK: - Custom Methods
+    
+    func setRootViewController() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let rootViewController = RootViewController(nibName: Constants.Xib.RootViewController, bundle: nil)
+        self.window?.rootViewController = rootViewController
+        self.window?.makeKeyAndVisible()
     }
 
 }
