@@ -33,6 +33,9 @@
 		953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */; };
 		953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */; };
 		953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */; };
+		95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */; };
+		95C103121D6D752200DCA0A2 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */; };
+		95C103161D6DA93800DCA0A2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95C103151D6DA93800DCA0A2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupNameViewController.swift; sourceTree = "<group>"; };
 		953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldTableViewCell.swift; sourceTree = "<group>"; };
 		953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextfieldTableViewCell.xib; sourceTree = "<group>"; };
+		95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
+		95C103151D6DA93800DCA0A2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +237,7 @@
 				953810CF1D6C5077005C4658 /* OpenSans-Light.ttf */,
 				953810D01D6C5077005C4658 /* OpenSans-Regular.ttf */,
 				953810D11D6C5077005C4658 /* OpenSans-Semibold.ttf */,
+				95C103151D6DA93800DCA0A2 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -266,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */,
+				95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				953810F61D6C8B4D005C4658 /* TextfieldTableViewCell.swift */,
+				95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -389,11 +398,13 @@
 				953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */,
 				953810D41D6C5077005C4658 /* OpenSans-Light.ttf in Resources */,
 				953810D61D6C5077005C4658 /* OpenSans-Semibold.ttf in Resources */,
+				95C103121D6D752200DCA0A2 /* TitleTableViewCell.xib in Resources */,
 				953810E61D6C5CC6005C4658 /* Home.storyboard in Resources */,
 				953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */,
 				953810DE1D6C5C17005C4658 /* RootViewController.xib in Resources */,
 				953810D21D6C5077005C4658 /* OpenSans-Bold.ttf in Resources */,
 				953810D51D6C5077005C4658 /* OpenSans-Regular.ttf in Resources */,
+				95C103161D6DA93800DCA0A2 /* Localizable.strings in Resources */,
 				953810E41D6C5C46005C4658 /* Login.storyboard in Resources */,
 				953810E01D6C5C2E005C4658 /* Signup.storyboard in Resources */,
 				953810E21D6C5C3B005C4658 /* Introduction.storyboard in Resources */,
@@ -426,6 +437,7 @@
 				953810CB1D6C4602005C4658 /* Helper.swift in Sources */,
 				953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */,
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
+				95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */,
 				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
@@ -651,6 +663,7 @@
 				953810B01D6C3BAA005C4658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		953810B11D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseTests" */ = {
 			isa = XCConfigurationList;
@@ -659,6 +672,7 @@
 				953810B31D6C3BAA005C4658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		953810B41D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "MeanwiseUITests" */ = {
 			isa = XCConfigurationList;
@@ -667,6 +681,7 @@
 				953810B61D6C3BAA005C4658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

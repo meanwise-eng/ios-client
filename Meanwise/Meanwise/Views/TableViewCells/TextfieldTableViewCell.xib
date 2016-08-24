@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="height" constant="1" id="gRz-tP-1Fu"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-eV-2ge" userLabel="Checkmark">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-eV-2ge" userLabel="Checkmark">
                                 <rect key="frame" x="324" y="79" width="23" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="AEm-ER-pW1"/>
@@ -48,18 +48,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5p7-TW-nwR" userLabel="Textfield">
-                                <rect key="frame" x="28" y="69" width="125" height="36"/>
+                                <rect key="frame" x="28" y="69" width="296" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="zhc-lN-WuJ"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="26"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidChange:" destination="jai-Uy-4To" eventType="editingChanged" id="hWt-9Q-Gow"/>
+                                    <outlet property="delegate" destination="jai-Uy-4To" id="Ysa-s2-dTZ"/>
+                                </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="GyW-x2-AWZ" secondAttribute="bottom" id="4Ri-iO-kmv"/>
-                            <constraint firstItem="xfc-eV-2ge" firstAttribute="leading" secondItem="5p7-TW-nwR" secondAttribute="trailing" constant="171" id="8U0-RH-ueI"/>
+                            <constraint firstItem="xfc-eV-2ge" firstAttribute="leading" secondItem="5p7-TW-nwR" secondAttribute="trailing" id="8U0-RH-ueI"/>
                             <constraint firstItem="byq-0p-ZCf" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="9t7-VN-PIg"/>
                             <constraint firstItem="5p7-TW-nwR" firstAttribute="top" secondItem="byq-0p-ZCf" secondAttribute="bottom" constant="18" id="B5M-Cr-fvb"/>
                             <constraint firstItem="xfc-eV-2ge" firstAttribute="centerY" secondItem="5p7-TW-nwR" secondAttribute="centerY" id="Jkv-k3-LDo"/>
@@ -73,6 +78,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="zB9-yp-byW" secondAttribute="bottom" id="2RS-tT-qMl"/>
                     <constraint firstAttribute="trailing" secondItem="zB9-yp-byW" secondAttribute="trailing" id="3Dp-mG-sD6"/>
@@ -80,6 +86,7 @@
                     <constraint firstItem="zB9-yp-byW" firstAttribute="leading" secondItem="nvb-tB-DAL" secondAttribute="leading" id="u18-RL-mKh"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="checkmarkImageView" destination="xfc-eV-2ge" id="sam-CV-AHJ"/>
                 <outlet property="textfield" destination="5p7-TW-nwR" id="c4u-oU-tfL"/>

@@ -21,8 +21,9 @@ struct Constants {
         static let RootViewController = "RootViewController"
     }
     
-    struct TableViewCellIdentifier {
+    struct TableViewCell {
         static let TextfieldTableViewCell = "TextfieldTableViewCell"
+        static let TitleTableViewCell = "TitleTableViewCell"
     }
     
     struct AnimationDurations {

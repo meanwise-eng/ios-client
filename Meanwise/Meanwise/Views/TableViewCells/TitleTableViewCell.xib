@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TitleTableViewCell" id="Oae-7o-Lp9" customClass="TitleTableViewCell" customModule="Meanwise" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oae-7o-Lp9" id="RaK-OX-MVI">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-QT-3Gf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-iq-vFK">
+                                <rect key="frame" x="25" y="38" width="270" height="39"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6WK-iq-vFK" firstAttribute="centerY" secondItem="VlS-QT-3Gf" secondAttribute="centerY" id="0mu-4K-asL"/>
+                            <constraint firstItem="6WK-iq-vFK" firstAttribute="leading" secondItem="VlS-QT-3Gf" secondAttribute="leading" constant="25" id="2sq-IM-XWL"/>
+                            <constraint firstAttribute="trailing" secondItem="6WK-iq-vFK" secondAttribute="trailing" constant="25" id="Ilj-o7-rGV"/>
+                            <constraint firstAttribute="height" constant="114" id="nF5-Ab-6KH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="VlS-QT-3Gf" firstAttribute="top" secondItem="RaK-OX-MVI" secondAttribute="top" id="7tu-tr-KLb"/>
+                    <constraint firstAttribute="trailing" secondItem="VlS-QT-3Gf" secondAttribute="trailing" id="O1v-pw-clm"/>
+                    <constraint firstAttribute="bottom" secondItem="VlS-QT-3Gf" secondAttribute="bottom" id="bUs-2t-rmk"/>
+                    <constraint firstItem="VlS-QT-3Gf" firstAttribute="leading" secondItem="RaK-OX-MVI" secondAttribute="leading" id="pkM-Xm-zOX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="titleLabel" destination="6WK-iq-vFK" id="e6Q-FQ-NAJ"/>
+            </connections>
+            <point key="canvasLocation" x="201" y="312"/>
+        </tableViewCell>
+    </objects>
+</document>
