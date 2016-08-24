@@ -28,21 +28,21 @@ class RootViewController: UIViewController {
     private func getViewController() -> UIViewController {
         var vc: UIViewController?
         
-        let isFirstTime = NSUserDefaults.standardUserDefaults().objectForKey(Constants.UserDefaults.IsFirstTime) as? String
-        
-        let isLoggedIn = NSUserDefaults.standardUserDefaults().objectForKey(Constants.UserDefaults.IsUserLoggedIn) as? String
-        
-        if (isFirstTime == nil) {
-            NSUserDefaults.standardUserDefaults().setObject(Constants.StringConstant.True, forKey: Constants.UserDefaults.IsFirstTime)
-            let storyboard = UIStoryboard(name: Constants.Storyboard.Introduction, bundle: nil)
-            vc = storyboard.instantiateInitialViewController()
-        } else if ((isLoggedIn) != nil) {
-            let storyboard = UIStoryboard(name: Constants.Storyboard.Home, bundle: nil)
-            vc = storyboard.instantiateInitialViewController()
-        } else {
+//        let isFirstTime = NSUserDefaults.standardUserDefaults().objectForKey(Constants.UserDefaults.IsFirstTime) as? String
+//        
+//        let isLoggedIn = NSUserDefaults.standardUserDefaults().objectForKey(Constants.UserDefaults.IsUserLoggedIn) as? String
+//        
+//        if (isFirstTime == nil) {
+//            NSUserDefaults.standardUserDefaults().setObject(Constants.StringConstant.True, forKey: Constants.UserDefaults.IsFirstTime)
+//            let storyboard = UIStoryboard(name: Constants.Storyboard.Introduction, bundle: nil)
+//            vc = storyboard.instantiateInitialViewController()
+//        } else if ((isLoggedIn) != nil) {
+//            let storyboard = UIStoryboard(name: Constants.Storyboard.Home, bundle: nil)
+//            vc = storyboard.instantiateInitialViewController()
+//        } else {
             let storyboard = UIStoryboard(name: Constants.Storyboard.Signup, bundle: nil)
             vc = storyboard.instantiateInitialViewController()
-        }
+//        }
         
         return vc!
     }
