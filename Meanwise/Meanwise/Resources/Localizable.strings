@@ -9,3 +9,10 @@
 "SignupNameTitle" = "What's your name?";
 "FirstName" = "FIRST NAME";
 "LastName" = "LAST NAME";
+
+"SignupMoreTitle" = "Tell us a bit more";
+"Email" = "EMAIL";
+"Password" = "PASSWORD";
+
+"SignupAddSkillTitle" = "Enter your skills";
+"AddSkill" = "ADD SKILL";

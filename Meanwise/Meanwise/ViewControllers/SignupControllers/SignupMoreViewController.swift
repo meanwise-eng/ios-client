@@ -1,21 +1,21 @@
 //
-//  SignupNameViewController.swift
+//  SignupMoreViewController.swift
 //  Meanwise
 //
-//  Created by Vishal on 23/08/16.
+//  Created by Sumit on 24/08/16.
 //  Copyright © 2016 Squelo. All rights reserved.
 //
 
 import UIKit
 
-class SignupNameViewController: SignupBaseViewController {
+class SignupMoreViewController: SignupBaseViewController {
     
     // MARK: - Variable
     
-    var firstNameTableViewCell: TextfieldTableViewCell!
-    var lastNameTableViewCell: TextfieldTableViewCell!
-    var firstName: String?
-    var lastName: String?
+    var emailTableViewCell: TextfieldTableViewCell!
+    var passwordTableViewCell: TextfieldTableViewCell!
+    var email: String?
+    var password: String?
     
     // MARK: - View Lifecycle
     
@@ -29,7 +29,7 @@ class SignupNameViewController: SignupBaseViewController {
     }
     
     // MARK: - Functions
-
+       
     func cellRegister() {
         tableView.registerNib(UINib(nibName: Constants.TableViewCell.TextfieldTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TextfieldTableViewCell)
         tableView.registerNib(UINib(nibName: Constants.TableViewCell.TitleTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TitleTableViewCell)
@@ -38,22 +38,19 @@ class SignupNameViewController: SignupBaseViewController {
     func validation() {
         var isValid = false
         
-        isValid = firstName != nil && firstName?.characters.count > 0
-        isValid = lastName != nil && lastName?.characters.count > 0
+        isValid = email != nil && email?.characters.count > 0
+        isValid = password != nil && password?.characters.count > 0
         
         enableNextButton(isValid)
     }
-    
-    // MARK: - Memory Management
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
-extension SignupNameViewController: UITableViewDelegate, UITableViewDataSource {
+extension SignupMoreViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -64,31 +61,31 @@ extension SignupNameViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TitleTableViewCell, forIndexPath: indexPath) as! TitleTableViewCell
-            cell.setValuesToCell(NSLocalizedString("SignupNameTitle", comment: "title for the screen"))
+            cell.setValuesToCell(NSLocalizedString("SignupMoreTitle", comment: "title for the screen"))
             return cell
         case 1:
-            if firstNameTableViewCell == nil {
-                firstNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
-                firstNameTableViewCell.setCellForSignupNameScreen(NSLocalizedString("FirstName", comment: "First Name"), indexPath: indexPath)
-                firstNameTableViewCell.delegate = self
+            if emailTableViewCell == nil {
+                emailTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                emailTableViewCell.setCellForEmail(NSLocalizedString("Email", comment: "Email"), indexPath: indexPath)
+                emailTableViewCell.delegate = self
             }
             
-            return firstNameTableViewCell
+            return emailTableViewCell
         case 2:
-            if lastNameTableViewCell == nil {
-                lastNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
-                lastNameTableViewCell.setCellForSignupNameScreen(NSLocalizedString("LastName", comment: "Last Name"), indexPath: indexPath)
-                lastNameTableViewCell.delegate = self
+            if passwordTableViewCell == nil {
+                passwordTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                passwordTableViewCell.setCellForPassword(NSLocalizedString("Password", comment: "Password"), indexPath: indexPath)
+                passwordTableViewCell.delegate = self
             }
             
-            return lastNameTableViewCell
+            return passwordTableViewCell
         default:
             return UITableViewCell()
         }
     }
 }
 
-extension SignupNameViewController: TextfieldTableViewCellProtocol {
+extension SignupMoreViewController: TextfieldTableViewCellProtocol {
     
     func textFieldDidBeginEditing(indexPath: NSIndexPath) {
         activeIndexPath = indexPath
@@ -97,16 +94,15 @@ extension SignupNameViewController: TextfieldTableViewCellProtocol {
     func textFieldShouldReturn(indexPath: NSIndexPath) {
         switch indexPath.row {
         case 1:
-            firstNameTableViewCell.endFirstResponder()
-            lastNameTableViewCell.setFirstResponder()
+            emailTableViewCell.endFirstResponder()
+            passwordTableViewCell.setFirstResponder()
             break
         case 2:
             if nextButton.enabled {
-                lastNameTableViewCell.endFirstResponder()
                 nextButtonTapped(nextButton)
             } else {
-                lastNameTableViewCell.endFirstResponder()
-                firstNameTableViewCell.setFirstResponder()
+                passwordTableViewCell.endFirstResponder()
+                emailTableViewCell.setFirstResponder()
             }
         default: break
         }
@@ -115,10 +111,10 @@ extension SignupNameViewController: TextfieldTableViewCellProtocol {
     func textFieldDidChange(text: String, indexPath: NSIndexPath) {
         switch indexPath.row {
         case 1:
-            firstName = text
+            email = text
             break
         case 2:
-            lastName = text
+            password = text
             break
         default: break
         }
@@ -126,16 +122,14 @@ extension SignupNameViewController: TextfieldTableViewCellProtocol {
     }
 }
 
-extension SignupNameViewController {
+extension SignupMoreViewController {
     
     @IBAction func backButtonTapped(sender: AnyObject) {
-        
+        navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
-        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupMore, sender: nil)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupSkills, sender: nil)
     }
 }
-
-

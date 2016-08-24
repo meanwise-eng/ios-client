@@ -25,17 +25,24 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zB9-yp-byW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PartitionLine" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-x2-AWZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-x2-AWZ" userLabel="PartitionLine">
                                 <rect key="frame" x="28" y="118" width="319" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="gRz-tP-1Fu"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-eV-2ge" userLabel="Checkmark">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-eV-2ge" userLabel="Checkmark">
                                 <rect key="frame" x="324" y="79" width="23" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="AEm-ER-pW1"/>
                                     <constraint firstAttribute="width" constant="23" id="Hu3-Bc-0Nc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Add" translatesAutoresizingMaskIntoConstraints="NO" id="WYy-Pj-XEj" userLabel="Add">
+                                <rect key="frame" x="327" y="79" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="6iK-Kc-hmr"/>
+                                    <constraint firstAttribute="height" constant="17" id="WNr-Mp-dGL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byq-0p-ZCf" userLabel="Title">
@@ -64,12 +71,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="GyW-x2-AWZ" secondAttribute="bottom" id="4Ri-iO-kmv"/>
+                            <constraint firstItem="WYy-Pj-XEj" firstAttribute="centerX" secondItem="xfc-eV-2ge" secondAttribute="centerX" id="4ym-3C-Ip1"/>
                             <constraint firstItem="xfc-eV-2ge" firstAttribute="leading" secondItem="5p7-TW-nwR" secondAttribute="trailing" id="8U0-RH-ueI"/>
                             <constraint firstItem="byq-0p-ZCf" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="9t7-VN-PIg"/>
                             <constraint firstItem="5p7-TW-nwR" firstAttribute="top" secondItem="byq-0p-ZCf" secondAttribute="bottom" constant="18" id="B5M-Cr-fvb"/>
                             <constraint firstItem="xfc-eV-2ge" firstAttribute="centerY" secondItem="5p7-TW-nwR" secondAttribute="centerY" id="Jkv-k3-LDo"/>
                             <constraint firstAttribute="trailing" secondItem="byq-0p-ZCf" secondAttribute="trailing" constant="28" id="LEL-mO-W7R"/>
                             <constraint firstItem="GyW-x2-AWZ" firstAttribute="leading" secondItem="zB9-yp-byW" secondAttribute="leading" constant="28" id="NEh-lo-oXN"/>
+                            <constraint firstItem="WYy-Pj-XEj" firstAttribute="centerY" secondItem="xfc-eV-2ge" secondAttribute="centerY" id="R6g-3G-9Qe"/>
                             <constraint firstAttribute="trailing" secondItem="GyW-x2-AWZ" secondAttribute="trailing" constant="28" id="SoO-Jf-ZD9"/>
                             <constraint firstAttribute="trailing" secondItem="xfc-eV-2ge" secondAttribute="trailing" constant="28" id="aWU-wq-HeC"/>
                             <constraint firstItem="byq-0p-ZCf" firstAttribute="top" secondItem="zB9-yp-byW" secondAttribute="top" constant="31" id="nvi-Da-JuH"/>
@@ -88,7 +97,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="PartitionLineImageView" destination="GyW-x2-AWZ" id="XEr-XE-9Ii"/>
+                <outlet property="addImageView" destination="WYy-Pj-XEj" id="4h2-Pj-q7j"/>
                 <outlet property="checkmarkImageView" destination="xfc-eV-2ge" id="sam-CV-AHJ"/>
+                <outlet property="partitionLineImageView" destination="GyW-x2-AWZ" id="Egj-JM-okB"/>
                 <outlet property="textfield" destination="5p7-TW-nwR" id="c4u-oU-tfL"/>
                 <outlet property="titleLabel" destination="byq-0p-ZCf" id="wTu-Ks-xu0"/>
             </connections>
@@ -96,7 +108,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Add" width="17" height="17"/>
         <image name="Checkmark" width="12" height="8"/>
-        <image name="PartitionLine" width="159" height="1"/>
     </resources>
 </document>

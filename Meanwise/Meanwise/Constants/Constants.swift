@@ -33,8 +33,8 @@ struct Constants {
     }
     
     struct SegueIdentifiers {
-        static let Master = "MasterViewController"
-        static let Detail = "DetailViewController"
+        static let SignupMore = "ToSignupMoreViewController"
+        static let SignupSkills = "ToSignupSkillsViewController"
     }
     
     struct UserDefaults {

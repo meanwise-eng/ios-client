@@ -9,9 +9,9 @@
 import UIKit
 
 protocol TextfieldTableViewCellProtocol {
-    func textFieldDidEndEditing(text: String, indexPath: NSIndexPath)
     func textFieldShouldReturn(indexPath: NSIndexPath)
     func textFieldDidBeginEditing(indexPath: NSIndexPath)
+    func textFieldDidChange(text: String, indexPath: NSIndexPath)
 }
 
 class TextfieldTableViewCell: UITableViewCell {
@@ -19,13 +19,16 @@ class TextfieldTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var partitionLineImageView: UIImageView!
     @IBOutlet weak var checkmarkImageView: UIImageView!
+    @IBOutlet weak var addImageView: UIImageView!
     @IBOutlet weak var textfield: UITextField!
     
     // MARK: - Variables
     
     var delegate: TextfieldTableViewCellProtocol?
     var indexPath: NSIndexPath!
+    var showAddImage = false
     
     // MARK: - Awake Method
 
@@ -36,7 +39,31 @@ class TextfieldTableViewCell: UITableViewCell {
     
     // Mark: - Public Methods
     
-    func setValuesToCell(titleText: String, indexPath: NSIndexPath) {
+    func setCellForSignupNameScreen(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "PartitionLineOrange")
+        setCell(titleText, indexPath: indexPath)
+    }
+    
+    func setCellForEmail(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "PartitionLineBlue")
+        setCell(titleText, indexPath: indexPath)
+    }
+    
+    func setCellForPassword(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "PartitionLineBlue")
+        textfield.secureTextEntry = true
+        setCell(titleText, indexPath: indexPath)
+    }
+    
+    func setCellForSignupSkillsScreen(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "PartitionLinePurple")
+        addImageView.hidden = false
+        showAddImage = true
+        checkmarkImageView.hidden = true
+        setCell(titleText, indexPath: indexPath)
+    }
+    
+    func setCell(titleText: String, indexPath: NSIndexPath) {
         titleLabel.text = titleText
         self.indexPath = indexPath
     }
@@ -62,16 +89,14 @@ class TextfieldTableViewCell: UITableViewCell {
 extension TextfieldTableViewCell: UITextFieldDelegate {
     
     @IBAction func textFieldDidChange(sender: AnyObject) {
-        checkmarkImageView.hidden = textfield.text?.characters.count < 1
+        if !showAddImage {
+            checkmarkImageView.hidden = textfield.text?.characters.count < 1
+        }
+        delegate?.textFieldDidChange(textfield.text!, indexPath: indexPath)
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
         delegate?.textFieldDidBeginEditing(indexPath)
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        
-        delegate?.textFieldDidEndEditing(textField.text!, indexPath: indexPath)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

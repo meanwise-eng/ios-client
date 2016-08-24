@@ -36,6 +36,9 @@
 		95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */; };
 		95C103121D6D752200DCA0A2 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */; };
 		95C103161D6DA93800DCA0A2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95C103151D6DA93800DCA0A2 /* Localizable.strings */; };
+		95C103181D6DCC5000DCA0A2 /* SignupMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C103171D6DCC5000DCA0A2 /* SignupMoreViewController.swift */; };
+		95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C103191D6DE04200DCA0A2 /* SignupBaseViewController.swift */; };
+		95C1031C1D6DE26000DCA0A2 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		95C103151D6DA93800DCA0A2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		95C103171D6DCC5000DCA0A2 /* SignupMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupMoreViewController.swift; sourceTree = "<group>"; };
+		95C103191D6DE04200DCA0A2 /* SignupBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupBaseViewController.swift; sourceTree = "<group>"; };
+		95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,7 +270,10 @@
 		953810EE1D6C8179005C4658 /* SignupControllers */ = {
 			isa = PBXGroup;
 			children = (
+				95C103191D6DE04200DCA0A2 /* SignupBaseViewController.swift */,
 				953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */,
+				95C103171D6DCC5000DCA0A2 /* SignupMoreViewController.swift */,
+				95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */,
 			);
 			path = SignupControllers;
 			sourceTree = "<group>";
@@ -433,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C1031C1D6DE26000DCA0A2 /* SignupSkillsViewController.swift in Sources */,
 				953810BD1D6C4285005C4658 /* ViewController.swift in Sources */,
 				953810CB1D6C4602005C4658 /* Helper.swift in Sources */,
 				953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */,
@@ -442,9 +452,11 @@
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
+				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,
 				953810C31D6C453F005C4658 /* Constants.swift in Sources */,
+				95C103181D6DCC5000DCA0A2 /* SignupMoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
