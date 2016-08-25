@@ -22,8 +22,11 @@ struct Constants {
     }
     
     struct TableViewCell {
-        static let TextfieldTableViewCell = "TextfieldTableViewCell"
-        static let TitleTableViewCell = "TitleTableViewCell"
+        static let Textfield = "TextfieldTableViewCell"
+        static let Title = "TitleTableViewCell"
+        static let Dropdown = "DropdownTableViewCell"
+        static let Skill = "SkillTableViewCell"
+        static let Spacer = "SpacerTableViewCell"
     }
     
     struct AnimationDurations {
@@ -35,6 +38,8 @@ struct Constants {
     struct SegueIdentifiers {
         static let SignupMore = "ToSignupMoreViewController"
         static let SignupSkills = "ToSignupSkillsViewController"
+        static let Dropdown = "ToDropdownViewController"
+        static let Interests = "ToSignupInterestsViewController"
     }
     
     struct UserDefaults {

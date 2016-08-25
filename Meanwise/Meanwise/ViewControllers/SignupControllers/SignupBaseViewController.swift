@@ -2,7 +2,7 @@
 //  SignupBaseViewController.swift
 //  Meanwise
 //
-//  Created by Sumit on 24/08/16.
+//  Created by Vishal on 24/08/16.
 //  Copyright © 2016 Squelo. All rights reserved.
 //
 

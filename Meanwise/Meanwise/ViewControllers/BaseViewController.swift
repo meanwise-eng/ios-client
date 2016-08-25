@@ -24,6 +24,7 @@ class BaseViewController: UIViewController {
     func addTapGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
     }
     
     func handleTap() {
@@ -37,3 +38,4 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+

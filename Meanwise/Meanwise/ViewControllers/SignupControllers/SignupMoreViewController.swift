@@ -2,7 +2,7 @@
 //  SignupMoreViewController.swift
 //  Meanwise
 //
-//  Created by Sumit on 24/08/16.
+//  Created by Vishal on 24/08/16.
 //  Copyright © 2016 Squelo. All rights reserved.
 //
 
@@ -31,8 +31,8 @@ class SignupMoreViewController: SignupBaseViewController {
     // MARK: - Functions
        
     func cellRegister() {
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TextfieldTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TextfieldTableViewCell)
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TitleTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TitleTableViewCell)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Textfield, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Textfield)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Title, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Title)
     }
     
     func validation() {
@@ -60,12 +60,12 @@ extension SignupMoreViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TitleTableViewCell, forIndexPath: indexPath) as! TitleTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Title, forIndexPath: indexPath) as! TitleTableViewCell
             cell.setValuesToCell(NSLocalizedString("SignupMoreTitle", comment: "title for the screen"))
             return cell
         case 1:
             if emailTableViewCell == nil {
-                emailTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                emailTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Textfield, forIndexPath: indexPath) as! TextfieldTableViewCell
                 emailTableViewCell.setCellForEmail(NSLocalizedString("Email", comment: "Email"), indexPath: indexPath)
                 emailTableViewCell.delegate = self
             }
@@ -73,7 +73,7 @@ extension SignupMoreViewController: UITableViewDelegate, UITableViewDataSource {
             return emailTableViewCell
         case 2:
             if passwordTableViewCell == nil {
-                passwordTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                passwordTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Textfield, forIndexPath: indexPath) as! TextfieldTableViewCell
                 passwordTableViewCell.setCellForPassword(NSLocalizedString("Password", comment: "Password"), indexPath: indexPath)
                 passwordTableViewCell.delegate = self
             }

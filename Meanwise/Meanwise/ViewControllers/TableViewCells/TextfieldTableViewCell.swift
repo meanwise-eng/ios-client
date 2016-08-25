@@ -68,6 +68,10 @@ class TextfieldTableViewCell: UITableViewCell {
         self.indexPath = indexPath
     }
     
+    func setCellTextFieldValue(text: String) {
+        textfield.text = text
+    }
+    
     func setFirstResponder() {
         textfield.becomeFirstResponder()
     }

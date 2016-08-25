@@ -31,8 +31,8 @@ class SignupNameViewController: SignupBaseViewController {
     // MARK: - Functions
 
     func cellRegister() {
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TextfieldTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TextfieldTableViewCell)
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TitleTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TitleTableViewCell)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Textfield, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Textfield)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Title, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Title)
     }
     
     func validation() {
@@ -63,12 +63,12 @@ extension SignupNameViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TitleTableViewCell, forIndexPath: indexPath) as! TitleTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Title, forIndexPath: indexPath) as! TitleTableViewCell
             cell.setValuesToCell(NSLocalizedString("SignupNameTitle", comment: "title for the screen"))
             return cell
         case 1:
             if firstNameTableViewCell == nil {
-                firstNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                firstNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Textfield, forIndexPath: indexPath) as! TextfieldTableViewCell
                 firstNameTableViewCell.setCellForSignupNameScreen(NSLocalizedString("FirstName", comment: "First Name"), indexPath: indexPath)
                 firstNameTableViewCell.delegate = self
             }
@@ -76,7 +76,7 @@ extension SignupNameViewController: UITableViewDelegate, UITableViewDataSource {
             return firstNameTableViewCell
         case 2:
             if lastNameTableViewCell == nil {
-                lastNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
+                lastNameTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Textfield, forIndexPath: indexPath) as! TextfieldTableViewCell
                 lastNameTableViewCell.setCellForSignupNameScreen(NSLocalizedString("LastName", comment: "Last Name"), indexPath: indexPath)
                 lastNameTableViewCell.delegate = self
             }

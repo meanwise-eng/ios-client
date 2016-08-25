@@ -2,47 +2,52 @@
 //  SignupSkillsViewController.swift
 //  Meanwise
 //
-//  Created by Sumit on 24/08/16.
+//  Created by Vishal on 24/08/16.
 //  Copyright © 2016 Squelo. All rights reserved.
 //
 
 import UIKit
 
 class SignupSkillsViewController: SignupBaseViewController {
-
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var dropdownView: UIView!
+    @IBOutlet weak var dropdownTopConstraint: NSLayoutConstraint!
+    
     // MARK: - Variable
     
     var addSkillTableViewCell: TextfieldTableViewCell!
-    var email: String?
-    var password: String?
+    var skills: [String]?
+    var dropdownViewController: DropdownViewController?
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        skills = []
         cellRegister()
+        enableNextButton(false)
     }
     
     // MARK: - Functions
     
     func cellRegister() {
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TextfieldTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TextfieldTableViewCell)
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.TitleTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.TitleTableViewCell)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Textfield, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Textfield)
+        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Title, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Title)
     }
     
     func validation() {
         var isValid = false
         
-        isValid = email != nil && email?.characters.count > 0
-        isValid = password != nil && password?.characters.count > 0
+        isValid = skills != nil && skills!.count > 0
         
         enableNextButton(isValid)
     }
     
     // MARK: - Memory Management
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,28 +56,77 @@ class SignupSkillsViewController: SignupBaseViewController {
 
 extension SignupSkillsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return section == 0 ? 2 : skills!.count + 1
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TitleTableViewCell, forIndexPath: indexPath) as! TitleTableViewCell
-            cell.setValuesToCell(NSLocalizedString("SignupAddSkillTitle", comment: "title for the screen"))
-            return cell
+            return getCellForFirstSection(indexPath)
         case 1:
-            if addSkillTableViewCell == nil {
-                addSkillTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.TextfieldTableViewCell, forIndexPath: indexPath) as! TextfieldTableViewCell
-                addSkillTableViewCell.setCellForSignupSkillsScreen(NSLocalizedString("AddSkill", comment: "Add Skills"), indexPath: indexPath)
-                addSkillTableViewCell.delegate = self
-            }
-            
-            return addSkillTableViewCell
+            return getCellForSecondSection(indexPath)
         default:
             return UITableViewCell()
         }
+    }
+    
+    func getCellForFirstSection(indexPath: NSIndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            return getTitleCell(indexPath)
+        case 1:
+            return getAddSkillCell(indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func getCellForSecondSection(indexPath: NSIndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+            return getSpacerCell(indexPath)
+        default:
+            return getSkillCell(indexPath)
+        }
+    }
+    
+    func getSkillCell(indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Skill, forIndexPath: indexPath) as! SkillTableViewCell
+        
+        cell.setTextToLabel("#" + skills![indexPath.row - 1] , indexPath: indexPath)
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    func getSpacerCell(indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Spacer, forIndexPath: indexPath)
+        return cell
+    }
+    
+    func getTitleCell(indexPath: NSIndexPath) -> TitleTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Title, forIndexPath: indexPath) as! TitleTableViewCell
+        
+        cell.setValuesToCell(NSLocalizedString("SignupAddSkillTitle", comment: "title for the screen"))
+        
+        return cell
+    }
+    
+    func getAddSkillCell(indexPath: NSIndexPath) -> TextfieldTableViewCell {
+        if addSkillTableViewCell == nil {
+            
+            addSkillTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Textfield, forIndexPath: indexPath) as! TextfieldTableViewCell
+        addSkillTableViewCell.setCellForSignupSkillsScreen(NSLocalizedString("AddSkill", comment: "Add Skills"), indexPath: indexPath)
+            
+            addSkillTableViewCell.delegate = self
+        }
+        
+        return addSkillTableViewCell
     }
 }
 
@@ -83,22 +137,11 @@ extension SignupSkillsViewController: TextfieldTableViewCellProtocol {
     }
     
     func textFieldShouldReturn(indexPath: NSIndexPath) {
-        switch indexPath.row {
-        case 1:
-            addSkillTableViewCell.endFirstResponder()
-            break
-        default: break
-        }
+        
     }
     
     func textFieldDidChange(text: String, indexPath: NSIndexPath) {
-        switch indexPath.row {
-        case 1:
-            email = text
-            break
-        default: break
-        }
-        validation()
+        showDropdownView(["Java", "JavaScript", "Java 6", "Swift", "Obj-C"])
     }
 }
 
@@ -110,6 +153,52 @@ extension SignupSkillsViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
-        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupSkills, sender: nil)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.Interests, sender: nil)
     }
 }
+
+extension SignupSkillsViewController: DropdownProtocol {
+    
+    func showDropdownView(list: [String]) {
+        setYPositionOfDropdown()
+        dropdownView.hidden = false
+        dropdownViewController?.getListToDisplay(list)
+    }
+    
+    func setYPositionOfDropdown() {
+        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0))
+        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
+        dropdownTopConstraint.constant = rectOfCellInSuperview.origin.y + rectOfCellInSuperview.size.height
+    }
+    
+    func valueSelected(indexPath: NSIndexPath, value: AnyObject) {
+        skills?.append(value as! String)
+        validation()
+        dropdownView.hidden = true
+        addSkillTableViewCell.setCellTextFieldValue("")
+        tableView.reloadData()
+    }
+    
+}
+
+extension SignupSkillsViewController: SkillCellProtocol {
+    
+    func removeSkill(indexPath: NSIndexPath) {
+        skills?.removeAtIndex(indexPath.row - 1)
+        validation()
+        tableView.reloadData()
+    }
+    
+}
+
+extension SignupSkillsViewController {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.SegueIdentifiers.Dropdown {
+            dropdownViewController = segue.destinationViewController as? DropdownViewController
+            dropdownViewController?.delegate = self
+        }
+    }
+    
+}
+
