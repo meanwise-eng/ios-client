@@ -36,6 +36,7 @@
 		95AF8B2A1D6F03E90040F54B /* DropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF8B291D6F03E90040F54B /* DropdownViewController.swift */; };
 		95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF8B2B1D6F1C890040F54B /* SkillTableViewCell.swift */; };
 		95AF8B2E1D6F2BB40040F54B /* SignupInterestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF8B2D1D6F2BB40040F54B /* SignupInterestsViewController.swift */; };
+		95AF8B331D6F37A60040F54B /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF8B321D6F37A60040F54B /* iCarousel.m */; };
 		95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */; };
 		95C103121D6D752200DCA0A2 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */; };
 		95C103161D6DA93800DCA0A2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95C103151D6DA93800DCA0A2 /* Localizable.strings */; };
@@ -97,6 +98,9 @@
 		95AF8B291D6F03E90040F54B /* DropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownViewController.swift; sourceTree = "<group>"; };
 		95AF8B2B1D6F1C890040F54B /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		95AF8B2D1D6F2BB40040F54B /* SignupInterestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInterestsViewController.swift; sourceTree = "<group>"; };
+		95AF8B311D6F37A60040F54B /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		95AF8B321D6F37A60040F54B /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		95AF8B351D6F388E0040F54B /* Meanwise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meanwise-Bridging-Header.h"; sourceTree = "<group>"; };
 		95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		95C103151D6DA93800DCA0A2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		953810851D6C3BAA005C4658 /* Meanwise */ = {
 			isa = PBXGroup;
 			children = (
+				95AF8B2F1D6F379C0040F54B /* Library */,
 				953810CC1D6C5049005C4658 /* Resources */,
 				953810C11D6C4525005C4658 /* Constants */,
 				953810BB1D6C41D3005C4658 /* Networking */,
@@ -303,6 +308,24 @@
 				95AF8B2B1D6F1C890040F54B /* SkillTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		95AF8B2F1D6F379C0040F54B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				95AF8B301D6F37A60040F54B /* iCarousel */,
+				95AF8B351D6F388E0040F54B /* Meanwise-Bridging-Header.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		95AF8B301D6F37A60040F54B /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				95AF8B311D6F37A60040F54B /* iCarousel.h */,
+				95AF8B321D6F37A60040F54B /* iCarousel.m */,
+			);
+			path = iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,6 +485,7 @@
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
 				95AF8B2E1D6F2BB40040F54B /* SignupInterestsViewController.swift in Sources */,
+				95AF8B331D6F37A60040F54B /* iCarousel.m in Sources */,
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
@@ -608,6 +632,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meanwise/Library/Meanwise-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -619,6 +644,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meanwise/Library/Meanwise-Bridging-Header.h";
 			};
 			name = Release;
 		};
