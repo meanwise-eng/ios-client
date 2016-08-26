@@ -63,6 +63,11 @@ class TextfieldTableViewCell: UITableViewCell {
         setCell(titleText, indexPath: indexPath)
     }
     
+    func setCellForSignupProfileScreen(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "PartitionLineGreen")
+        setCell(titleText, indexPath: indexPath)
+    }
+    
     func setCell(titleText: String, indexPath: NSIndexPath) {
         titleLabel.text = titleText
         self.indexPath = indexPath

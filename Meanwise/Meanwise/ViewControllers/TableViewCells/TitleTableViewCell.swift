@@ -13,6 +13,7 @@ class TitleTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
 
     // MARK: - Awake Method
 
@@ -25,6 +26,11 @@ class TitleTableViewCell: UITableViewCell {
     
     func setValuesToCell(titleText: String) {
         titleLabel.text = titleText
+    }
+    
+    func setValuesToCell(titleText: String, subTitleText: String) {
+        titleLabel.text = titleText
+        subTitleLabel.text = subTitleText
     }
 
     // MARK: - Selection Method

@@ -12,6 +12,8 @@
 		950974B41D704A5E0068D457 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B01D704A5E0068D457 /* TagListView.swift */; };
 		950974B51D704A5E0068D457 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B11D704A5E0068D457 /* TagView.swift */; };
 		950974B71D704ECF0068D457 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B61D704ECF0068D457 /* TagsTableViewCell.swift */; };
+		950974B91D706F8B0068D457 /* SignupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B81D706F8B0068D457 /* SignupProfileViewController.swift */; };
+		950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974BA1D708C5C0068D457 /* TextviewTableViewCell.swift */; };
 		953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810861D6C3BAA005C4658 /* AppDelegate.swift */; };
 		9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */; };
 		953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953810901D6C3BAA005C4658 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		950974B01D704A5E0068D457 /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		950974B11D704A5E0068D457 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		950974B61D704ECF0068D457 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		950974B81D706F8B0068D457 /* SignupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupProfileViewController.swift; sourceTree = "<group>"; };
+		950974BA1D708C5C0068D457 /* TextviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextviewTableViewCell.swift; sourceTree = "<group>"; };
 		953810831D6C3BAA005C4658 /* Meanwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meanwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953810861D6C3BAA005C4658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9538108E1D6C3BAA005C4658 /* Meanwise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meanwise.xcdatamodel; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */,
 				95AF8B291D6F03E90040F54B /* DropdownViewController.swift */,
 				95AF8B2D1D6F2BB40040F54B /* SignupInterestsViewController.swift */,
+				950974B81D706F8B0068D457 /* SignupProfileViewController.swift */,
 			);
 			path = SignupControllers;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				95C1030F1D6D750B00DCA0A2 /* TitleTableViewCell.swift */,
 				95AF8B2B1D6F1C890040F54B /* SkillTableViewCell.swift */,
 				950974B61D704ECF0068D457 /* TagsTableViewCell.swift */,
+				950974BA1D708C5C0068D457 /* TextviewTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -514,8 +520,10 @@
 				950974B21D704A5E0068D457 /* CloseButton.swift in Sources */,
 				95AF8B2E1D6F2BB40040F54B /* SignupInterestsViewController.swift in Sources */,
 				950974B51D704A5E0068D457 /* TagView.swift in Sources */,
+				950974B91D706F8B0068D457 /* SignupProfileViewController.swift in Sources */,
 				95AF8B331D6F37A60040F54B /* iCarousel.m in Sources */,
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
+				950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,

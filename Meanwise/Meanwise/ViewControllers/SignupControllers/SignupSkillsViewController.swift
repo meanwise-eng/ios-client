@@ -154,7 +154,7 @@ extension SignupSkillsViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
-        performSegueWithIdentifier(Constants.SegueIdentifiers.Interests, sender: nil)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupInterests, sender: nil)
     }
 }
 

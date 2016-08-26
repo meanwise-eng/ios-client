@@ -16,3 +16,9 @@
 
 "SignupAddSkillTitle" = "Enter your skills";
 "AddSkill" = "ADD SKILL";
+
+"Profile" = "Profile";
+"ProfileSubtitle" = "Make yourself stand out from the \ncrowd";
+"Username" = "USERNAME";
+"Profession" = "PROFESSION";
+"Bio" = "BIO";

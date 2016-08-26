@@ -19,6 +19,7 @@ class SignupBaseViewController: BaseViewController {
     // MAKE: - Variables
     
     var activeIndexPath: NSIndexPath?
+    var isScrollingEnabled = false
     
     //MARK: - View Lifecycle
 
@@ -97,7 +98,7 @@ extension SignupBaseViewController {
             self.view.layoutIfNeeded()
         })
         
-        tableView.scrollEnabled = false
+        tableView.scrollEnabled = isScrollingEnabled
     }
     
     func makeLowerCellVisible() {

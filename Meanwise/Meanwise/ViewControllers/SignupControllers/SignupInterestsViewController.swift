@@ -62,7 +62,7 @@ extension SignupInterestsViewController {
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
-        //        performSegueWithIdentifier(Constants.SegueIdentifiers.Interests, sender: nil)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupProfile, sender: nil)
     }
 }
 

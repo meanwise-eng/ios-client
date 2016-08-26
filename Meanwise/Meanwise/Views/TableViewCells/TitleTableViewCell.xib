@@ -8,6 +8,9 @@
         <mutableArray key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
         </mutableArray>
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,19 +25,32 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-QT-3Gf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-iq-vFK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-iq-vFK" userLabel="TitleLabel">
                                 <rect key="frame" x="25" y="38" width="270" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="3fY-WT-D7D"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvN-h5-jDy" userLabel="SubtitleLabel">
+                                <rect key="frame" x="25" y="85" width="270" height="0.0"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6WK-iq-vFK" firstAttribute="centerY" secondItem="VlS-QT-3Gf" secondAttribute="centerY" id="0mu-4K-asL"/>
                             <constraint firstItem="6WK-iq-vFK" firstAttribute="leading" secondItem="VlS-QT-3Gf" secondAttribute="leading" constant="25" id="2sq-IM-XWL"/>
+                            <constraint firstAttribute="bottom" secondItem="mvN-h5-jDy" secondAttribute="bottom" constant="29" id="Ce7-Ba-B04"/>
+                            <constraint firstItem="mvN-h5-jDy" firstAttribute="top" secondItem="6WK-iq-vFK" secondAttribute="bottom" constant="8" id="Iaj-ia-Gwy"/>
                             <constraint firstAttribute="trailing" secondItem="6WK-iq-vFK" secondAttribute="trailing" constant="25" id="Ilj-o7-rGV"/>
-                            <constraint firstAttribute="height" constant="114" id="nF5-Ab-6KH"/>
+                            <constraint firstItem="mvN-h5-jDy" firstAttribute="leading" secondItem="VlS-QT-3Gf" secondAttribute="leading" constant="25" id="OfG-Zn-9es"/>
+                            <constraint firstItem="6WK-iq-vFK" firstAttribute="top" secondItem="VlS-QT-3Gf" secondAttribute="top" constant="38" id="T5p-mS-zKP"/>
+                            <constraint firstAttribute="trailing" secondItem="mvN-h5-jDy" secondAttribute="trailing" constant="25" id="h0z-dj-rrp"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="114" id="nF5-Ab-6KH"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,6 +64,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="subTitleLabel" destination="mvN-h5-jDy" id="avI-W2-Hyx"/>
                 <outlet property="titleLabel" destination="6WK-iq-vFK" id="e6Q-FQ-NAJ"/>
             </connections>
             <point key="canvasLocation" x="201" y="312"/>

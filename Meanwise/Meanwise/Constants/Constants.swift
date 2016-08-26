@@ -28,6 +28,7 @@ struct Constants {
         static let Skill = "SkillTableViewCell"
         static let Spacer = "SpacerTableViewCell"
         static let Tags = "TagsTableViewCell"
+        static let Textview = "TextviewTableViewCell"
     }
     
     struct AnimationDurations {
@@ -40,7 +41,8 @@ struct Constants {
         static let SignupMore = "ToSignupMoreViewController"
         static let SignupSkills = "ToSignupSkillsViewController"
         static let Dropdown = "ToDropdownViewController"
-        static let Interests = "ToSignupInterestsViewController"
+        static let SignupInterests = "ToSignupInterestsViewController"
+        static let SignupProfile = "ToSignupProfileViewController"
     }
     
     struct UserDefaults {
