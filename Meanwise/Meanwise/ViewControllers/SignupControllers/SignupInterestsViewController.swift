@@ -22,8 +22,7 @@ class SignupInterestsViewController: UIViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        for i in 0...99
-        {
+        for i in 0...99 {
             items.append(i)
         }
     }
@@ -35,9 +34,15 @@ class SignupInterestsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        carousel.type = .CoverFlow
+        carousel.type = .Custom
         carousel.decelerationRate = 0.0
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        carousel.reloadData()
     }
     
     // MARK: - Memory Management
@@ -64,13 +69,11 @@ extension SignupInterestsViewController {
 extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource {
     
     //iCarousel Delegate Methods
-    func numberOfItemsInCarousel(carousel: iCarousel) -> Int
-    {
+    func numberOfItemsInCarousel(carousel: iCarousel) -> Int {
         return items.count
     }
     
-    func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView view: UIView?) -> UIView
-    {
+    func carousel(carousel: iCarousel, viewForItemAtIndex index: Int, reusingView view: UIView?) -> UIView {
         var itemView: UIImageView
         var img : UIImageView
         var selectButton: UIButton
@@ -78,11 +81,11 @@ extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource 
         
         //create new view if no view is available for recycling
         if (view == nil) {
-            itemView = UIImageView(frame:CGRect(x:0, y:0, width:carousel.frame.size.width, height:carousel.frame.size.height))
+            itemView = UIImageView(frame:CGRect(x:0, y:0, width:275, height:395))
             itemView.backgroundColor = UIColor.clearColor()
             itemView.contentMode = .ScaleAspectFit
             
-            img = UIImageView(frame:CGRect(x:0, y:5, width:itemView.frame.size.width-10, height:itemView.frame.size.height-10))
+            img = UIImageView(frame:CGRect(x:0, y:5, width:itemView.frame.size.width, height:itemView.frame.size.height))
             img.image = UIImage(named: "Fashion")
             img.backgroundColor = UIColor.clearColor()
             img.contentMode = .ScaleAspectFit
@@ -114,13 +117,27 @@ extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource 
         return itemView
     }
     
-    func carousel(carousel: iCarousel, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat
-    {
-        if (option == .Spacing)
-        {
-            return value * 1.5
+    func carousel(carousel: iCarousel, valueForOption option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
+        if (option == .Spacing) {
+            return value * 2.5
         }
         return value
+    }
+    
+    func carousel(carousel: iCarousel, itemTransformForOffset offset: CGFloat, baseTransform transform: CATransform3D) -> CATransform3D {
+        
+        let distance: CGFloat = 50.0
+        let spacing: CGFloat = 0.11
+        
+        let clampedOffset = min(1.0, max(-1.0, offset))
+        
+        let z: CGFloat = -fabs(clampedOffset) * distance
+        
+        var offset1 = offset
+        
+        offset1 += clampedOffset * spacing
+        
+        return CATransform3DTranslate(transform, offset1 * carousel.itemWidth, 0.0, z)
     }
     
     func carousel(carousel: iCarousel, didSelectItemAtIndex index: Int) {
@@ -128,7 +145,6 @@ extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource 
         
         let button = itemView?.viewWithTag(1) as! UIButton
         button.selected = !button.selected
-        
     }
     
 }

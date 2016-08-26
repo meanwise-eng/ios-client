@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Bold.ttf">
@@ -228,11 +227,8 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrd-Mg-CpH" userLabel="iCarouselView" customClass="iCarousel">
-                                        <rect key="frame" x="179" y="206" width="242" height="314"/>
+                                        <rect key="frame" x="0.0" y="186" width="600" height="354"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rrd-Mg-CpH" secondAttribute="height" multiplier="270:349" id="G77-7o-WNn"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="ZGd-xb-uuP" id="YjP-4W-hRZ"/>
                                             <outlet property="delegate" destination="ZGd-xb-uuP" id="SRp-Ab-WZ7"/>
@@ -280,17 +276,18 @@
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.32549019607843138" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="wPp-PK-a61" firstAttribute="top" secondItem="6Fm-2Y-DBk" secondAttribute="top" constant="20" id="EU4-ca-opv"/>
-                                    <constraint firstItem="rrd-Mg-CpH" firstAttribute="top" secondItem="tE0-iM-Uvf" secondAttribute="bottom" constant="20" id="G74-L7-QWg"/>
+                                    <constraint firstItem="rrd-Mg-CpH" firstAttribute="top" secondItem="tE0-iM-Uvf" secondAttribute="bottom" id="G74-L7-QWg"/>
                                     <constraint firstItem="wPp-PK-a61" firstAttribute="leading" secondItem="6Fm-2Y-DBk" secondAttribute="leading" id="Jho-d2-aR7"/>
                                     <constraint firstAttribute="trailing" secondItem="tE0-iM-Uvf" secondAttribute="trailing" id="LG9-o8-1ve"/>
                                     <constraint firstAttribute="bottom" secondItem="29y-ah-fn3" secondAttribute="bottom" id="PBU-hh-hcC"/>
                                     <constraint firstItem="tE0-iM-Uvf" firstAttribute="top" secondItem="wPp-PK-a61" secondAttribute="bottom" id="PHH-n0-bDg"/>
-                                    <constraint firstItem="29y-ah-fn3" firstAttribute="top" secondItem="rrd-Mg-CpH" secondAttribute="bottom" constant="20" id="U17-9D-gDp"/>
+                                    <constraint firstItem="29y-ah-fn3" firstAttribute="top" secondItem="rrd-Mg-CpH" secondAttribute="bottom" id="U17-9D-gDp"/>
+                                    <constraint firstItem="rrd-Mg-CpH" firstAttribute="leading" secondItem="6Fm-2Y-DBk" secondAttribute="leading" id="UhL-9q-nzh"/>
                                     <constraint firstAttribute="trailing" secondItem="wPp-PK-a61" secondAttribute="trailing" id="WLx-b6-RLJ"/>
                                     <constraint firstAttribute="trailing" secondItem="29y-ah-fn3" secondAttribute="trailing" id="Ynu-74-3K1"/>
                                     <constraint firstItem="29y-ah-fn3" firstAttribute="leading" secondItem="6Fm-2Y-DBk" secondAttribute="leading" id="Zxi-ld-uq4"/>
                                     <constraint firstItem="tE0-iM-Uvf" firstAttribute="leading" secondItem="6Fm-2Y-DBk" secondAttribute="leading" id="aMb-Ck-7ge"/>
-                                    <constraint firstItem="rrd-Mg-CpH" firstAttribute="centerX" secondItem="6Fm-2Y-DBk" secondAttribute="centerX" id="f8b-66-0XB"/>
+                                    <constraint firstAttribute="trailing" secondItem="rrd-Mg-CpH" secondAttribute="trailing" id="kAD-dl-YzR"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -303,7 +300,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="carousel" destination="rrd-Mg-CpH" id="Jym-Xj-EU3"/>
+                        <outlet property="carousel" destination="rrd-Mg-CpH" id="vdB-1h-8Av"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtC-FS-zsC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,6 +681,10 @@
         <scene sceneID="Tv4-Nx-gRV">
             <objects>
                 <viewController id="LaP-qj-hhv" customClass="DropdownViewController" customModule="Meanwise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="35O-Kr-JGn"/>
+                        <viewControllerLayoutGuide type="bottom" id="paQ-Tz-szY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4JL-YQ-oDL">
                         <rect key="frame" x="0.0" y="0.0" width="544" height="165"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
