@@ -27,6 +27,7 @@ struct Constants {
         static let Dropdown = "DropdownTableViewCell"
         static let Skill = "SkillTableViewCell"
         static let Spacer = "SpacerTableViewCell"
+        static let Tags = "TagsTableViewCell"
     }
     
     struct AnimationDurations {

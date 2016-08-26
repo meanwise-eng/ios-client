@@ -17,6 +17,7 @@ class SignupSkillsViewController: SignupBaseViewController {
     // MARK: - Variable
     
     var addSkillTableViewCell: TextfieldTableViewCell!
+    var tagsTableViewCell: TagsTableViewCell!
     var skills: [String]?
     var dropdownViewController: DropdownViewController?
     
@@ -61,7 +62,7 @@ extension SignupSkillsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 2 : skills!.count + 1
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -91,17 +92,17 @@ extension SignupSkillsViewController: UITableViewDelegate, UITableViewDataSource
         case 0:
             return getSpacerCell(indexPath)
         default:
-            return getSkillCell(indexPath)
+            return getTagCell(indexPath)
         }
     }
     
-    func getSkillCell(indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Skill, forIndexPath: indexPath) as! SkillTableViewCell
-        
-        cell.setTextToLabel("#" + skills![indexPath.row - 1] , indexPath: indexPath)
-        cell.delegate = self
-        
-        return cell
+    func getTagCell(indexPath: NSIndexPath) -> UITableViewCell {
+        if tagsTableViewCell == nil {
+            tagsTableViewCell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Tags, forIndexPath: indexPath) as! TagsTableViewCell
+            tagsTableViewCell.delegate = self
+        }
+
+        return tagsTableViewCell
     }
     
     func getSpacerCell(indexPath: NSIndexPath) -> UITableViewCell {
@@ -175,16 +176,17 @@ extension SignupSkillsViewController: DropdownProtocol {
         skills?.append(value as! String)
         validation()
         dropdownView.hidden = true
+        tagsTableViewCell.addTag(value as! String)
         addSkillTableViewCell.setCellTextFieldValue("")
         tableView.reloadData()
     }
     
 }
 
-extension SignupSkillsViewController: SkillCellProtocol {
+extension SignupSkillsViewController: TagsCellProtocol {
     
-    func removeSkill(indexPath: NSIndexPath) {
-        skills?.removeAtIndex(indexPath.row - 1)
+    func removeTag(tagName: String) {
+        skills = skills?.filter() {$0 != tagName}
         validation()
         tableView.reloadData()
     }
