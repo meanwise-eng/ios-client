@@ -847,7 +847,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InviteTableViewCell" rowHeight="80" id="WTo-sb-DsZ" userLabel="InviteTableViewCell">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InviteTableViewCell1" rowHeight="80" id="WTo-sb-DsZ" userLabel="InviteTableViewCell">
                                                 <rect key="frame" x="0.0" y="53" width="600" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTo-sb-DsZ" id="NJD-MK-c9w">
@@ -882,6 +882,69 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InviteTableViewCell" rowHeight="80" id="QG7-Up-Ka0" userLabel="InviteTableViewCell" customClass="InviteTableViewCell" customModule="Meanwise" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="133" width="600" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QG7-Up-Ka0" id="QWt-fm-q0x">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-wc-bpl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ora-cV-ITx">
+                                                                    <rect key="frame" x="30" y="10" width="540" height="60"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <connections>
+                                                                        <action selector="buttonTapped:" destination="QG7-Up-Ka0" eventType="touchUpInside" id="w5v-hz-0rh"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-Tc-z57" userLabel="IconImageView">
+                                                                    <rect key="frame" x="45" y="25" width="30" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="1Br-9N-acp"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="n4u-zQ-IzT"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUL-fj-gMG" userLabel="TextLabel">
+                                                                    <rect key="frame" x="95" y="29" width="475" height="21"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="dan-CY-scL"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="PUL-fj-gMG" firstAttribute="trailing" secondItem="ora-cV-ITx" secondAttribute="trailing" id="EkB-UT-9tD"/>
+                                                                <constraint firstItem="nzp-Tc-z57" firstAttribute="centerY" secondItem="ora-cV-ITx" secondAttribute="centerY" id="Kfw-F4-GYu"/>
+                                                                <constraint firstItem="ora-cV-ITx" firstAttribute="leading" secondItem="9IO-wc-bpl" secondAttribute="leading" constant="30" id="QCa-Fw-6KC"/>
+                                                                <constraint firstItem="PUL-fj-gMG" firstAttribute="centerY" secondItem="ora-cV-ITx" secondAttribute="centerY" id="QQ6-J0-PW1"/>
+                                                                <constraint firstItem="ora-cV-ITx" firstAttribute="top" secondItem="9IO-wc-bpl" secondAttribute="top" constant="10" id="T3l-h9-kJ0"/>
+                                                                <constraint firstItem="nzp-Tc-z57" firstAttribute="leading" secondItem="ora-cV-ITx" secondAttribute="leading" constant="15" id="Ufc-48-5Oj"/>
+                                                                <constraint firstItem="PUL-fj-gMG" firstAttribute="leading" secondItem="ora-cV-ITx" secondAttribute="leading" constant="65" id="VrN-AD-0jt"/>
+                                                                <constraint firstAttribute="height" constant="80" id="Z2Z-Oc-XrG"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ora-cV-ITx" secondAttribute="bottom" constant="10" id="j08-BA-51f"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ora-cV-ITx" secondAttribute="trailing" constant="30" id="zKf-rR-DQ7"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="9IO-wc-bpl" firstAttribute="top" secondItem="QWt-fm-q0x" secondAttribute="top" id="2gZ-2A-khD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9IO-wc-bpl" secondAttribute="trailing" id="B6C-oI-8Ea"/>
+                                                        <constraint firstItem="9IO-wc-bpl" firstAttribute="leading" secondItem="QWt-fm-q0x" secondAttribute="leading" id="Yed-LL-bdp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="9IO-wc-bpl" secondAttribute="bottom" id="cnS-IA-mZ6"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="buttonTextLabel" destination="PUL-fj-gMG" id="Red-7A-uKF"/>
+                                                    <outlet property="iconImageView" destination="nzp-Tc-z57" id="vmE-Dd-hgv"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
