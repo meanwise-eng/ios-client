@@ -35,6 +35,11 @@ class SignupBaseViewController: BaseViewController {
         registerForNotifications()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollTableView()
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         deRegisterForNotification()
@@ -52,6 +57,11 @@ class SignupBaseViewController: BaseViewController {
     func enableNextButton(enable: Bool) {
         nextButton.alpha = enable ? 1.0 : 0.5
         nextButton.enabled = enable
+    }
+    
+    func scrollTableView() {
+        tableView.scrollEnabled = tableView.contentSize.height > tableView.frame.size.height
+        isScrollingEnabled = tableView.scrollEnabled
     }
     
     // MARK: - Memory Management

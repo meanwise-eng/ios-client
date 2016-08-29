@@ -52,6 +52,7 @@
 		95C1031C1D6DE26000DCA0A2 /* SignupSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */; };
 		95C8501A1D7449180026C297 /* SignupAppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C850191D7449180026C297 /* SignupAppearanceViewController.swift */; };
 		95C8501C1D7455050026C297 /* UploadImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8501B1D7455050026C297 /* UploadImageTableViewCell.swift */; };
+		95C8501E1D7471BB0026C297 /* SignupInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8501D1D7471BB0026C297 /* SignupInviteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		95C1031B1D6DE26000DCA0A2 /* SignupSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupSkillsViewController.swift; sourceTree = "<group>"; };
 		95C850191D7449180026C297 /* SignupAppearanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupAppearanceViewController.swift; sourceTree = "<group>"; };
 		95C8501B1D7455050026C297 /* UploadImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageTableViewCell.swift; sourceTree = "<group>"; };
+		95C8501D1D7471BB0026C297 /* SignupInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInviteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 				95AF8B2D1D6F2BB40040F54B /* SignupInterestsViewController.swift */,
 				950974B81D706F8B0068D457 /* SignupProfileViewController.swift */,
 				95C850191D7449180026C297 /* SignupAppearanceViewController.swift */,
+				95C8501D1D7471BB0026C297 /* SignupInviteViewController.swift */,
 			);
 			path = SignupControllers;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				950974B41D704A5E0068D457 /* TagListView.swift in Sources */,
 				950974B21D704A5E0068D457 /* CloseButton.swift in Sources */,
 				95AF8B2E1D6F2BB40040F54B /* SignupInterestsViewController.swift in Sources */,
+				95C8501E1D7471BB0026C297 /* SignupInviteViewController.swift in Sources */,
 				950974B51D704A5E0068D457 /* TagView.swift in Sources */,
 				950974B91D706F8B0068D457 /* SignupProfileViewController.swift in Sources */,
 				95AF8B331D6F37A60040F54B /* iCarousel.m in Sources */,

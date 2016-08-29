@@ -16,7 +16,8 @@ class SignupAppearanceViewController: SignupBaseViewController {
     var coverPicTableViewCell: UploadImageTableViewCell!
     var profilePic: UIImage?
     var coverPic: UIImage?
-    
+    var imagePicker = UIImagePickerController()
+
     // MARK: View Lifecycle
     
     override func viewDidLoad() {
@@ -30,7 +31,6 @@ class SignupAppearanceViewController: SignupBaseViewController {
     // MARK: - Functions
     
     func cellRegister() {
-        tableView.registerNib(UINib(nibName: Constants.TableViewCell.Textfield, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Textfield)
         tableView.registerNib(UINib(nibName: Constants.TableViewCell.Title, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.Title)
     }
     
@@ -97,6 +97,53 @@ extension SignupAppearanceViewController: UploadImageCellProtocol {
     }
     
     func chooseImage(at indexPath: NSIndexPath) {
+        activeIndexPath = indexPath
         
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum;
+            imagePicker.allowsEditing = true
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
     }
+}
+
+extension SignupAppearanceViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+        switch activeIndexPath!.row {
+        case 2:
+            profilePic = image
+            profilePicTableViewCell.setImageInCell(profilePic!)
+            break
+        case 3:
+            coverPic = image
+            coverPicTableViewCell.setImageInCell(coverPic!)
+           break
+        default:
+            break
+        }
+        
+        validation()
+    }
+
+}
+
+extension SignupAppearanceViewController {
+    
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func nextButtonTapped(sender: AnyObject) {
+        view.endEditing(true)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupInvite, sender: nil)
+    }
+    
 }
