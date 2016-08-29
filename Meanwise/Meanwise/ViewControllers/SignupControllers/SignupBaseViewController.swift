@@ -14,7 +14,7 @@ class SignupBaseViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomViewBottomConstraint: NSLayoutConstraint!
     
     // MAKE: - Variables
     
@@ -80,7 +80,7 @@ extension SignupBaseViewController {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
-        tableViewBottomConstraint.constant = keyboardFrame.size.height - 50
+        bottomViewBottomConstraint.constant = keyboardFrame.size.height
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.view.layoutIfNeeded()
@@ -92,7 +92,7 @@ extension SignupBaseViewController {
     
     func keyboardWillHide(notification: NSNotification) {
         
-        tableViewBottomConstraint.constant = 0
+        bottomViewBottomConstraint.constant = 0
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.view.layoutIfNeeded()

@@ -28,6 +28,12 @@ class SignupNameViewController: SignupBaseViewController {
         enableNextButton(false)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        firstNameTableViewCell.setFirstResponder()
+    }
+    
     // MARK: - Functions
 
     func cellRegister() {
@@ -39,7 +45,7 @@ class SignupNameViewController: SignupBaseViewController {
         var isValid = false
         
         isValid = firstName != nil && firstName?.characters.count > 0
-        isValid = lastName != nil && lastName?.characters.count > 0
+        isValid = isValid && lastName != nil && lastName?.characters.count > 0
         
         enableNextButton(isValid)
     }

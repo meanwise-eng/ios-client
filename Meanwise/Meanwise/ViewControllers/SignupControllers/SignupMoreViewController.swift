@@ -28,6 +28,12 @@ class SignupMoreViewController: SignupBaseViewController {
         enableNextButton(false)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        emailTableViewCell.setFirstResponder()
+    }
+    
     // MARK: - Functions
        
     func cellRegister() {
@@ -39,7 +45,7 @@ class SignupMoreViewController: SignupBaseViewController {
         var isValid = false
         
         isValid = email != nil && email?.characters.count > 0
-        isValid = password != nil && password?.characters.count > 0
+        isValid = isValid && password != nil && password?.characters.count > 0
         
         enableNextButton(isValid)
     }

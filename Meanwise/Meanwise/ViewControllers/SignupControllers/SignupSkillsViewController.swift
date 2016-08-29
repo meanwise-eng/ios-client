@@ -32,6 +32,12 @@ class SignupSkillsViewController: SignupBaseViewController {
         enableNextButton(false)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        addSkillTableViewCell.setFirstResponder()
+    }
+    
     // MARK: - Functions
     
     func cellRegister() {

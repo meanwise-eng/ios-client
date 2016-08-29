@@ -33,6 +33,12 @@ class SignupProfileViewController: SignupBaseViewController {
         tableView.scrollEnabled = true
         isScrollingEnabled = true
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        usernameTableViewCell.setFirstResponder()
+    }
 
     // MARK: - Functions
     
@@ -45,8 +51,8 @@ class SignupProfileViewController: SignupBaseViewController {
         var isValid = false
         
         isValid = username != nil && username?.characters.count > 0
-        isValid = profession != nil && profession?.characters.count > 0
-        isValid = bio != nil && bio?.characters.count > 0
+        isValid = isValid && profession != nil && profession?.characters.count > 0
+        isValid = isValid && bio != nil && bio?.characters.count > 0
         
         enableNextButton(isValid)
     }

@@ -10,6 +10,9 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    // MARK: - Vatiables
+    var tapGesture: UITapGestureRecognizer!
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -22,11 +25,12 @@ class BaseViewController: UIViewController {
     // MARK: - Functions
 
     func addTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        view.addGestureRecognizer(tap)
-        tap.cancelsTouchesInView = false
+        tapGesture = UITapGestureRecognizer()
+        tapGesture.delegate = self
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
-    
+
     func handleTap() {
         view.endEditing(true)
     }
@@ -36,6 +40,15 @@ class BaseViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension BaseViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if (!(touch.view is UIControl) && !(touch.view is UITextView) && !(touch.view is UITextField))  {
+            handleTap()
+        }
+        return true
     }
 }
 
