@@ -22,3 +22,8 @@
 "Username" = "USERNAME";
 "Profession" = "PROFESSION";
 "Bio" = "BIO";
+
+"Appearance" = "Appearance";
+"AppearanceSubtitle" = "Make yourself look cooler to others";
+"ProfilePhoto" = "PROFILE PHOTO";
+"CoverPhoto" = "COVER PHOTO";

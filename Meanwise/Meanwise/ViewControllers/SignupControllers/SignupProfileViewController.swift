@@ -163,7 +163,8 @@ extension SignupProfileViewController {
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
-        
+        view.endEditing(true)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupAppearance, sender: nil)
     }
     
 }

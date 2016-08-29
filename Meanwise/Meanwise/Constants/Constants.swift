@@ -29,6 +29,7 @@ struct Constants {
         static let Spacer = "SpacerTableViewCell"
         static let Tags = "TagsTableViewCell"
         static let Textview = "TextviewTableViewCell"
+        static let UploadImage = "UploadImageTableViewCell"
     }
     
     struct AnimationDurations {
@@ -43,6 +44,7 @@ struct Constants {
         static let Dropdown = "ToDropdownViewController"
         static let SignupInterests = "ToSignupInterestsViewController"
         static let SignupProfile = "ToSignupProfileViewController"
+        static let SignupAppearance = "ToSignupAppearanceViewController"
     }
     
     struct UserDefaults {

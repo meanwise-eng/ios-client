@@ -61,7 +61,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <connections>
                                     <action selector="textFieldDidChange:" destination="jai-Uy-4To" eventType="editingChanged" id="hWt-9Q-Gow"/>
                                     <outlet property="delegate" destination="jai-Uy-4To" id="Ysa-s2-dTZ"/>
