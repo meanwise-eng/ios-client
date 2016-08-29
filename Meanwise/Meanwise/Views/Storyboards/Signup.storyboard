@@ -1057,10 +1057,10 @@
         <image name="BackButton" width="23" height="16"/>
         <image name="BlueArrow" width="9" height="16"/>
         <image name="Cancel" width="14" height="14"/>
-        <image name="Checkmark" width="12" height="8"/>
+        <image name="Checkmark" width="23" height="16"/>
         <image name="GreenArrow" width="9" height="16"/>
         <image name="OrangeArrow" width="9" height="16"/>
-        <image name="PartitionLineGreen" width="12" height="8"/>
+        <image name="PartitionLineGreen" width="319" height="1"/>
         <image name="PartitionLinePurple" width="319" height="1"/>
         <image name="ProgressBar" width="54" height="2"/>
         <image name="ProgressBar2" width="107" height="2"/>

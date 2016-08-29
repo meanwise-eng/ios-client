@@ -81,7 +81,11 @@ extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource 
         
         //create new view if no view is available for recycling
         if (view == nil) {
-            itemView = UIImageView(frame:CGRect(x:0, y:0, width:275, height:395))
+            let height = self.carousel.frame.size.height - 25
+            
+            let width = height * 275/390
+            
+            itemView = UIImageView(frame:CGRect(x:0, y:0, width:width, height:height))
             itemView.backgroundColor = UIColor.clearColor()
             itemView.contentMode = .ScaleAspectFit
             
@@ -127,7 +131,21 @@ extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource 
     func carousel(carousel: iCarousel, itemTransformForOffset offset: CGFloat, baseTransform transform: CATransform3D) -> CATransform3D {
         
         let distance: CGFloat = 50.0
-        let spacing: CGFloat = 0.11
+        var spacing: CGFloat = 0.33
+        
+        switch UIScreen.mainScreen().bounds.width {
+        case 320:
+            spacing = 0.01
+            break
+        case 375:
+            spacing = 0.33
+            break
+        case 414:
+            spacing = 0.51
+            break
+        default:
+            spacing = 0.33
+        }
         
         let clampedOffset = min(1.0, max(-1.0, offset))
         

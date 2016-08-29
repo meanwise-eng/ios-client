@@ -109,6 +109,6 @@
     </objects>
     <resources>
         <image name="Add" width="17" height="17"/>
-        <image name="Checkmark" width="12" height="8"/>
+        <image name="Checkmark" width="23" height="16"/>
     </resources>
 </document>
