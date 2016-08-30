@@ -68,6 +68,12 @@ class TextfieldTableViewCell: UITableViewCell {
         setCell(titleText, indexPath: indexPath)
     }
     
+    func setCellForLoginEmailScreen(titleText: String, indexPath: NSIndexPath, isPassword: Bool) {
+        partitionLineImageView.image = UIImage(named: "PartitionLineViolet")
+        textfield.secureTextEntry = isPassword
+        setCell(titleText, indexPath: indexPath)
+    }
+    
     func setCell(titleText: String, indexPath: NSIndexPath) {
         titleLabel.text = titleText
         self.indexPath = indexPath

@@ -38,3 +38,10 @@
 "IntroductionDescription1" = "Everyone has their own story to tell.\nCreate your own unique identity and \nconnect with friends. Let your story be\ndiscovered by the world.";
 "IntroductionDescription2" = "Share your ideas with like-minded\n people. Create and engage in \nconversations you care about and \nboost your chances of being \ndiscovered by potential employers.";
 "IntroductionDescription3" = "Say goodbye to your old-fashioned \nresume. Apply for the job you want in \nseconds.";
+
+"TermsOfService" = "By signing up, I agree to Meanwise’s Terms of Service and Privacy Policy";
+"WorkLifeBalance" = "Work. Life. Balance.";
+
+"LoginEmailTitle" = "Login";
+
+"ForgotPasswordTitle" = "Forgot password";

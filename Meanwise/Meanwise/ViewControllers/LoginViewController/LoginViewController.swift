@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var createButton:UIButton!
     @IBOutlet weak var bySignUpTextView:UITextView!
+    @IBOutlet weak var titleLabel:UILabel!
 
     // MARK: - View Lifecycle
 
@@ -37,11 +38,14 @@ class LoginViewController: UIViewController {
     func defaultSetting()  {
         
         createButton.layer.borderWidth = 1
-        createButton.layer.borderColor = UIColor(red:1.0, green: 1.0, blue: 1.0, alpha: 0.5).CGColor
-
-        let attributedString = NSMutableAttributedString(string:"By signing up, I agree to Meanwise’s Terms of Service and Privacy Policy")
+        createButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        titleLabel.text = NSLocalizedString("WorkLifeBalance", comment: "label title")
+        
+        let attributedString = NSMutableAttributedString(string:NSLocalizedString("TermsOfService", comment: "terms of service text"))
         attributedString.setAsLink("Terms of Service", linkURL: "https://www.google.co.in")
         attributedString.setAsLink("Privacy Policy", linkURL: "https://www.google.co.in")
+        
         bySignUpTextView.attributedText = attributedString
         bySignUpTextView.linkTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),NSUnderlineColorAttributeName:UIColor.whiteColor(),NSUnderlineStyleAttributeName : NSUnderlineStyle.StyleSingle.rawValue]
         bySignUpTextView.textColor = UIColor.whiteColor()
@@ -98,6 +102,10 @@ extension LoginViewController {
         let storyboard = UIStoryboard(name: Constants.Storyboard.Signup, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
         self.presentViewController(vc!, animated: false, completion:nil)
+    }
+    
+    @IBAction func loginButtonTapped(sender: AnyObject) {
+        performSegueWithIdentifier(Constants.SegueIdentifiers.LoginEmail, sender: nil)
     }
     
 }
