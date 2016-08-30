@@ -102,8 +102,8 @@ extension UIColor {
     }
 
     // Custom Methods for app
-    class func appThemeColor() -> UIColor {
-        return UIColor(hexColorCode: "")
+    class func appLoginbackColor() -> UIColor {
+        return UIColor(hexColorCode: "26C6DA")
     }
 }
 

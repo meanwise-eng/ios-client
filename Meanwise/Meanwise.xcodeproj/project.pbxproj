@@ -17,6 +17,7 @@
 		0A19B9311D7020AA00EC047E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9301D7020AA00EC047E /* Color.swift */; };
 		0A19B9331D7020DA00EC047E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9321D7020DA00EC047E /* Font.swift */; };
 		0A19B9351D7023B900EC047E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9341D7023B900EC047E /* String.swift */; };
+		0A19B9381D707EE700EC047E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9371D707EE700EC047E /* LoginViewController.swift */; };
 		0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */; };
 		953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810861D6C3BAA005C4658 /* AppDelegate.swift */; };
 		9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */; };
@@ -89,6 +90,7 @@
 		0A19B9301D7020AA00EC047E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		0A19B9321D7020DA00EC047E /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		0A19B9341D7023B900EC047E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0A19B9371D707EE700EC047E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		953810831D6C3BAA005C4658 /* Meanwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meanwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953810861D6C3BAA005C4658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		0A19B9361D707EBE00EC047E /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A19B9371D707EE700EC047E /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
 		0A9A54531D6F31D300DB9787 /* IntroductionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +283,7 @@
 		953810B91D6C3F3D005C4658 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A19B9361D707EBE00EC047E /* LoginViewController */,
 				0A9A54531D6F31D300DB9787 /* IntroductionController */,
 				953810F51D6C8B4D005C4658 /* TableViewCells */,
 				953810EE1D6C8179005C4658 /* SignupControllers */,
@@ -573,6 +584,7 @@
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
+				0A19B9381D707EE700EC047E /* LoginViewController.swift in Sources */,
 				0A19B9351D7023B900EC047E /* String.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,
 				95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */,
