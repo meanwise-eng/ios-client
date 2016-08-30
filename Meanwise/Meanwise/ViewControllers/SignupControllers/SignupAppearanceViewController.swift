@@ -93,10 +93,6 @@ extension SignupAppearanceViewController: UITableViewDelegate, UITableViewDataSo
 extension SignupAppearanceViewController: UploadImageCellProtocol {
     
     func uploadImage(at indexPath: NSIndexPath) {
-        
-    }
-    
-    func chooseImage(at indexPath: NSIndexPath) {
         activeIndexPath = indexPath
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum){
@@ -106,6 +102,26 @@ extension SignupAppearanceViewController: UploadImageCellProtocol {
             imagePicker.allowsEditing = true
             
             self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func chooseImage(at indexPath: NSIndexPath) {
+        activeIndexPath = indexPath
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.allowsEditing = true
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }  else {
+            let alertController = UIAlertController(title: "Error!", message: "Your device doesn't support camera.", preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (result : UIAlertAction) -> Void in
+                print("OK")
+            }
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 }
