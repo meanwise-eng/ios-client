@@ -135,7 +135,9 @@ extension SignupNameViewController: TextfieldTableViewCellProtocol {
 extension SignupNameViewController {
     
     @IBAction func backButtonTapped(sender: AnyObject) {
-        
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Login, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.presentViewController(vc!, animated: false, completion:nil)
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {

@@ -116,7 +116,9 @@ extension SignupInviteViewController {
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
-        view.endEditing(true)
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Login, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.presentViewController(vc!, animated: false, completion:nil)
     }
     
 }

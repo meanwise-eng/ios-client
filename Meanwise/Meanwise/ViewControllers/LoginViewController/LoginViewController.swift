@@ -86,3 +86,18 @@ extension LoginViewController:UITextViewDelegate {
     }
 
 }
+
+extension LoginViewController {
+    
+    @IBAction func facebookButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    
+    @IBAction func createAccountButtonTapped(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Signup, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.presentViewController(vc!, animated: false, completion:nil)
+    }
+    
+}

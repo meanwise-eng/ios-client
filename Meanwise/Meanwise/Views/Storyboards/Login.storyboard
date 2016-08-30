@@ -84,6 +84,9 @@
                                                 <state key="normal" title="Login with Facebook">
                                                     <color key="titleColor" red="0.14901960784313725" green="0.77647058823529413" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="facebookButtonTapped:" destination="kzB-UI-vmT" eventType="touchUpInside" id="mlS-y8-J3h"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FbLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-iA-1Eu" userLabel="FacebookLogo">
                                                 <rect key="frame" x="19" y="14" width="12" height="23"/>
@@ -100,6 +103,9 @@
                                                 <state key="normal" title="Create Account">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="createAccountButtonTapped:" destination="kzB-UI-vmT" eventType="touchUpInside" id="WWq-0U-xaZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKw-MW-ASA" userLabel="EmailButton">
                                                 <rect key="frame" x="0.0" y="128" width="520" height="40"/>
@@ -180,7 +186,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bySignUpTextView" destination="44y-in-jTN" id="y5E-bD-gMr"/>
-                        <outlet property="createButton" destination="zUO-Um-nns" id="Xxx-7A-UtZ"/>
+                        <outlet property="createButton" destination="zUO-Um-nns" id="CKU-XS-CQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W51-hw-04q" userLabel="First Responder" sceneMemberID="firstResponder"/>
