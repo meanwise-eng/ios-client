@@ -14,6 +14,10 @@
 		950974B71D704ECF0068D457 /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B61D704ECF0068D457 /* TagsTableViewCell.swift */; };
 		950974B91D706F8B0068D457 /* SignupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B81D706F8B0068D457 /* SignupProfileViewController.swift */; };
 		950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974BA1D708C5C0068D457 /* TextviewTableViewCell.swift */; };
+		0A19B9311D7020AA00EC047E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9301D7020AA00EC047E /* Color.swift */; };
+		0A19B9331D7020DA00EC047E /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9321D7020DA00EC047E /* Font.swift */; };
+		0A19B9351D7023B900EC047E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9341D7023B900EC047E /* String.swift */; };
+		0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */; };
 		953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953810861D6C3BAA005C4658 /* AppDelegate.swift */; };
 		9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9538108D1D6C3BAA005C4658 /* Meanwise.xcdatamodeld */; };
 		953810911D6C3BAA005C4658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953810901D6C3BAA005C4658 /* Assets.xcassets */; };
@@ -82,6 +86,10 @@
 		950974B61D704ECF0068D457 /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		950974B81D706F8B0068D457 /* SignupProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupProfileViewController.swift; sourceTree = "<group>"; };
 		950974BA1D708C5C0068D457 /* TextviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextviewTableViewCell.swift; sourceTree = "<group>"; };
+		0A19B9301D7020AA00EC047E /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0A19B9321D7020DA00EC047E /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		0A19B9341D7023B900EC047E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		953810831D6C3BAA005C4658 /* Meanwise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meanwise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953810861D6C3BAA005C4658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9538108E1D6C3BAA005C4658 /* Meanwise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meanwise.xcdatamodel; sourceTree = "<group>"; };
@@ -169,6 +177,24 @@
 			path = TagListView;
 			sourceTree = "<group>";
 		};
+		0A19B92D1D701F1E00EC047E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0A19B9301D7020AA00EC047E /* Color.swift */,
+				0A19B9321D7020DA00EC047E /* Font.swift */,
+				0A19B9341D7023B900EC047E /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0A9A54531D6F31D300DB9787 /* IntroductionController */ = {
+			isa = PBXGroup;
+			children = (
+				0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */,
+			);
+			path = IntroductionController;
+			sourceTree = "<group>";
+		};
 		9538107A1D6C3BAA005C4658 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				95AF8B2F1D6F379C0040F54B /* Library */,
+				0A19B92D1D701F1E00EC047E /* Extension */,
 				953810CC1D6C5049005C4658 /* Resources */,
 				953810C11D6C4525005C4658 /* Constants */,
 				953810BB1D6C41D3005C4658 /* Networking */,
@@ -246,6 +273,7 @@
 		953810B91D6C3F3D005C4658 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A9A54531D6F31D300DB9787 /* IntroductionController */,
 				953810F51D6C8B4D005C4658 /* TableViewCells */,
 				953810EE1D6C8179005C4658 /* SignupControllers */,
 				953810BC1D6C4285005C4658 /* ViewController.swift */,
@@ -526,6 +554,10 @@
 				953810F71D6C8B4D005C4658 /* TextfieldTableViewCell.swift in Sources */,
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
 				95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */,
+				0A19B9331D7020DA00EC047E /* Font.swift in Sources */,
+				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
+				0A19B9311D7020AA00EC047E /* Color.swift in Sources */,
+				0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */,
 				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
@@ -541,6 +573,7 @@
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
+				0A19B9351D7023B900EC047E /* String.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,
 				95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */,
 				950974B71D704ECF0068D457 /* TagsTableViewCell.swift in Sources */,

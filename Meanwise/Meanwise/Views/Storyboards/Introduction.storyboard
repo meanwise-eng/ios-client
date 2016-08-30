@@ -1,35 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xfH-VD-o5W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bJX-fT-sbJ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s8h-Uu-9PW">
+        <!--Introduction View Controller-->
+        <scene sceneID="iGK-TF-cx5">
             <objects>
-                <viewController id="xfH-VD-o5W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introduction" id="bJX-fT-sbJ" customClass="IntroductionViewController" customModule="Meanwise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NPP-7V-BbY"/>
-                        <viewControllerLayoutGuide type="bottom" id="7CH-2O-2lm"/>
+                        <viewControllerLayoutGuide type="top" id="ZLk-VQ-vXL"/>
+                        <viewControllerLayoutGuide type="bottom" id="GOl-wc-QJY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LHp-zj-gOr">
+                    <view key="view" contentMode="scaleToFill" id="IdJ-oh-Nbp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Introduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qL-sl-Bxi">
-                                <rect key="frame" x="-31" y="43" width="213" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Er-BZ-LWM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8J-Sk-CPl" userLabel="SkipButton">
+                                        <rect key="frame" x="517" y="40" width="58" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="ZWg-H7-l7f"/>
+                                            <constraint firstAttribute="height" constant="16" id="am4-xG-2Wq"/>
+                                        </constraints>
+                                        <state key="normal" image="SkipButton"/>
+                                        <connections>
+                                            <action selector="btnSkip:" destination="bJX-fT-sbJ" eventType="touchUpInside" id="qyR-t9-38m"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbZ-WJ-b0r" userLabel="ScrollView">
+                                        <rect key="frame" x="0.0" y="70" width="600" height="453"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="bJX-fT-sbJ" id="QsP-2K-KGe"/>
+                                        </connections>
+                                    </scrollView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2nH-XV-Sbg">
+                                        <rect key="frame" x="280" y="531" width="40" height="13"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="13" id="Qkb-BA-zji"/>
+                                            <constraint firstAttribute="width" constant="40" id="neK-x8-7So"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.77254901960784317" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="DbZ-WJ-b0r" secondAttribute="trailing" id="2ca-EG-Nej"/>
+                                    <constraint firstItem="n8J-Sk-CPl" firstAttribute="top" secondItem="6Er-BZ-LWM" secondAttribute="top" constant="40" id="8Bf-Ay-xh8"/>
+                                    <constraint firstItem="2nH-XV-Sbg" firstAttribute="top" secondItem="DbZ-WJ-b0r" secondAttribute="bottom" constant="8" id="Nuu-D7-CYR"/>
+                                    <constraint firstAttribute="bottom" secondItem="2nH-XV-Sbg" secondAttribute="bottom" constant="56" id="PGg-ew-D2L"/>
+                                    <constraint firstItem="DbZ-WJ-b0r" firstAttribute="leading" secondItem="6Er-BZ-LWM" secondAttribute="leading" id="RCp-g2-9Ei"/>
+                                    <constraint firstAttribute="trailing" secondItem="n8J-Sk-CPl" secondAttribute="trailing" constant="25" id="hCH-1J-pNn"/>
+                                    <constraint firstItem="DbZ-WJ-b0r" firstAttribute="top" secondItem="6Er-BZ-LWM" secondAttribute="top" constant="70" id="pvr-Qa-6Sx"/>
+                                    <constraint firstItem="2nH-XV-Sbg" firstAttribute="centerX" secondItem="DbZ-WJ-b0r" secondAttribute="centerX" id="yGQ-8l-cCt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Er-BZ-LWM" firstAttribute="leading" secondItem="IdJ-oh-Nbp" secondAttribute="leading" id="211-fS-0mE"/>
+                            <constraint firstItem="6Er-BZ-LWM" firstAttribute="top" secondItem="IdJ-oh-Nbp" secondAttribute="topMargin" id="EWg-JU-7dV"/>
+                            <constraint firstAttribute="trailing" secondItem="6Er-BZ-LWM" secondAttribute="trailing" id="Y5C-kE-pDY"/>
+                            <constraint firstItem="6Er-BZ-LWM" firstAttribute="top" secondItem="IdJ-oh-Nbp" secondAttribute="top" id="gRQ-tL-hRD"/>
+                            <constraint firstItem="6Er-BZ-LWM" firstAttribute="bottom" secondItem="GOl-wc-QJY" secondAttribute="top" id="m9A-Ug-y3y"/>
+                            <constraint firstItem="GOl-wc-QJY" firstAttribute="top" secondItem="6Er-BZ-LWM" secondAttribute="bottom" id="uin-u8-uPm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EWg-JU-7dV"/>
+                                <exclude reference="uin-u8-uPm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="2nH-XV-Sbg" id="sdb-hW-OvN"/>
+                        <outlet property="scrollView" destination="DbZ-WJ-b0r" id="bgC-Ym-iBO"/>
+                        <outlet property="skip" destination="n8J-Sk-CPl" id="tum-sA-fZp"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bGI-oy-uPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yk3-2C-NS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="288" y="353"/>
+            <point key="canvasLocation" x="441" y="353"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SkipButton" width="116" height="32"/>
+    </resources>
 </document>
