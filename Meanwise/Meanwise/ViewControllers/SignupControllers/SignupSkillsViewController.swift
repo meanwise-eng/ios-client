@@ -204,6 +204,8 @@ extension SignupSkillsViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.SegueIdentifiers.Dropdown {
             dropdownViewController = segue.destinationViewController as? DropdownViewController
+            dropdownViewController?.setCellColor(UIColor(red:142/255.0, green: 36/255.0, blue: 170/255.0, alpha: 1.0), cellColor: UIColor(red:156/255.0, green: 39/255.0, blue: 176/255.0, alpha: 1.0), separatorImageName: "PartitionLinePurple")
+            dropdownViewController?.setTableViewBackgroundColor(UIColor(red:156/255.0, green: 39/255.0, blue: 176/255.0, alpha: 1.0))
             dropdownViewController?.delegate = self
         }
     }

@@ -21,6 +21,11 @@ class DropdownViewController: UIViewController {
     
     var list: [String] = []
     var delegate: DropdownProtocol?
+    var selectedCellColor: UIColor!
+    var cellColor: UIColor!
+    var separatorImageName: String!
+    var tableViewbackgroundColor: UIColor!
+
 
     // MARK: - View Lifecycle
     
@@ -28,6 +33,7 @@ class DropdownViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        tableView.backgroundColor = tableViewbackgroundColor
     }
     
     // MARK: - Functions
@@ -35,6 +41,16 @@ class DropdownViewController: UIViewController {
     func getListToDisplay(list: [String]) {
         self.list = list
         tableView.reloadData()
+    }
+
+    func setCellColor(selectedCellColor: UIColor, cellColor: UIColor, separatorImageName: String) {
+        self.selectedCellColor = selectedCellColor
+        self.cellColor = cellColor
+        self.separatorImageName = separatorImageName
+    }
+    
+    func setTableViewBackgroundColor(color: UIColor) {
+        tableViewbackgroundColor = color
     }
     
     // MARK: - Memory Management
@@ -57,7 +73,10 @@ extension DropdownViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.Dropdown, forIndexPath: indexPath)
         
         let backGroundView = cell.viewWithTag(10)
-        backGroundView?.backgroundColor = indexPath.row == 0 ? UIColor.init(colorLiteralRed: 142/255.0, green: 36/255.0, blue: 170/255.0, alpha: 1.0) : UIColor.init(colorLiteralRed: 156/255.0, green: 39/255.0, blue: 176/255.0, alpha: 1.0)
+        backGroundView?.backgroundColor = indexPath.row == 0 ? selectedCellColor: cellColor
+
+        let separator = cell.viewWithTag(20) as? UIImageView
+        separator?.image = UIImage(named: separatorImageName!)
         
         let textLabel = cell.viewWithTag(5) as? UILabel
         textLabel!.text = list[indexPath.row]

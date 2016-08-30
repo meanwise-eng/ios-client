@@ -11,6 +11,8 @@ import UIKit
 class SignupProfileViewController: SignupBaseViewController {
 
     // MARK: - IBOutlets
+    @IBOutlet weak var dropdownView: UIView!
+    @IBOutlet weak var dropdownTopConstraint: NSLayoutConstraint!
     
     // MARK: - Variables
     
@@ -20,6 +22,8 @@ class SignupProfileViewController: SignupBaseViewController {
     var username: String?
     var profession: String?
     var bio: String?
+    var skills: [String]?
+    var dropdownViewController: DropdownViewController?
     
     // MARK: - View Lifecycle
     
@@ -135,6 +139,7 @@ extension SignupProfileViewController: TextfieldTableViewCellProtocol {
             break
         case 2:
             profession = text
+            showDropdownView(["Web Developer", "Web Programmer", "Web Designer"])
             break
         default: break
         }
@@ -156,6 +161,7 @@ extension SignupProfileViewController: TextviewTableViewCellProtocol {
     
 }
 
+
 extension SignupProfileViewController {
     
     @IBAction func backButtonTapped(sender: AnyObject) {
@@ -167,4 +173,41 @@ extension SignupProfileViewController {
         performSegueWithIdentifier(Constants.SegueIdentifiers.SignupAppearance, sender: nil)
     }
     
+}
+
+extension SignupProfileViewController: DropdownProtocol {
+
+    func showDropdownView(list: [String]) {
+        setYPositionOfDropdown()
+        dropdownView.hidden = false
+        dropdownViewController?.getListToDisplay(list)
+    }
+
+    func setYPositionOfDropdown() {
+        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0))
+        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
+        dropdownTopConstraint.constant = rectOfCellInSuperview.origin.y + rectOfCellInSuperview.size.height
+    }
+
+    func valueSelected(indexPath: NSIndexPath, value: AnyObject) {
+        validation()
+        dropdownView.hidden = true
+        profession = value as? String
+        professionTableViewCell.setCellTextFieldValue(value as! String)
+        tableView.reloadData()
+    }
+
+}
+
+extension SignupProfileViewController {
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.SegueIdentifiers.Dropdown {
+            dropdownViewController = segue.destinationViewController as? DropdownViewController
+            dropdownViewController?.setCellColor(UIColor(red:67/255.0, green: 160/255.0, blue: 71/255.0, alpha: 1.0), cellColor: UIColor(red:76/255.0, green: 175/255.0, blue: 80/255.0, alpha: 1.0), separatorImageName: "PartitionLineGreen")
+            dropdownViewController?.setTableViewBackgroundColor(UIColor(red:76/255.0, green: 175/255.0, blue: 80/255.0, alpha: 1.0))
+            dropdownViewController?.delegate = self
+        }
+    }
+
 }
