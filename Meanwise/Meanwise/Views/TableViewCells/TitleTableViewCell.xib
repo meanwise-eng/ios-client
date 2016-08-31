@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-iq-vFK" userLabel="TitleLabel">
-                                <rect key="frame" x="28" y="38" width="264" height="39"/>
+                                <rect key="frame" x="28" y="38" width="282" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="3fY-WT-D7D"/>
                                 </constraints>
@@ -46,7 +46,7 @@
                             <constraint firstItem="6WK-iq-vFK" firstAttribute="leading" secondItem="VlS-QT-3Gf" secondAttribute="leading" constant="28" id="2sq-IM-XWL"/>
                             <constraint firstAttribute="bottom" secondItem="mvN-h5-jDy" secondAttribute="bottom" constant="29" id="Ce7-Ba-B04"/>
                             <constraint firstItem="mvN-h5-jDy" firstAttribute="top" secondItem="6WK-iq-vFK" secondAttribute="bottom" constant="8" id="Iaj-ia-Gwy"/>
-                            <constraint firstAttribute="trailing" secondItem="6WK-iq-vFK" secondAttribute="trailing" constant="28" id="Ilj-o7-rGV"/>
+                            <constraint firstAttribute="trailing" secondItem="6WK-iq-vFK" secondAttribute="trailing" constant="10" id="Ilj-o7-rGV"/>
                             <constraint firstItem="mvN-h5-jDy" firstAttribute="leading" secondItem="VlS-QT-3Gf" secondAttribute="leading" constant="28" id="OfG-Zn-9es"/>
                             <constraint firstItem="6WK-iq-vFK" firstAttribute="top" secondItem="VlS-QT-3Gf" secondAttribute="top" constant="38" id="T5p-mS-zKP"/>
                             <constraint firstAttribute="trailing" secondItem="mvN-h5-jDy" secondAttribute="trailing" constant="28" id="h0z-dj-rrp"/>
