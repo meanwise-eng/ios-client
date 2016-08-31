@@ -74,6 +74,11 @@ class TextfieldTableViewCell: UITableViewCell {
         setCell(titleText, indexPath: indexPath)
     }
     
+    func setCellForForgotScreen(titleText: String, indexPath: NSIndexPath) {
+        partitionLineImageView.image = UIImage(named: "SeparatorDarkGrey")
+        setCell(titleText, indexPath: indexPath)
+    }
+    
     func setCell(titleText: String, indexPath: NSIndexPath) {
         titleLabel.text = titleText
         self.indexPath = indexPath

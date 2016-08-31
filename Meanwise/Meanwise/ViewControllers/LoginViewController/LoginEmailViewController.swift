@@ -149,7 +149,12 @@ extension LoginEmailViewController {
     }
 
     @IBAction func nextButtonTapped(sender: AnyObject) {
-//        view.endEditing(true)
+        view.endEditing(true)
 //        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupMore, sender: nil)
+    }
+    
+    @IBAction func forgotPasswordButtonTapped(sender: AnyObject) {
+        view.endEditing(true)
+        performSegueWithIdentifier(Constants.SegueIdentifiers.ForgotPassword, sender: nil)
     }
 }

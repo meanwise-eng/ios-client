@@ -243,7 +243,7 @@
                                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="ZZd-U7-MDh" kind="show" id="1ls-XC-YN2"/>
+                                                    <action selector="forgotPasswordButtonTapped:" destination="oVP-g4-jEp" eventType="touchUpInside" id="LZg-LW-Urm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -329,6 +329,7 @@
                         <outlet property="bottomViewBottomConstraint" destination="2qO-n1-FWO" id="ZKV-8J-5DU"/>
                         <outlet property="nextButton" destination="cVe-4r-JLg" id="S6q-sY-Ylp"/>
                         <outlet property="tableView" destination="EDw-Vy-fVr" id="2Ok-6w-Ooe"/>
+                        <segue destination="ZZd-U7-MDh" kind="show" identifier="ToForgotPasswordViewController" id="3iO-mi-EaY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sp4-b9-HCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -364,20 +365,11 @@
                                                     <action selector="backButtonTapped:" destination="ZZd-U7-MDh" eventType="touchUpInside" id="JIK-mf-SGJ"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar" translatesAutoresizingMaskIntoConstraints="NO" id="X8T-be-x54" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="54" height="2"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="54" id="Ka3-ZS-v4y"/>
-                                                    <constraint firstAttribute="height" constant="2" id="LdV-ip-5dt"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Fdi-Zb-Cdk" firstAttribute="centerY" secondItem="SBo-pk-r9Z" secondAttribute="centerY" id="FeC-9j-4Qd"/>
-                                            <constraint firstItem="X8T-be-x54" firstAttribute="leading" secondItem="SBo-pk-r9Z" secondAttribute="leading" id="Siy-gf-Aua"/>
                                             <constraint firstAttribute="height" constant="56" id="cnZ-bB-gjE"/>
-                                            <constraint firstItem="X8T-be-x54" firstAttribute="top" secondItem="SBo-pk-r9Z" secondAttribute="top" id="jV2-Wo-Blt"/>
                                             <constraint firstItem="Fdi-Zb-Cdk" firstAttribute="leading" secondItem="SBo-pk-r9Z" secondAttribute="leading" constant="19" id="vls-Yr-bEr"/>
                                         </constraints>
                                     </view>
@@ -458,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLZ-gC-mBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="361"/>
+            <point key="canvasLocation" x="2366" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZlC-hj-2hZ">
@@ -485,7 +477,6 @@
         <image name="BackButton" width="23" height="16"/>
         <image name="FbLogo" width="12" height="23"/>
         <image name="PartitionLineDarkGrey" width="319" height="1"/>
-        <image name="ProgressBar" width="54" height="2"/>
         <image name="SeparatorViolet" width="375" height="1"/>
         <image name="mean" width="84" height="70"/>
     </resources>

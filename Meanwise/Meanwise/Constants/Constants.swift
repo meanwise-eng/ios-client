@@ -48,6 +48,7 @@ struct Constants {
         static let SignupAppearance = "ToSignupAppearanceViewController"
         static let SignupInvite = "ToSignupInviteViewController"
         static let LoginEmail = "ToLoginEmailViewController"
+        static let ForgotPassword = "ToForgotPasswordViewController"
     }
     
     struct UserDefaults {
