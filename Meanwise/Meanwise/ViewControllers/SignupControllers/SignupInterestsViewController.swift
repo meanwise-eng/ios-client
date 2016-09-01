@@ -55,14 +55,19 @@ class SignupInterestsViewController: UIViewController {
 }
 
 extension SignupInterestsViewController {
-    
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
+
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
         performSegueWithIdentifier(Constants.SegueIdentifiers.SignupProfile, sender: nil)
+    }
+
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+
+    }
+
+    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        return segue
     }
 }
 

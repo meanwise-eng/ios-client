@@ -153,8 +153,13 @@ extension SignupAppearanceViewController: UINavigationControllerDelegate, UIImag
 
 extension SignupAppearanceViewController {
     
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+
+    }
+
+    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        return segue
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {

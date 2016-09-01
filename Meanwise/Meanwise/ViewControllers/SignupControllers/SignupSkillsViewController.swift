@@ -209,6 +209,15 @@ extension SignupSkillsViewController {
             dropdownViewController?.delegate = self
         }
     }
+
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+
+    }
+
+    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        return segue
+    }
     
 }
 

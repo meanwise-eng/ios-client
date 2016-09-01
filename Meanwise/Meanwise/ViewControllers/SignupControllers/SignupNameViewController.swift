@@ -56,7 +56,7 @@ class SignupNameViewController: SignupBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 }
 
 extension SignupNameViewController: UITableViewDelegate, UITableViewDataSource {
@@ -144,6 +144,16 @@ extension SignupNameViewController {
         view.endEditing(true)
         performSegueWithIdentifier(Constants.SegueIdentifiers.SignupMore, sender: nil)
     }
+
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+
+    }
+
+    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
+        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
+        return segue
+    }
+
 }
 
 

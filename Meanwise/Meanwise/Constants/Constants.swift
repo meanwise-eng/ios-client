@@ -50,6 +50,15 @@ struct Constants {
         static let LoginEmail = "ToLoginEmailViewController"
         static let ForgotPassword = "ToForgotPasswordViewController"
     }
+
+    struct UnWindSegueIdentifiers {
+        static let UnWindSignupMore = "UnWindToSignupMoreViewController"
+        static let UnWindSignupSkills = "UnWindToSignupSkillsViewController"
+        static let UnWindSignupInterests = "UnWindToSignupInterestsViewController"
+        static let UnWindSignupProfile = "UnWindToSignupProfileViewController"
+        static let UnWindSignupAppearance = "UnWindToSignupAppearanceViewController"
+        static let UnWindSignupInvite = "UnWindToSignupInviteViewController"
+    }
     
     struct UserDefaults {
         static let IsFirstTime = "IsFirstTime"
