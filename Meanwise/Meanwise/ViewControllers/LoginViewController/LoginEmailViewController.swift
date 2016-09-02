@@ -31,6 +31,7 @@ class LoginEmailViewController: SignupBaseViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         emailTableViewCell.setFirstResponder()
+        showProgressBarAnimation = false
     }
 
     // MARK: - Functions
@@ -145,12 +146,18 @@ extension LoginEmailViewController: TextfieldTableViewCellProtocol {
 extension LoginEmailViewController {
 
     @IBAction func backButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.view.window?.layer.addAnimation(getPresentCustomAnimation(), forKey: kCATransition)
+ //       self.navigationController?.popViewControllerAnimated(false)
+        dismissViewControllerAnimated(false, completion: nil)
     }
 
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
 //        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupMore, sender: nil)
+    }
+    
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+        
     }
     
     @IBAction func forgotPasswordButtonTapped(sender: AnyObject) {

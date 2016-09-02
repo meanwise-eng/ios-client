@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SignupInterestsViewController: UIViewController {
+class SignupInterestsViewController: SignupRootViewController {
     
     // MARK: - IBOutlets
     
     @IBOutlet weak var carousel: iCarousel!
-    
+
     // MARK: - Variables
     
     var items: [Int] = []
@@ -36,7 +36,7 @@ class SignupInterestsViewController: UIViewController {
         
         carousel.type = .Custom
         carousel.decelerationRate = 0.0
-        
+        currentScreenIndex = 4
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,10 +65,6 @@ extension SignupInterestsViewController {
 
     }
 
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
-    }
 }
 
 extension SignupInterestsViewController: iCarouselDelegate, iCarouselDataSource {

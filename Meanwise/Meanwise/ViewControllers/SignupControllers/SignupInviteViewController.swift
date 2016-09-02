@@ -118,6 +118,7 @@ extension SignupInviteViewController {
     @IBAction func nextButtonTapped(sender: AnyObject) {
         let storyboard = UIStoryboard(name: Constants.Storyboard.Login, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
+        self.view.window?.layer.addAnimation(getPresentCustomAnimation(), forKey: kCATransition)
         self.presentViewController(vc!, animated: false, completion:nil)
     }
     

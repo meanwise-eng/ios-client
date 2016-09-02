@@ -26,6 +26,12 @@ class SignupMoreViewController: SignupBaseViewController {
         
         cellRegister()
         enableNextButton(false)
+        currentScreenIndex = 2.0
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -136,11 +142,6 @@ extension SignupMoreViewController {
     }
 
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
-
     }
 
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
-    }
 }

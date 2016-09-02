@@ -9,7 +9,7 @@
 import UIKit
 
 class SignupProfileViewController: SignupBaseViewController {
-
+    
     // MARK: - IBOutlets
     @IBOutlet weak var dropdownView: UIView!
     @IBOutlet weak var dropdownTopConstraint: NSLayoutConstraint!
@@ -29,21 +29,22 @@ class SignupProfileViewController: SignupBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         cellRegister()
         enableNextButton(false)
         tableView.scrollEnabled = true
         isScrollingEnabled = true
+        currentScreenIndex = 5
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        usernameTableViewCell.endFirstResponder()
         usernameTableViewCell.setFirstResponder()
     }
-
+    
     // MARK: - Functions
     
     func cellRegister() {
@@ -67,7 +68,7 @@ class SignupProfileViewController: SignupBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 extension SignupProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -168,32 +169,27 @@ extension SignupProfileViewController {
         view.endEditing(true)
         performSegueWithIdentifier(Constants.SegueIdentifiers.SignupAppearance, sender: nil)
     }
-
+    
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
-
-    }
-
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
+        
     }
     
 }
 
 extension SignupProfileViewController: DropdownProtocol {
-
+    
     func showDropdownView(list: [String]) {
         setYPositionOfDropdown()
         dropdownView.hidden = false
         dropdownViewController?.getListToDisplay(list)
     }
-
+    
     func setYPositionOfDropdown() {
         let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0))
         let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
         dropdownTopConstraint.constant = rectOfCellInSuperview.origin.y + rectOfCellInSuperview.size.height
     }
-
+    
     func valueSelected(indexPath: NSIndexPath, value: AnyObject) {
         validation()
         dropdownView.hidden = true
@@ -201,11 +197,11 @@ extension SignupProfileViewController: DropdownProtocol {
         professionTableViewCell.setCellTextFieldValue(value as! String)
         tableView.reloadData()
     }
-
+    
 }
 
 extension SignupProfileViewController {
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.SegueIdentifiers.Dropdown {
             dropdownViewController = segue.destinationViewController as? DropdownViewController
@@ -213,6 +209,7 @@ extension SignupProfileViewController {
             dropdownViewController?.setTableViewBackgroundColor(UIColor(red:76/255.0, green: 175/255.0, blue: 80/255.0, alpha: 1.0))
             dropdownViewController?.delegate = self
         }
+        super.prepareForSegue(segue, sender: sender)
     }
-
+    
 }

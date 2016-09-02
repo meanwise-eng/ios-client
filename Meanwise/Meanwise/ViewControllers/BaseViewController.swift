@@ -41,6 +41,14 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func getPresentCustomAnimation() -> CATransition {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionFade
+        transition.subtype = kCATransitionFromBottom
+        return transition
+    }
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {

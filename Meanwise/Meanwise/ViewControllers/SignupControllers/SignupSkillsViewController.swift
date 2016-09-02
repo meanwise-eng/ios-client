@@ -30,11 +30,16 @@ class SignupSkillsViewController: SignupBaseViewController {
         skills = []
         cellRegister()
         enableNextButton(false)
+        currentScreenIndex = 3.0
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         addSkillTableViewCell.setFirstResponder()
     }
     
@@ -59,6 +64,7 @@ class SignupSkillsViewController: SignupBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 }
 
 extension SignupSkillsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -154,10 +160,6 @@ extension SignupSkillsViewController: TextfieldTableViewCellProtocol {
 
 extension SignupSkillsViewController {
     
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
         performSegueWithIdentifier(Constants.SegueIdentifiers.SignupInterests, sender: nil)
@@ -208,16 +210,12 @@ extension SignupSkillsViewController {
             dropdownViewController?.setTableViewBackgroundColor(UIColor(red:156/255.0, green: 39/255.0, blue: 176/255.0, alpha: 1.0))
             dropdownViewController?.delegate = self
         }
+        super.prepareForSegue(segue, sender: sender)
     }
 
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
 
     }
 
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
-    }
-    
 }
 

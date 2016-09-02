@@ -63,6 +63,8 @@
 		95C8501C1D7455050026C297 /* UploadImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8501B1D7455050026C297 /* UploadImageTableViewCell.swift */; };
 		95C8501E1D7471BB0026C297 /* SignupInviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8501D1D7471BB0026C297 /* SignupInviteViewController.swift */; };
 		95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C8501F1D748AD40026C297 /* InviteTableViewCell.swift */; };
+		FA7AEFC41D79A5C70076792F /* SignupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC31D79A5C70076792F /* SignupRootViewController.swift */; };
+		FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		95C8501B1D7455050026C297 /* UploadImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageTableViewCell.swift; sourceTree = "<group>"; };
 		95C8501D1D7471BB0026C297 /* SignupInviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInviteViewController.swift; sourceTree = "<group>"; };
 		95C8501F1D748AD40026C297 /* InviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
+		FA7AEFC31D79A5C70076792F /* SignupRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRootViewController.swift; sourceTree = "<group>"; };
+		FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +307,7 @@
 		953810B91D6C3F3D005C4658 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA7AEFC71D79F0020076792F /* NavigationController */,
 				0A19B9361D707EBE00EC047E /* LoginViewController */,
 				0A9A54531D6F31D300DB9787 /* IntroductionController */,
 				953810F51D6C8B4D005C4658 /* TableViewCells */,
@@ -375,6 +380,7 @@
 		953810EE1D6C8179005C4658 /* SignupControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA7AEFC31D79A5C70076792F /* SignupRootViewController.swift */,
 				95C103191D6DE04200DCA0A2 /* SignupBaseViewController.swift */,
 				953810EF1D6C81FC005C4658 /* SignupNameViewController.swift */,
 				95C103171D6DCC5000DCA0A2 /* SignupMoreViewController.swift */,
@@ -428,6 +434,14 @@
 				95AF8B321D6F37A60040F54B /* iCarousel.m */,
 			);
 			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		FA7AEFC71D79F0020076792F /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +601,7 @@
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
 				0A2D4B631D7590250048959E /* ForgotPasswordViewController.swift in Sources */,
 				95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */,
+				FA7AEFC41D79A5C70076792F /* SignupRootViewController.swift in Sources */,
 				0A19B9331D7020DA00EC047E /* Font.swift in Sources */,
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
 				0A19B9311D7020AA00EC047E /* Color.swift in Sources */,
@@ -603,6 +618,7 @@
 				950974B91D706F8B0068D457 /* SignupProfileViewController.swift in Sources */,
 				95AF8B331D6F37A60040F54B /* iCarousel.m in Sources */,
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
+				FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */,
 				950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */,
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,

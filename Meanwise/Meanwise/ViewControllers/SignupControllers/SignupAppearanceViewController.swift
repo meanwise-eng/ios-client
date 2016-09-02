@@ -9,7 +9,7 @@
 import UIKit
 
 class SignupAppearanceViewController: SignupBaseViewController {
-
+    
     // MARK: - Variables
     
     var profilePicTableViewCell: UploadImageTableViewCell!
@@ -17,15 +17,16 @@ class SignupAppearanceViewController: SignupBaseViewController {
     var profilePic: UIImage?
     var coverPic: UIImage?
     var imagePicker = UIImagePickerController()
-
+    
     // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         cellRegister()
         enableNextButton(false)
+        currentScreenIndex = 6
     }
     
     // MARK: - Functions
@@ -42,14 +43,14 @@ class SignupAppearanceViewController: SignupBaseViewController {
         
         enableNextButton(isValid)
     }
-
+    
     // MARK: - Memory Management
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
 
 extension SignupAppearanceViewController: UITableViewDelegate, UITableViewDataSource {
@@ -141,25 +142,20 @@ extension SignupAppearanceViewController: UINavigationControllerDelegate, UIImag
         case 3:
             coverPic = image
             coverPicTableViewCell.setImageInCell(coverPic!)
-           break
+            break
         default:
             break
         }
         
         validation()
     }
-
+    
 }
 
 extension SignupAppearanceViewController {
     
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
-
-    }
-
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
+        
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {

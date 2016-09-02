@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     // MARK: - IBOutlet
     @IBOutlet weak var createButton:UIButton!
@@ -101,10 +101,12 @@ extension LoginViewController {
     @IBAction func createAccountButtonTapped(sender: AnyObject) {
         let storyboard = UIStoryboard(name: Constants.Storyboard.Signup, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
+        self.view.window?.layer.addAnimation(getPresentCustomAnimation(), forKey: kCATransition)
         self.presentViewController(vc!, animated: false, completion:nil)
     }
     
     @IBAction func loginButtonTapped(sender: AnyObject) {
+        self.view.window?.layer.addAnimation(getPresentCustomAnimation(), forKey: kCATransition)
         performSegueWithIdentifier(Constants.SegueIdentifiers.LoginEmail, sender: nil)
     }
     

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="taB-qp-QJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UvY-Dh-0QG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Bold.ttf">
@@ -48,19 +49,19 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <segue destination="F2k-uU-euE" kind="unwind" identifier="UnWindToSignupMoreViewController" customClass="SignUpCustomUnwindSegue" customModule="Meanwise" customModuleProvider="target" unwindAction="unwindFromViewController:" id="qia-Qn-dKc"/>
+                                                    <segue destination="F2k-uU-euE" kind="unwind" unwindAction="unwindFromViewController:" id="XiM-05-ufh"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar2" translatesAutoresizingMaskIntoConstraints="NO" id="rOA-t8-8la" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="171" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="107" id="an3-I9-LRY"/>
                                                     <constraint firstAttribute="height" constant="2" id="azo-gw-uYQ"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="rOA-t8-8la" firstAttribute="width" secondItem="27U-tp-jTi" secondAttribute="width" multiplier="2:7" id="Iap-AZ-rXt"/>
                                             <constraint firstItem="a9F-XB-FwD" firstAttribute="centerY" secondItem="27U-tp-jTi" secondAttribute="centerY" id="VO1-Zw-1tH"/>
                                             <constraint firstItem="rOA-t8-8la" firstAttribute="top" secondItem="27U-tp-jTi" secondAttribute="top" id="X9R-aU-Vcm"/>
                                             <constraint firstItem="a9F-XB-FwD" firstAttribute="leading" secondItem="27U-tp-jTi" secondAttribute="leading" constant="19" id="YzK-AL-QnP"/>
@@ -100,7 +101,7 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="Do0-zb-y4j"/>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="UK2-Ki-dsT"/>
+                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="phU-Na-HEv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -141,6 +142,7 @@
                     <connections>
                         <outlet property="bottomViewBottomConstraint" destination="tz1-Ya-gui" id="WQc-ub-Hw2"/>
                         <outlet property="nextButton" destination="PZo-4d-SoD" id="FEZ-kX-UJq"/>
+                        <outlet property="progressView" destination="rOA-t8-8la" id="eYn-CA-PlN"/>
                         <outlet property="tableView" destination="Lrn-nA-whk" id="ZhB-Ap-Zgt"/>
                         <segue destination="pX7-Wg-vgB" kind="custom" identifier="ToSignupSkillsViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="dJj-0V-DWk"/>
                     </connections>
@@ -176,15 +178,13 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="fL7-7Q-xjU"/>
                                                     <segue destination="HRW-c2-uzG" kind="unwind" identifier="UnWindToSignupInterestsViewController" unwindAction="unwindFromViewController:" id="Dgg-FT-sT8"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar4" translatesAutoresizingMaskIntoConstraints="NO" id="96V-lC-jeY" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="214" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Hlm-zQ-n7e"/>
-                                                    <constraint firstAttribute="width" constant="214" id="W95-3j-d3n"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -195,6 +195,7 @@
                                             <constraint firstItem="96V-lC-jeY" firstAttribute="top" secondItem="wPp-PK-a61" secondAttribute="top" id="OpV-f3-Xdi"/>
                                             <constraint firstItem="Bxv-Js-lAe" firstAttribute="leading" secondItem="wPp-PK-a61" secondAttribute="leading" constant="19" id="Vvw-gd-kd0"/>
                                             <constraint firstItem="Bxv-Js-lAe" firstAttribute="centerY" secondItem="wPp-PK-a61" secondAttribute="centerY" id="YDs-ng-SmI"/>
+                                            <constraint firstItem="96V-lC-jeY" firstAttribute="width" secondItem="wPp-PK-a61" secondAttribute="width" multiplier="4:7" id="z5z-vt-wsU"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tE0-iM-Uvf" userLabel="TitleView">
@@ -260,7 +261,6 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="7Re-4T-a54"/>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="gyj-DV-tjZ"/>
                                                     <action selector="nextButtonTapped:" destination="ZGd-xb-uuP" eventType="touchUpInside" id="sFy-mq-LHa"/>
                                                 </connections>
@@ -305,6 +305,7 @@
                     </view>
                     <connections>
                         <outlet property="carousel" destination="rrd-Mg-CpH" id="vdB-1h-8Av"/>
+                        <outlet property="progressView" destination="96V-lC-jeY" id="3Pb-ad-ZZd"/>
                         <segue destination="a3D-5H-sBR" kind="custom" identifier="ToSignupProfileViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="Jq6-cu-vyT"/>
                     </connections>
                 </viewController>
@@ -344,16 +345,16 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar5" translatesAutoresizingMaskIntoConstraints="NO" id="M8W-V9-D3E" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="429" height="2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="2uf-I0-VCZ"/>
-                                                    <constraint firstAttribute="width" constant="268" id="oKn-le-SM8"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="M8W-V9-D3E" firstAttribute="top" secondItem="baD-ep-Znd" secondAttribute="top" id="9Wi-5Z-2oT"/>
+                                            <constraint firstItem="M8W-V9-D3E" firstAttribute="width" secondItem="baD-ep-Znd" secondAttribute="width" multiplier="5:7" id="E5C-3N-lAa"/>
                                             <constraint firstItem="JOm-jo-HtT" firstAttribute="centerY" secondItem="baD-ep-Znd" secondAttribute="centerY" id="KPB-Np-pJK"/>
                                             <constraint firstItem="JOm-jo-HtT" firstAttribute="leading" secondItem="baD-ep-Znd" secondAttribute="leading" constant="19" id="SkE-W3-WxY"/>
                                             <constraint firstItem="M8W-V9-D3E" firstAttribute="leading" secondItem="baD-ep-Znd" secondAttribute="leading" id="ZfY-r5-3WO"/>
@@ -490,9 +491,8 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="nextButtonTapped:" destination="a3D-5H-sBR" eventType="touchUpInside" id="AmY-Ed-CDY"/>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="F72-5O-fbP"/>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="wRD-sF-LXd"/>
+                                                    <action selector="nextButtonTapped:" destination="a3D-5H-sBR" eventType="touchUpInside" id="qJv-xO-8UI"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -538,6 +538,7 @@
                         <outlet property="dropdownTopConstraint" destination="mhJ-ag-RZb" id="Fvn-Ip-kJQ"/>
                         <outlet property="dropdownView" destination="gXy-Sg-VNv" id="9XO-VY-uSb"/>
                         <outlet property="nextButton" destination="B9I-Ar-Sm9" id="Sk5-ei-VDk"/>
+                        <outlet property="progressView" destination="M8W-V9-D3E" id="wB7-a4-c3i"/>
                         <outlet property="tableView" destination="g77-pw-YGA" id="Vmo-Om-kWJ"/>
                         <segue destination="8xC-El-VW1" kind="custom" identifier="ToSignupAppearanceViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="B6s-aK-FHL"/>
                     </connections>
@@ -573,14 +574,12 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="abT-xG-2qe"/>
                                                     <segue destination="IN4-6H-9oT" kind="unwind" identifier="UnWindToSignupAppearanceViewController" unwindAction="unwindFromViewController:" id="OSf-az-YdK"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar6" translatesAutoresizingMaskIntoConstraints="NO" id="EXF-ei-POK" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="268" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="514" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="268" id="T92-v6-MBy"/>
                                                     <constraint firstAttribute="height" constant="2" id="aFz-X8-uJc"/>
                                                 </constraints>
                                             </imageView>
@@ -590,6 +589,7 @@
                                             <constraint firstItem="SSN-sd-A53" firstAttribute="centerY" secondItem="JNf-P7-XKg" secondAttribute="centerY" id="5Fw-AS-m7a"/>
                                             <constraint firstAttribute="height" constant="56" id="EGi-gb-638"/>
                                             <constraint firstItem="EXF-ei-POK" firstAttribute="top" secondItem="JNf-P7-XKg" secondAttribute="top" id="Hfr-zj-LGW"/>
+                                            <constraint firstItem="EXF-ei-POK" firstAttribute="width" secondItem="JNf-P7-XKg" secondAttribute="width" multiplier="6:7" id="P5X-1E-Lg5"/>
                                             <constraint firstItem="EXF-ei-POK" firstAttribute="leading" secondItem="JNf-P7-XKg" secondAttribute="leading" id="m3a-bi-wJk"/>
                                             <constraint firstItem="SSN-sd-A53" firstAttribute="leading" secondItem="JNf-P7-XKg" secondAttribute="leading" constant="19" id="ql5-4D-pkD"/>
                                         </constraints>
@@ -728,9 +728,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="nextButtonTapped:" destination="a3D-5H-sBR" eventType="touchUpInside" id="5mU-qg-43r"/>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="cnA-IV-rui"/>
-                                                    <action selector="nextButtonTapped:" destination="8xC-El-VW1" eventType="touchUpInside" id="kE7-Jp-O9u"/>
+                                                    <action selector="nextButtonTapped:" destination="8xC-El-VW1" eventType="touchUpInside" id="Yhw-RP-5jY"/>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="v6b-N6-1ep"/>
                                                 </connections>
                                             </button>
@@ -772,6 +770,7 @@
                     <connections>
                         <outlet property="bottomViewBottomConstraint" destination="LCh-uf-FhF" id="vlv-4l-gZC"/>
                         <outlet property="nextButton" destination="nhQ-3h-61x" id="UYX-Rw-1XK"/>
+                        <outlet property="progressView" destination="EXF-ei-POK" id="X6t-3X-enx"/>
                         <outlet property="tableView" destination="rZj-yG-heN" id="yWI-Jm-Chu"/>
                         <segue destination="vjS-9D-GWJ" kind="custom" identifier="ToSignupInviteViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="iWL-fc-XIL"/>
                     </connections>
@@ -807,7 +806,6 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="q97-Bs-2Po"/>
                                                     <segue destination="odt-1I-esu" kind="unwind" identifier="UnWindToSignupInviteViewController" unwindAction="unwindFromViewController:" id="TPJ-fC-WrU"/>
                                                 </connections>
                                             </button>
@@ -985,10 +983,8 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="nextButtonTapped:" destination="vjS-9D-GWJ" eventType="touchUpInside" id="1EO-Ca-hQo"/>
+                                                    <action selector="nextButtonTapped:" destination="vjS-9D-GWJ" eventType="touchUpInside" id="2Zr-7a-nXg"/>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="Gxj-LJ-3h5"/>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="teM-Wi-RN3"/>
-                                                    <action selector="nextButtonTapped:" destination="a3D-5H-sBR" eventType="touchUpInside" id="wby-bX-k4x"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1028,6 +1024,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="Q2F-9h-gKn" id="HU3-CY-1aV"/>
+                        <outlet property="progressView" destination="u4z-9A-QDO" id="wWc-dU-iSJ"/>
                         <outlet property="tableView" destination="QOs-o4-Zae" id="5iG-GI-meN"/>
                     </connections>
                 </viewController>
@@ -1062,15 +1059,12 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <action selector="backButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="UC6-bd-HHE"/>
-                                                    <action selector="backButtonTapped:" destination="pX7-Wg-vgB" eventType="touchUpInside" id="fkw-EM-1VJ"/>
                                                     <segue destination="RDx-4r-t2s" kind="unwind" unwindAction="unwindFromViewController:" id="k2F-Ad-ge3"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar3" translatesAutoresizingMaskIntoConstraints="NO" id="heW-uL-Bdg" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="161" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="257" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="161" id="G96-A1-RBw"/>
                                                     <constraint firstAttribute="height" constant="2" id="rWs-Xv-bSK"/>
                                                 </constraints>
                                             </imageView>
@@ -1078,6 +1072,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="GQH-xz-utD"/>
+                                            <constraint firstItem="heW-uL-Bdg" firstAttribute="width" secondItem="YHY-d0-TtU" secondAttribute="width" multiplier="3:7" id="Mca-jT-YfI"/>
                                             <constraint firstItem="heW-uL-Bdg" firstAttribute="top" secondItem="YHY-d0-TtU" secondAttribute="top" id="Q9a-9h-4Rt"/>
                                             <constraint firstItem="ZBb-Hr-6bp" firstAttribute="leading" secondItem="YHY-d0-TtU" secondAttribute="leading" constant="19" id="RpG-5Z-dOr"/>
                                             <constraint firstItem="heW-uL-Bdg" firstAttribute="leading" secondItem="YHY-d0-TtU" secondAttribute="leading" id="W93-wL-mi5"/>
@@ -1271,7 +1266,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="nextButtonTapped:" destination="pX7-Wg-vgB" eventType="touchUpInside" id="MTA-oD-F4S"/>
-                                                    <action selector="nextButtonTapped:" destination="WhB-hz-LJP" eventType="touchUpInside" id="SmO-1n-Fug"/>
                                                     <action selector="nextButtonTapped:" destination="UvY-Dh-0QG" eventType="touchUpInside" id="fAG-07-xbo"/>
                                                 </connections>
                                             </button>
@@ -1318,6 +1312,7 @@
                         <outlet property="dropdownTopConstraint" destination="EBp-lV-DNA" id="1qb-j6-3xs"/>
                         <outlet property="dropdownView" destination="y5U-lg-eBA" id="xrh-Xw-qGd"/>
                         <outlet property="nextButton" destination="gmC-b0-zO0" id="dZN-N1-z6a"/>
+                        <outlet property="progressView" destination="heW-uL-Bdg" id="bAM-56-8Oa"/>
                         <outlet property="tableView" destination="l9s-8i-FNG" id="GNK-gv-VCn"/>
                         <segue destination="ZGd-xb-uuP" kind="custom" identifier="ToSignupInterestsViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="JaC-pq-mhk"/>
                     </connections>
@@ -1357,9 +1352,8 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProgressBar" translatesAutoresizingMaskIntoConstraints="NO" id="22b-Ev-7s2" userLabel="ProgressBar">
-                                                <rect key="frame" x="0.0" y="0.0" width="54" height="2"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="2"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="54" id="CuG-2N-aA4"/>
                                                     <constraint firstAttribute="height" constant="2" id="olX-h6-p7u"/>
                                                 </constraints>
                                             </imageView>
@@ -1371,6 +1365,7 @@
                                             <constraint firstAttribute="height" constant="56" id="Ig4-7m-npe"/>
                                             <constraint firstItem="22b-Ev-7s2" firstAttribute="leading" secondItem="JLI-Oq-UKo" secondAttribute="leading" id="bke-7P-kxI"/>
                                             <constraint firstItem="BWI-M8-XYM" firstAttribute="leading" secondItem="JLI-Oq-UKo" secondAttribute="leading" constant="19" id="mNo-9R-TzZ"/>
+                                            <constraint firstItem="22b-Ev-7s2" firstAttribute="width" secondItem="JLI-Oq-UKo" secondAttribute="width" multiplier="1:7" id="rtw-4m-9G2"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YJ0-4M-NXj">
@@ -1447,6 +1442,7 @@
                     <connections>
                         <outlet property="bottomViewBottomConstraint" destination="a8j-Ir-vj1" id="I9S-qV-0YW"/>
                         <outlet property="nextButton" destination="xtJ-jH-Eqa" id="S8H-y2-JNI"/>
+                        <outlet property="progressView" destination="22b-Ev-7s2" id="rHa-zy-Bfr"/>
                         <outlet property="tableView" destination="YJ0-4M-NXj" id="QUe-Ys-wag"/>
                         <segue destination="WhB-hz-LJP" kind="custom" identifier="ToSignupMoreViewController" customClass="SignUpCustomSegue" customModule="Meanwise" customModuleProvider="target" id="ffE-Oz-okf"/>
                     </connections>
@@ -1454,25 +1450,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzG-4x-Sfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1075" y="355"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7tg-ww-ayI">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="taB-qp-QJE" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6qd-l0-CVS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="UvY-Dh-0QG" kind="relationship" relationship="rootViewController" id="LJX-nH-SSl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YIo-g1-u8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="263" y="355"/>
         </scene>
         <!--Dropdown View Controller-->
         <scene sceneID="Tv4-Nx-gRV">
@@ -1591,6 +1568,6 @@
         <image name="Upload" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tyC-ca-3Vh"/>
+        <segue reference="tjC-Wf-tj9"/>
     </inferredMetricsTieBreakers>
 </document>

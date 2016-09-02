@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupBaseViewController: BaseViewController {
+class SignupBaseViewController: SignupRootViewController {
     
     // MAKE: - IBOutlets
     
@@ -37,6 +37,7 @@ class SignupBaseViewController: BaseViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        view.endEditing(true)
         scrollTableView()
     }
     
@@ -116,4 +117,5 @@ extension SignupBaseViewController {
             tableView.scrollToRowAtIndexPath(activeIndexPath!, atScrollPosition: .Bottom, animated: true)
         }
     }
+
 }

@@ -98,8 +98,8 @@ extension ForgotPasswordViewController: TextfieldTableViewCellProtocol {
 
 extension ForgotPasswordViewController {
     
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
+
     }
     
     @IBAction func nextButtonTapped(sender: AnyObject) {

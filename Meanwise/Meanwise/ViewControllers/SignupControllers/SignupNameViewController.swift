@@ -26,6 +26,8 @@ class SignupNameViewController: SignupBaseViewController {
         
         cellRegister()
         enableNextButton(false)
+        currentScreenIndex = 1.0
+        progressView!.hidden = false
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -137,6 +139,7 @@ extension SignupNameViewController {
     @IBAction func backButtonTapped(sender: AnyObject) {
         let storyboard = UIStoryboard(name: Constants.Storyboard.Login, bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
+        self.view.window?.layer.addAnimation(getPresentCustomAnimation(), forKey: kCATransition)
         self.presentViewController(vc!, animated: false, completion:nil)
     }
     
@@ -147,11 +150,6 @@ extension SignupNameViewController {
 
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
 
-    }
-
-    override func segueForUnwindingToViewController(toViewController: UIViewController, fromViewController: UIViewController, identifier: String?) -> UIStoryboardSegue {
-        let segue = SignUpCustomUnwindSegue(identifier: identifier, source: fromViewController, destination: toViewController)
-        return segue
     }
 
 }
