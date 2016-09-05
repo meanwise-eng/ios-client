@@ -31,6 +31,7 @@ struct Constants {
         static let Textview = "TextviewTableViewCell"
         static let UploadImage = "UploadImageTableViewCell"
         static let Invite = "InviteTableViewCell"
+        static let Replies = "RepliesTableViewCell"
     }
     
     struct AnimationDurations {

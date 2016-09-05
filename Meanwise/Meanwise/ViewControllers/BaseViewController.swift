@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    // MARK: - Vatiables
+    // MARK: - Variables
     var tapGesture: UITapGestureRecognizer!
     
     // MARK: - View Lifecycle
@@ -49,6 +49,7 @@ class BaseViewController: UIViewController {
         transition.subtype = kCATransitionFromBottom
         return transition
     }
+
 }
 
 extension BaseViewController: UIGestureRecognizerDelegate {
@@ -59,4 +60,5 @@ extension BaseViewController: UIGestureRecognizerDelegate {
         return true
     }
 }
+
 

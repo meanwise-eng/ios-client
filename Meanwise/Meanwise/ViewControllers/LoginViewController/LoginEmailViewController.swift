@@ -153,7 +153,9 @@ extension LoginEmailViewController {
 
     @IBAction func nextButtonTapped(sender: AnyObject) {
         view.endEditing(true)
-//        performSegueWithIdentifier(Constants.SegueIdentifiers.SignupMore, sender: nil)
+        let storyboard = UIStoryboard(name: Constants.Storyboard.Home, bundle: nil)
+        let vc = storyboard.instantiateInitialViewController()
+        self.presentViewController(vc!, animated: false, completion:nil)
     }
     
     @IBAction func unwindFromViewController(sender: UIStoryboardSegue) {
