@@ -15,6 +15,9 @@
 		0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */; };
 		0ADC77C81D7847480061994B /* SignUpCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */; };
 		0ADC77CA1D7848800061994B /* SignUpCustomUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */; };
+		56DB61121D7EA420003429DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DB61111D7EA420003429DC /* ProfileViewController.swift */; };
+		56DB61141D7EA427003429DC /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 56DB61131D7EA427003429DC /* mag_app_reducedvid.mp4 */; };
+		56DB61171D7EA443003429DC /* CGGeometryExtended.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DB61161D7EA443003429DC /* CGGeometryExtended.m */; };
 		950974B21D704A5E0068D457 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974AD1D704A5E0068D457 /* CloseButton.swift */; };
 		950974B31D704A5E0068D457 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 950974AE1D704A5E0068D457 /* Info.plist */; };
 		950974B41D704A5E0068D457 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B01D704A5E0068D457 /* TagListView.swift */; };
@@ -93,6 +96,10 @@
 		0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomSegue.swift; sourceTree = "<group>"; };
 		0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomUnwindSegue.swift; sourceTree = "<group>"; };
+		56DB61111D7EA420003429DC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		56DB61131D7EA427003429DC /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
+		56DB61151D7EA43C003429DC /* CGGeometryExtended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryExtended.h; sourceTree = "<group>"; };
+		56DB61161D7EA443003429DC /* CGGeometryExtended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryExtended.m; sourceTree = "<group>"; };
 		950974AD1D704A5E0068D457 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		950974AE1D704A5E0068D457 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950974AF1D704A5E0068D457 /* TagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
@@ -216,6 +223,17 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		56DB61091D7EA38D003429DC /* ProfileViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				56DB61151D7EA43C003429DC /* CGGeometryExtended.h */,
+				56DB61161D7EA443003429DC /* CGGeometryExtended.m */,
+				56DB61131D7EA427003429DC /* mag_app_reducedvid.mp4 */,
+				56DB61111D7EA420003429DC /* ProfileViewController.swift */,
+			);
+			path = ProfileViewControllers;
+			sourceTree = "<group>";
+		};
 		950974AC1D704A5E0068D457 /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +325,7 @@
 		953810B91D6C3F3D005C4658 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				56DB61091D7EA38D003429DC /* ProfileViewControllers */,
 				FA7AEFC71D79F0020076792F /* NavigationController */,
 				0A19B9361D707EBE00EC047E /* LoginViewController */,
 				0A9A54531D6F31D300DB9787 /* IntroductionController */,
@@ -551,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DB61141D7EA427003429DC /* mag_app_reducedvid.mp4 in Resources */,
 				950974B31D704A5E0068D457 /* Info.plist in Resources */,
 				953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */,
 				953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */,
@@ -594,6 +614,7 @@
 				95C8501C1D7455050026C297 /* UploadImageTableViewCell.swift in Sources */,
 				95B89BF61D76DB610033B6E7 /* LoginEmailViewController.swift in Sources */,
 				95C1031C1D6DE26000DCA0A2 /* SignupSkillsViewController.swift in Sources */,
+				56DB61171D7EA443003429DC /* CGGeometryExtended.m in Sources */,
 				953810BD1D6C4285005C4658 /* ViewController.swift in Sources */,
 				953810CB1D6C4602005C4658 /* Helper.swift in Sources */,
 				95AF8B2A1D6F03E90040F54B /* DropdownViewController.swift in Sources */,
@@ -609,6 +630,7 @@
 				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
+				56DB61121D7EA420003429DC /* ProfileViewController.swift in Sources */,
 				950974B41D704A5E0068D457 /* TagListView.swift in Sources */,
 				950974B21D704A5E0068D457 /* CloseButton.swift in Sources */,
 				0ADC77CA1D7848800061994B /* SignUpCustomUnwindSegue.swift in Sources */,
@@ -768,10 +790,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meanwise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meanwise/Library/Meanwise-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -780,10 +804,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meanwise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Squelo.Meanwise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meanwise/Library/Meanwise-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

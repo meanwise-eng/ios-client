@@ -14,15 +14,30 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let button = UIButton(frame: CGRectMake(100, 100, 100, 100))
+        self.view!.addSubview(button)
+        button.setTitle("SALLY", forState: .Normal)
+        //  button.center = self.view.center
+        button.backgroundColor = UIColor.blackColor()
+        button.addTarget(self, action: Selector("openProfile"), forControlEvents: .TouchUpInside)
+
 
         // Do any additional setup after loading the view.
     }
+    func openProfile()
+    {
+        let m = ProfileViewController()
+        self.presentViewController(m, animated: true, completion:nil);
+        
+    }
+
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let vc = getViewController()
-        self.presentViewController(vc, animated: false, completion: nil)
+    //    let vc = getViewController()
+     //   self.presentViewController(vc, animated: false, completion: nil)
     }
     
     private func getViewController() -> UIViewController {

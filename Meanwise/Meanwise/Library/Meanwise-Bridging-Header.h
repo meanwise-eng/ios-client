@@ -10,6 +10,6 @@
 #define Meanwise_Bridging_Header_h
 
 #import "iCarousel.h"
-
+#import "CGGeometryExtended.h"
 
 #endif /* Meanwise_Bridging_Header_h */

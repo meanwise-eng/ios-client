@@ -77,8 +77,8 @@ extension SignupBaseViewController {
     
     func registerForNotifications() {
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+     //   NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("SignupBaseViewController.keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil)
+      //  NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("SignupBaseViewController.keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil)
         
     }
     
