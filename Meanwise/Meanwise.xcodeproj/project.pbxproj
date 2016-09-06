@@ -12,6 +12,9 @@
 		0A19B9351D7023B900EC047E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9341D7023B900EC047E /* String.swift */; };
 		0A19B9381D707EE700EC047E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A19B9371D707EE700EC047E /* LoginViewController.swift */; };
 		0A2D4B631D7590250048959E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2D4B621D7590250048959E /* ForgotPasswordViewController.swift */; };
+		0A37B2911D7ED6120097A1DB /* HomeFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37B2901D7ED6120097A1DB /* HomeFeedViewController.swift */; };
+		0A37B2931D7ED6810097A1DB /* RepliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37B2921D7ED6810097A1DB /* RepliesViewController.swift */; };
+		0A37B2951D7EDB570097A1DB /* HomeFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37B2941D7EDB570097A1DB /* HomeFeedTableViewCell.swift */; };
 		0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */; };
 		0ADC77C81D7847480061994B /* SignUpCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */; };
 		0ADC77CA1D7848800061994B /* SignUpCustomUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */; };
@@ -92,6 +95,9 @@
 		0A19B9341D7023B900EC047E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0A19B9371D707EE700EC047E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0A2D4B621D7590250048959E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		0A37B2901D7ED6120097A1DB /* HomeFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedViewController.swift; sourceTree = "<group>"; };
+		0A37B2921D7ED6810097A1DB /* RepliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepliesViewController.swift; sourceTree = "<group>"; };
+		0A37B2941D7EDB570097A1DB /* HomeFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedTableViewCell.swift; sourceTree = "<group>"; };
 		0A9A54541D6F320700DB9787 /* IntroductionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionViewController.swift; sourceTree = "<group>"; };
 		0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomSegue.swift; sourceTree = "<group>"; };
 		0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomUnwindSegue.swift; sourceTree = "<group>"; };
@@ -203,6 +209,14 @@
 			path = LoginViewController;
 			sourceTree = "<group>";
 		};
+		0A37B28F1D7ED5BA0097A1DB /* HomeFeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A37B2901D7ED6120097A1DB /* HomeFeedViewController.swift */,
+			);
+			path = HomeFeedViewController;
+			sourceTree = "<group>";
+		};
 		0A9A54531D6F31D300DB9787 /* IntroductionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +237,7 @@
 		0AEC7CF71D7D9C5800613F50 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0A37B28F1D7ED5BA0097A1DB /* HomeFeedViewController */,
 				0AEC7CF81D7D9C5800613F50 /* RepliesViewController */,
 			);
 			path = HomeViewController;
@@ -231,7 +246,7 @@
 		0AEC7CF81D7D9C5800613F50 /* RepliesViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0AEC7CF91D7D9C7E00613F50 /* RepliesViewController.swift */,
+				0A37B2921D7ED6810097A1DB /* RepliesViewController.swift */,
 			);
 			path = RepliesViewController;
 			sourceTree = "<group>";
@@ -435,6 +450,7 @@
 				95C8501B1D7455050026C297 /* UploadImageTableViewCell.swift */,
 				95C8501F1D748AD40026C297 /* InviteTableViewCell.swift */,
 				0AEC7CFB1D7D9DEB00613F50 /* RepliesTableViewCell.swift */,
+				0A37B2941D7EDB570097A1DB /* HomeFeedTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -624,6 +640,7 @@
 				0A2D4B631D7590250048959E /* ForgotPasswordViewController.swift in Sources */,
 				95C103101D6D750B00DCA0A2 /* TitleTableViewCell.swift in Sources */,
 				FA7AEFC41D79A5C70076792F /* SignupRootViewController.swift in Sources */,
+				0A37B2951D7EDB570097A1DB /* HomeFeedTableViewCell.swift in Sources */,
 				0A19B9331D7020DA00EC047E /* Font.swift in Sources */,
 				9538108F1D6C3BAA005C4658 /* Meanwise.xcdatamodeld in Sources */,
 				0A19B9311D7020AA00EC047E /* Color.swift in Sources */,
@@ -631,9 +648,11 @@
 				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
+				0A37B2931D7ED6810097A1DB /* RepliesViewController.swift in Sources */,
 				950974B41D704A5E0068D457 /* TagListView.swift in Sources */,
 				950974B21D704A5E0068D457 /* CloseButton.swift in Sources */,
 				0ADC77CA1D7848800061994B /* SignUpCustomUnwindSegue.swift in Sources */,
+				0A37B2911D7ED6120097A1DB /* HomeFeedViewController.swift in Sources */,
 				95AF8B2E1D6F2BB40040F54B /* SignupInterestsViewController.swift in Sources */,
 				95C8501E1D7471BB0026C297 /* SignupInviteViewController.swift in Sources */,
 				950974B51D704A5E0068D457 /* TagView.swift in Sources */,
@@ -650,7 +669,6 @@
 				0A19B9351D7023B900EC047E /* String.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,
 				95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */,
-				0AEC7CFA1D7D9C7E00613F50 /* RepliesViewController.swift in Sources */,
 				950974B71D704ECF0068D457 /* TagsTableViewCell.swift in Sources */,
 				953810C31D6C453F005C4658 /* Constants.swift in Sources */,
 				95C8501A1D7449180026C297 /* SignupAppearanceViewController.swift in Sources */,
