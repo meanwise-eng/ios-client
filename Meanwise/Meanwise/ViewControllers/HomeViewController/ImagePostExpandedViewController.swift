@@ -16,6 +16,8 @@ class ImagePostExpandedViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationController?.navigationBarHidden = true
+        UIApplication.sharedApplication().statusBarHidden = true
     }
 
     // MARK: - Memory Management

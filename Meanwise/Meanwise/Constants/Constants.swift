@@ -52,6 +52,7 @@ struct Constants {
         static let SignupInvite = "ToSignupInviteViewController"
         static let LoginEmail = "ToLoginEmailViewController"
         static let ForgotPassword = "ToForgotPasswordViewController"
+        static let ImagePostExpanded = "ToImagePostExpandedViewController"
     }
 
     struct UnWindSegueIdentifiers {
