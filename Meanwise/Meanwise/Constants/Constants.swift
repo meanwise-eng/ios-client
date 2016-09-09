@@ -34,6 +34,7 @@ struct Constants {
         static let Replies = "RepliesTableViewCell"
         static let HomeFeed = "HomeFeedCell"
         static let ImagePost = "ImagePostCell"
+        static let VideoPost = "VideoPostCell"
     }
     
     struct AnimationDurations {

@@ -74,6 +74,8 @@
 		FA71AA7C1D8013DF00595248 /* ImagePostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA71AA7B1D8013DF00595248 /* ImagePostCell.xib */; };
 		FA7AEFC41D79A5C70076792F /* SignupRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC31D79A5C70076792F /* SignupRootViewController.swift */; };
 		FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */; };
+		FA7DAABB1D82DE57002E4BB0 /* VideoPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */; };
+		FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		FA71AA7B1D8013DF00595248 /* ImagePostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePostCell.xib; sourceTree = "<group>"; };
 		FA7AEFC31D79A5C70076792F /* SignupRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRootViewController.swift; sourceTree = "<group>"; };
 		FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPostCell.xib; sourceTree = "<group>"; };
+		FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +397,7 @@
 		953810CC1D6C5049005C4658 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */,
 				953810CD1D6C5077005C4658 /* OpenSans-Bold.ttf */,
 				953810CE1D6C5077005C4658 /* OpenSans-ExtraBold.ttf */,
 				953810CF1D6C5077005C4658 /* OpenSans-Light.ttf */,
@@ -445,6 +450,7 @@
 				953810F81D6C8B79005C4658 /* TextfieldTableViewCell.xib */,
 				95C103111D6D752200DCA0A2 /* TitleTableViewCell.xib */,
 				FA71AA7B1D8013DF00595248 /* ImagePostCell.xib */,
+				FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 			files = (
 				950974B31D704A5E0068D457 /* Info.plist in Resources */,
 				953810941D6C3BAA005C4658 /* LaunchScreen.storyboard in Resources */,
+				FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */,
 				953810F91D6C8B79005C4658 /* TextfieldTableViewCell.xib in Resources */,
 				953810D41D6C5077005C4658 /* OpenSans-Light.ttf in Resources */,
 				953810D61D6C5077005C4658 /* OpenSans-Semibold.ttf in Resources */,
@@ -615,6 +622,7 @@
 				953810D51D6C5077005C4658 /* OpenSans-Regular.ttf in Resources */,
 				95C103161D6DA93800DCA0A2 /* Localizable.strings in Resources */,
 				953810E41D6C5C46005C4658 /* Login.storyboard in Resources */,
+				FA7DAABB1D82DE57002E4BB0 /* VideoPostCell.xib in Resources */,
 				953810E01D6C5C2E005C4658 /* Signup.storyboard in Resources */,
 				953810E21D6C5C3B005C4658 /* Introduction.storyboard in Resources */,
 				FA71AA7C1D8013DF00595248 /* ImagePostCell.xib in Resources */,

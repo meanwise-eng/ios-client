@@ -7,15 +7,54 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class VideoPostCell: PostCell {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    // MARK: - Variables
+    
+    let controller = AVPlayerViewController()
+
+    // MARK: - Functions
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        controller.showsPlaybackControls = false
+        controller.view.frame = CGRectMake(0, 0.0, contentView.frame.size.width, contentView.frame.size.height - 3.0)
+        contentView.addSubview(controller.view!)
+        contentView.sendSubviewToBack(controller.view!)
     }
-    */
+    
+    func loadVideo() {
+        let videoURL = NSBundle.mainBundle().URLForResource("mag_app_reducedvid", withExtension: "mp4")
+        setPlayerForUrl(videoURL!)
+    }
+    
+    func setPlayerForUrl(url: NSURL) {
+
+        controller.player = AVPlayer(URL: url)
+        controller.player!.play()
+        
+    }
+    
+//    func addObserver() {
+//        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil) { notification in
+//            self.player!.seekToTime(kCMTimeZero)
+//            self.player!.play()
+//        }
+//    }
+//    
+//    func playVideo() {
+//        player?.play()
+//    }
+//    
+//    func stopVideo() {
+//        player?.pause()
+//    }
+    
+    deinit {
+        print("Video Post Cell is DeInitialising")
+    }
 
 }
