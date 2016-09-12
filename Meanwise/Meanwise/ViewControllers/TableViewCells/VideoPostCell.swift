@@ -45,6 +45,7 @@ class VideoPostCell: PostCell {
         }
     }
     
+    
     func addAvPlayerLayer() {
         let screenSize = UIScreen.mainScreen().bounds
         
@@ -56,6 +57,8 @@ class VideoPostCell: PostCell {
         let videoURL = NSBundle.mainBundle().URLForResource("mag_app_reducedvid", withExtension: "mp4")
         
         playerLayer!.player = AVPlayer(URL: videoURL!)
+        
+        addPlayerNotification()
     }
     
     func playVideo() {
@@ -71,13 +74,32 @@ class VideoPostCell: PostCell {
     }
     
     func unloadVideo() {
-        playerLayer!.player = nil
+        removePlayerNotification()
+
+        playerLayer!.player = nil        
     }
     
     // MARK: - DeInit
     
     deinit {
         print("Video Post Cell is DeInitialising")
+    }
+
+}
+
+extension VideoPostCell {
+    
+    func addPlayerNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VideoPostCell.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playerLayer?.player!.currentItem)
+    }
+    
+    func removePlayerNotification() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playerLayer?.player!.currentItem)
+    }
+    
+    func playerItemDidReachEnd(notification: NSNotification) {
+        self.playerLayer?.player!.seekToTime(kCMTimeZero)
+        playVideo()
     }
 
 }
