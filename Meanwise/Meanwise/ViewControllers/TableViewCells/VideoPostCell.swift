@@ -12,46 +12,69 @@ import AVFoundation
 
 class VideoPostCell: PostCell {
 
-    // MARK: - Variables
+    // MARK: - IBOutlets
     
-    let controller = AVPlayerViewController()
+    @IBOutlet weak var videoView: UIView!
+    
+    // MARK: - Variables
+    var playerLayer: AVPlayerLayer?
+    var videoUrl: String?
 
-    // MARK: - Functions
+    // MARK: - AWAKE
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        controller.showsPlaybackControls = false
-        controller.view.frame = CGRectMake(0, 0.0, contentView.frame.size.width, contentView.frame.size.height - 3.0)
-        contentView.addSubview(controller.view!)
-        contentView.sendSubviewToBack(controller.view!)
+    
+    }
+    
+    // MARK: - Functions
+    
+    func setValueToCell(urlString: String, videoImage: String) {
+        videoUrl = urlString
+        backgroundImageView.image = UIImage(named: videoImage)
+        
+        initialiseAndAddAVPlayerLayer()
+    }
+    
+    func initialiseAndAddAVPlayerLayer() {
+        if playerLayer == nil {
+            playerLayer = AVPlayerLayer()
+            playerLayer!.videoGravity = AVLayerVideoGravityResize
+
+            addAvPlayerLayer()
+        }
+    }
+    
+    func addAvPlayerLayer() {
+        let screenSize = UIScreen.mainScreen().bounds
+        
+        playerLayer!.frame = CGRectMake(0.0, 0, screenSize.size.width, contentView.frame.size.height - 3.0)
+        videoView.layer.addSublayer(playerLayer!)
     }
     
     func loadVideo() {
         let videoURL = NSBundle.mainBundle().URLForResource("mag_app_reducedvid", withExtension: "mp4")
-        setPlayerForUrl(videoURL!)
-    }
-    
-    func setPlayerForUrl(url: NSURL) {
-
-        controller.player = AVPlayer(URL: url)
-        controller.player!.play()
         
+        playerLayer!.player = AVPlayer(URL: videoURL!)
     }
     
-//    func addObserver() {
-//        NSNotificationCenter.defaultCenter().addObserverForName(AVPlayerItemDidPlayToEndTimeNotification, object: nil, queue: nil) { notification in
-//            self.player!.seekToTime(kCMTimeZero)
-//            self.player!.play()
-//        }
-//    }
-//    
-//    func playVideo() {
-//        player?.play()
-//    }
-//    
-//    func stopVideo() {
-//        player?.pause()
-//    }
+    func playVideo() {
+        if playerLayer!.player != nil {
+            playerLayer!.player?.play()
+        }
+    }
+    
+    func pauseVideo() {
+        if playerLayer!.player != nil {
+            playerLayer!.player?.pause()
+        }
+    }
+    
+    func unloadVideo() {
+        playerLayer!.player = nil
+    }
+    
+    // MARK: - DeInit
     
     deinit {
         print("Video Post Cell is DeInitialising")

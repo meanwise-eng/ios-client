@@ -18,6 +18,7 @@ class HomeFeedViewController: UIViewController {
     // MARK: - Variables
     
     var lastContentOffset: CGFloat = 0.0
+    var loadedCellIndexs: NSMutableArray!
     
     // MARK: - View Lifecycle
     
@@ -27,14 +28,29 @@ class HomeFeedViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableViewSetup()
         cellRegister()
+        
+        statusBarSetup()
+        navigationBarSetup()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showVideoInVisibleCell()
+    }
+    
+    // MARK: Function
+    
+    func statusBarSetup() {
         UIApplication.sharedApplication().statusBarStyle = .Default
         navigationController!.hidesBarsOnSwipe = true
+    }
+    
+    func navigationBarSetup() {
         addUserButton()
         addMessageButton()
         setTitleLogo()
     }
-    
-    // MARK: Function
     
     func addUserButton() {
         let userButton = UIButton()
@@ -49,7 +65,6 @@ class HomeFeedViewController: UIViewController {
     }
     
     func userButtonTapped() {
-        //        navigationController?.popViewControllerAnimated(true)
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -87,6 +102,12 @@ class HomeFeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - DeInit Method
+    
+    deinit {
+        print("HomeFeedViewController id DeInitialising")
+    }
+    
 }
 
 // MARK: - TableView DataSource Delegate
@@ -108,8 +129,7 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     
     func getVideoPostCell(indexPath: NSIndexPath) -> VideoPostCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.VideoPost) as! VideoPostCell
-        cell.loadVideo()
-//        cell.playVideo()
+        cell.setValueToCell("", videoImage: "SampleVideoImage")
         return cell
     }
     
@@ -119,28 +139,52 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
         performSegueWithIdentifier(Constants.SegueIdentifiers.ImagePostExpanded, sender: nil)
     }
     
-    func tableView(tableView: UITableView, willEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row % 2 == 1 {
-//            let cell = tableView.cellForRowAtIndexPath(indexPath) as! VideoPostCell
-//            cell.stopVideo()
+            (cell as! VideoPostCell).unloadVideo()
+        }
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row % 2 == 1 {
+            (cell as! VideoPostCell).loadVideo()
         }
     }
     
 }
 
 extension HomeFeedViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        showVideoInVisibleCell()
+    }
 
-//    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-//        let visibleCellsIndexPath = tableView.indexPathsForVisibleRows
-//        
-//        for indexPath in visibleCellsIndexPath! {
-//            if indexPath.row % 2 == 1 {
-//                let cell = tableView.cellForRowAtIndexPath(indexPath) as! VideoPostCell
-//                cell.playVideo()
-//            }
-//        }
-//        
-//    }
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        showVideoInVisibleCell()
+    }
+    
+    func showVideoInVisibleCell() {
+        let visibleCellsIndexPath = tableView.indexPathsForVisibleRows
+        
+        for indexPath in visibleCellsIndexPath! {
+            if indexPath.row % 2 == 1 {
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! VideoPostCell
+                if isCellVisibleCompletely(indexPath, tableView: tableView) {
+                    cell.playVideo()
+                } else {
+                    cell.pauseVideo()
+                }
+            }
+        }
+    }
+    
+    func isCellVisibleCompletely(indexPath: NSIndexPath, tableView: UITableView) -> Bool {
+        
+        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(indexPath)
+        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
+        
+        return CGRectContainsRect(tableView.frame, rectOfCellInSuperview)
+    }
     
 }
 

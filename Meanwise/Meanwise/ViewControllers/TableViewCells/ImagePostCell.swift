@@ -10,10 +10,6 @@ import UIKit
 
 class ImagePostCell: PostCell {
 
-    // MARK: - IBOutlets
-    
-    @IBOutlet weak var backgroundImageView: UIImageView!
-
     // MARK: - Methods
     
     override func setValuesToCell() {

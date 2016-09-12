@@ -20,7 +20,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var channelLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var postTextLabel: UILabel!
-
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
     // MARK: - Methods
     
     func setValuesToCell() {
