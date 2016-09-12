@@ -110,7 +110,7 @@
         <!--Image Post Expanded View Controller-->
         <scene sceneID="fm8-q0-m8R">
             <objects>
-                <viewController id="jLR-lb-sRo" customClass="ImagePostExpandedViewController" customModule="Meanwise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImagePostExpandedViewController" id="jLR-lb-sRo" customClass="ImagePostExpandedViewController" customModule="Meanwise" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xoU-Iq-VPH"/>
                         <viewControllerLayoutGuide type="bottom" id="kUt-xx-sUh"/>

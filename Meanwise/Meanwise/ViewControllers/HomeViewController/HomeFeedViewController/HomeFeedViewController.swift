@@ -19,7 +19,9 @@ class HomeFeedViewController: UIViewController {
     
     var lastContentOffset: CGFloat = 0.0
     var loadedCellIndexs: NSMutableArray!
-    
+    let transition = PopAnimator()
+    var selectedIndexPath: NSIndexPath!
+
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -136,7 +138,13 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        performSegueWithIdentifier(Constants.SegueIdentifiers.ImagePostExpanded, sender: nil)
+//        performSegueWithIdentifier(Constants.SegueIdentifiers.ImagePostExpanded, sender: nil)
+        selectedIndexPath = indexPath
+        
+        let imagePostExpandedViewController = storyboard!.instantiateViewControllerWithIdentifier("ImagePostExpandedViewController") as! ImagePostExpandedViewController
+        imagePostExpandedViewController.transitioningDelegate = self
+        presentViewController(imagePostExpandedViewController, animated: true, completion: nil)
+        
     }
     
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -180,12 +188,29 @@ extension HomeFeedViewController: UIScrollViewDelegate {
     
     func isCellVisibleCompletely(indexPath: NSIndexPath, tableView: UITableView) -> Bool {
         
-        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(indexPath)
-        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
+        let rectOfCellInTableView = tableView.rectForRowAtIndexPath(indexPath)
+        let rectOfCellInSuperview = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
         
         return CGRectContainsRect(tableView.frame, rectOfCellInSuperview)
     }
     
+}
+
+extension HomeFeedViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(selectedIndexPath)
+        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
+        
+            transition.originFrame = rectOfCellInSuperview
+            transition.presenting = true
+            
+            return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+    }
 }
 
 

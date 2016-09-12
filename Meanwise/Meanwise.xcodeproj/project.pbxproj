@@ -76,6 +76,7 @@
 		FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */; };
 		FA7DAABB1D82DE57002E4BB0 /* VideoPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */; };
 		FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */; };
+		FAD860421D87417E00E2F936 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD860411D87417E00E2F936 /* PopAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,7 @@
 		FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPostCell.xib; sourceTree = "<group>"; };
 		FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
+		FAD860411D87417E00E2F936 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +479,7 @@
 		95AF8B2F1D6F379C0040F54B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAD8603E1D87410300E2F936 /* Animation */,
 				950974AC1D704A5E0068D457 /* TagListView */,
 				95AF8B301D6F37A60040F54B /* iCarousel */,
 				95AF8B351D6F388E0040F54B /* Meanwise-Bridging-Header.h */,
@@ -499,6 +502,14 @@
 				FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		FAD8603E1D87410300E2F936 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				FAD860411D87417E00E2F936 /* PopAnimator.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,6 +696,7 @@
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
 				FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */,
 				950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */,
+				FAD860421D87417E00E2F936 /* PopAnimator.swift in Sources */,
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				FA71AA7A1D8012F800595248 /* TextPostCell.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
