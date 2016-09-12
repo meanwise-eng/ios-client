@@ -17,8 +17,8 @@ class VideoPostCell: PostCell {
     @IBOutlet weak var videoView: UIView!
     
     // MARK: - Variables
-    var playerLayer: AVPlayerLayer?
-    var videoUrl: String?
+    private var playerLayer: AVPlayerLayer?
+    private var videoUrl: String?
 
     // MARK: - AWAKE
     
@@ -27,7 +27,17 @@ class VideoPostCell: PostCell {
     
     }
     
-    // MARK: - Functions
+    // MARK: - DeInit
+    
+    deinit {
+        print("Video Post Cell is DeInitialising")
+    }
+
+}
+
+// MARK: - Public
+
+extension VideoPostCell {
     
     func setValueToCell(urlString: String, videoImage: String) {
         videoUrl = urlString
@@ -35,24 +45,7 @@ class VideoPostCell: PostCell {
         
         initialiseAndAddAVPlayerLayer()
     }
-    
-    func initialiseAndAddAVPlayerLayer() {
-        if playerLayer == nil {
-            playerLayer = AVPlayerLayer()
-            playerLayer!.videoGravity = AVLayerVideoGravityResize
 
-            addAvPlayerLayer()
-        }
-    }
-    
-    
-    func addAvPlayerLayer() {
-        let screenSize = UIScreen.mainScreen().bounds
-        
-        playerLayer!.frame = CGRectMake(0.0, 0, screenSize.size.width, contentView.frame.size.height - 3.0)
-        videoView.layer.addSublayer(playerLayer!)
-    }
-    
     func loadVideo() {
         let videoURL = NSBundle.mainBundle().URLForResource("mag_app_reducedvid", withExtension: "mp4")
         
@@ -75,19 +68,37 @@ class VideoPostCell: PostCell {
     
     func unloadVideo() {
         removePlayerNotification()
-
-        playerLayer!.player = nil        
+        
+        playerLayer!.player = nil
     }
     
-    // MARK: - DeInit
-    
-    deinit {
-        print("Video Post Cell is DeInitialising")
-    }
-
 }
 
-extension VideoPostCell {
+// MARK: - Private
+
+private extension VideoPostCell {
+    
+    func initialiseAndAddAVPlayerLayer() {
+        if playerLayer == nil {
+            playerLayer = AVPlayerLayer()
+            playerLayer!.videoGravity = AVLayerVideoGravityResize
+            
+            addAvPlayerLayer()
+        }
+    }
+    
+    func addAvPlayerLayer() {
+        let screenSize = UIScreen.mainScreen().bounds
+        
+        playerLayer!.frame = CGRectMake(0.0, 0, screenSize.size.width, contentView.frame.size.height - 3.0)
+        videoView.layer.addSublayer(playerLayer!)
+    }
+    
+}
+
+// MARK: - Notifications
+
+private extension VideoPostCell {
     
     func addPlayerNotification() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VideoPostCell.playerItemDidReachEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playerLayer?.player!.currentItem)
@@ -97,7 +108,7 @@ extension VideoPostCell {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playerLayer?.player!.currentItem)
     }
     
-    func playerItemDidReachEnd(notification: NSNotification) {
+    @objc func playerItemDidReachEnd(notification: NSNotification) {
         self.playerLayer?.player!.seekToTime(kCMTimeZero)
         playVideo()
     }
