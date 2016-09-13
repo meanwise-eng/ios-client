@@ -156,12 +156,23 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
             
             postImageView.removeFromSuperview()
             
-            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
+            var viewController: UIViewController
             
-            imagePostExpandedViewController.backgroundImageName = "SampleExpandedImage"
+            if indexPath.row % 2 == 0{
+                let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
+                
+                imagePostExpandedViewController.backgroundImageName = "SampleExpandedImage"
+                
+                viewController = imagePostExpandedViewController
+
+            } else {
+                let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
+                viewController = videoPostViewController
+            }
+            
             
             self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
-            self.presentViewController(imagePostExpandedViewController, animated: false, completion: nil)
+            self.presentViewController(viewController, animated: false, completion: nil)
         }
         
     }

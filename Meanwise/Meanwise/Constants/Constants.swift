@@ -23,6 +23,7 @@ struct Constants {
     
     struct StoryboardId {
         static let ImagePostExpanded = "ImagePostExpandedViewController"
+        static let VideoPost = "VideoPostViewController"
     }
     
     struct TableViewCell {

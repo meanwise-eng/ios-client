@@ -78,6 +78,7 @@
 		FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */; };
 		FACEACBF1D883C74005DC77E /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACBE1D883C74005DC77E /* TableView.swift */; };
 		FACEACC11D8841DF005DC77E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACC01D8841DF005DC77E /* View.swift */; };
+		FACEACC31D889A4D005DC77E /* VideoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */; };
 		FAD860421D87417E00E2F936 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD860411D87417E00E2F936 /* PopAnimator.swift */; };
 /* End PBXBuildFile section */
 
@@ -179,6 +180,7 @@
 		FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
 		FACEACBE1D883C74005DC77E /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		FACEACC01D8841DF005DC77E /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostViewController.swift; sourceTree = "<group>"; };
 		FAD860411D87417E00E2F936 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +262,7 @@
 				0A37B28F1D7ED5BA0097A1DB /* HomeFeedViewController */,
 				0AEC7CF81D7D9C5800613F50 /* RepliesViewController */,
 				FA35DE681D80B38600C66062 /* ImagePostExpandedViewController.swift */,
+				FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				953810EA1D6C6AE2005C4658 /* BaseViewController.swift in Sources */,
 				FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */,
 				950974BB1D708C5C0068D457 /* TextviewTableViewCell.swift in Sources */,
+				FACEACC31D889A4D005DC77E /* VideoPostViewController.swift in Sources */,
 				FAD860421D87417E00E2F936 /* PopAnimator.swift in Sources */,
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				FA71AA7A1D8012F800595248 /* TextPostCell.swift in Sources */,
