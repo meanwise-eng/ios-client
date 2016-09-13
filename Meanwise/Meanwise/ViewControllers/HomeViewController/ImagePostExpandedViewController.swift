@@ -9,6 +9,14 @@
 import UIKit
 
 class ImagePostExpandedViewController: BaseViewController {
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    // MARK: - Variables
+    
+    var backgroundImageName: String?
 
     // MARK: - View Lifecycle
     
@@ -18,6 +26,7 @@ class ImagePostExpandedViewController: BaseViewController {
         // Do any additional setup after loading the view.
         navigationController?.navigationBarHidden = true
         UIApplication.sharedApplication().statusBarHidden = true
+        self.backgroundImageView.image = UIImage(named: backgroundImageName!)
     }
 
     // MARK: - Memory Management
@@ -27,4 +36,12 @@ class ImagePostExpandedViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension ImagePostExpandedViewController {
+    
+    @IBAction func swipedDown(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeFeedViewController: UIViewController {
+class HomeFeedViewController: BaseViewController {
     
     // MARK: - IBOutlets
     
@@ -19,9 +19,7 @@ class HomeFeedViewController: UIViewController {
     
     var lastContentOffset: CGFloat = 0.0
     var loadedCellIndexs: NSMutableArray!
-    let transition = PopAnimator()
-    var selectedIndexPath: NSIndexPath!
-
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -126,6 +124,7 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     
     func getImagePostCell(indexPath: NSIndexPath) -> ImagePostCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.TableViewCell.ImagePost) as! ImagePostCell
+        cell.setValuesToCell("SamplePostImage")
         return cell
     }
     
@@ -138,12 +137,32 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-//        performSegueWithIdentifier(Constants.SegueIdentifiers.ImagePostExpanded, sender: nil)
-        selectedIndexPath = indexPath
+        let postImageView = UIImageView(frame: tableView.rectOfCellInSuperviewAtIndexPath(indexPath))
+        postImageView.image = UIImage(named: "SamplePostImage")
         
-        let imagePostExpandedViewController = storyboard!.instantiateViewControllerWithIdentifier("ImagePostExpandedViewController") as! ImagePostExpandedViewController
-        imagePostExpandedViewController.transitioningDelegate = self
-        presentViewController(imagePostExpandedViewController, animated: true, completion: nil)
+        view.addSubview(postImageView)
+        view.bringSubviewToFront(postImageView)
+        
+        var frameImage = postImageView.frame
+        
+        let newHeight = view.getHeight()
+        let newWidth = postImageView.getWidth() * newHeight / postImageView.getHeight()
+        
+        frameImage = CGRectMake((postImageView.getWidth() - newWidth)/2.0, 0, newWidth, newHeight)
+        
+        UIView.animateWithDuration(1.0, animations: {
+            postImageView.frame = frameImage
+        }) { _ in
+            
+            postImageView.removeFromSuperview()
+            
+            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
+            
+            imagePostExpandedViewController.backgroundImageName = "SampleExpandedImage"
+            
+            self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
+            self.presentViewController(imagePostExpandedViewController, animated: false, completion: nil)
+        }
         
     }
     
@@ -166,7 +185,7 @@ extension HomeFeedViewController: UIScrollViewDelegate {
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         showVideoInVisibleCell()
     }
-
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         showVideoInVisibleCell()
     }
@@ -195,22 +214,3 @@ extension HomeFeedViewController: UIScrollViewDelegate {
     }
     
 }
-
-extension HomeFeedViewController: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let rectOfCellInTableView: CGRect = tableView.rectForRowAtIndexPath(selectedIndexPath)
-        let rectOfCellInSuperview: CGRect = tableView.convertRect(rectOfCellInTableView, toView: tableView.superview)
-        
-            transition.originFrame = rectOfCellInSuperview
-            transition.presenting = true
-            
-            return transition
-    }
-    
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.presenting = false
-        return transition
-    }
-}
-
-

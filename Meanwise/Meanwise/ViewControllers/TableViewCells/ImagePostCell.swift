@@ -10,10 +10,14 @@ import UIKit
 
 class ImagePostCell: PostCell {
 
+ 
+}
+
+extension ImagePostCell {
     // MARK: - Methods
     
-    override func setValuesToCell() {
-        
+    func setValuesToCell(imageName: String) {
+        backgroundImageView.image = UIImage(named: imageName)
     }
     
 }

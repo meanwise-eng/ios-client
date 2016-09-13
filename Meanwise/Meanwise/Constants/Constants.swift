@@ -21,6 +21,10 @@ struct Constants {
         static let RootViewController = "RootViewController"
     }
     
+    struct StoryboardId {
+        static let ImagePostExpanded = "ImagePostExpandedViewController"
+    }
+    
     struct TableViewCell {
         static let Textfield = "TextfieldTableViewCell"
         static let Title = "TitleTableViewCell"

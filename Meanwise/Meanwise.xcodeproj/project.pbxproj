@@ -76,6 +76,8 @@
 		FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */; };
 		FA7DAABB1D82DE57002E4BB0 /* VideoPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */; };
 		FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */; };
+		FACEACBF1D883C74005DC77E /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACBE1D883C74005DC77E /* TableView.swift */; };
+		FACEACC11D8841DF005DC77E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACC01D8841DF005DC77E /* View.swift */; };
 		FAD860421D87417E00E2F936 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD860411D87417E00E2F936 /* PopAnimator.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +177,8 @@
 		FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPostCell.xib; sourceTree = "<group>"; };
 		FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
+		FACEACBE1D883C74005DC77E /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		FACEACC01D8841DF005DC77E /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FAD860411D87417E00E2F936 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +213,8 @@
 				0A19B9301D7020AA00EC047E /* Color.swift */,
 				0A19B9321D7020DA00EC047E /* Font.swift */,
 				0A19B9341D7023B900EC047E /* String.swift */,
+				FACEACBE1D883C74005DC77E /* TableView.swift */,
+				FACEACC01D8841DF005DC77E /* View.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -662,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACEACC11D8841DF005DC77E /* View.swift in Sources */,
 				FA35DE691D80B38600C66062 /* ImagePostExpandedViewController.swift in Sources */,
 				95C8501C1D7455050026C297 /* UploadImageTableViewCell.swift in Sources */,
 				95B89BF61D76DB610033B6E7 /* LoginEmailViewController.swift in Sources */,
@@ -708,6 +715,7 @@
 				95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */,
 				FA71AA761D8012D600595248 /* ImagePostCell.swift in Sources */,
 				950974B71D704ECF0068D457 /* TagsTableViewCell.swift in Sources */,
+				FACEACBF1D883C74005DC77E /* TableView.swift in Sources */,
 				953810C31D6C453F005C4658 /* Constants.swift in Sources */,
 				95C8501A1D7449180026C297 /* SignupAppearanceViewController.swift in Sources */,
 				0ADC77C81D7847480061994B /* SignUpCustomSegue.swift in Sources */,
