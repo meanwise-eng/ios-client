@@ -18,6 +18,7 @@
 		0ADC77C81D7847480061994B /* SignUpCustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */; };
 		0ADC77CA1D7848800061994B /* SignUpCustomUnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */; };
 		0AEC7CFC1D7D9DEB00613F50 /* RepliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC7CFB1D7D9DEB00613F50 /* RepliesTableViewCell.swift */; };
+		71BDE44D960B8A8160395137 /* Pods_Meanwise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641DB22980B5756FC313DDE /* Pods_Meanwise.framework */; };
 		950974B21D704A5E0068D457 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974AD1D704A5E0068D457 /* CloseButton.swift */; };
 		950974B31D704A5E0068D457 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 950974AE1D704A5E0068D457 /* Info.plist */; };
 		950974B41D704A5E0068D457 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950974B01D704A5E0068D457 /* TagListView.swift */; };
@@ -111,6 +112,9 @@
 		0ADC77C71D7847480061994B /* SignUpCustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomSegue.swift; sourceTree = "<group>"; };
 		0ADC77C91D7848800061994B /* SignUpCustomUnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCustomUnwindSegue.swift; sourceTree = "<group>"; };
 		0AEC7CFB1D7D9DEB00613F50 /* RepliesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepliesTableViewCell.swift; sourceTree = "<group>"; };
+		12F06E595F6532E781381630 /* Pods-Meanwise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meanwise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meanwise/Pods-Meanwise.debug.xcconfig"; sourceTree = "<group>"; };
+		3F7E37D8E61426D5E66CED9D /* Pods-Meanwise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meanwise.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meanwise/Pods-Meanwise.release.xcconfig"; sourceTree = "<group>"; };
+		5641DB22980B5756FC313DDE /* Pods_Meanwise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meanwise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950974AD1D704A5E0068D457 /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		950974AE1D704A5E0068D457 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950974AF1D704A5E0068D457 /* TagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BDE44D960B8A8160395137 /* Pods_Meanwise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +280,15 @@
 			path = RepliesViewController;
 			sourceTree = "<group>";
 		};
+		583214FA8707FBBA933054BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				12F06E595F6532E781381630 /* Pods-Meanwise.debug.xcconfig */,
+				3F7E37D8E61426D5E66CED9D /* Pods-Meanwise.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		950974AC1D704A5E0068D457 /* TagListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +308,8 @@
 				9538109D1D6C3BAA005C4658 /* MeanwiseTests */,
 				953810A81D6C3BAA005C4658 /* MeanwiseUITests */,
 				953810841D6C3BAA005C4658 /* Products */,
+				583214FA8707FBBA933054BB /* Pods */,
+				C4CF72D4E4572E932A7CC249 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -505,6 +521,14 @@
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
+		C4CF72D4E4572E932A7CC249 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5641DB22980B5756FC313DDE /* Pods_Meanwise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA7AEFC71D79F0020076792F /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,9 +552,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 953810AE1D6C3BAA005C4658 /* Build configuration list for PBXNativeTarget "Meanwise" */;
 			buildPhases = (
+				87E05DC3F404C854778990DF /* [CP] Check Pods Manifest.lock */,
 				9538107F1D6C3BAA005C4658 /* Sources */,
 				953810801D6C3BAA005C4658 /* Frameworks */,
 				953810811D6C3BAA005C4658 /* Resources */,
+				80910A83E42AE6A21EEFF6B8 /* [CP] Embed Pods Frameworks */,
+				A52D78BDB809DCE3E1C884F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -665,6 +692,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80910A83E42AE6A21EEFF6B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meanwise/Pods-Meanwise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87E05DC3F404C854778990DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A52D78BDB809DCE3E1C884F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meanwise/Pods-Meanwise-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9538107F1D6C3BAA005C4658 /* Sources */ = {
@@ -857,6 +932,7 @@
 		};
 		953810AF1D6C3BAA005C4658 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12F06E595F6532E781381630 /* Pods-Meanwise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meanwise/Info.plist;
@@ -869,6 +945,7 @@
 		};
 		953810B01D6C3BAA005C4658 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F7E37D8E61426D5E66CED9D /* Pods-Meanwise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Meanwise/Info.plist;

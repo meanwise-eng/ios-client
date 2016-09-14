@@ -1,0 +1,8 @@
+platform :ios, '8.0'
+
+target 'Meanwise' do
+  use_frameworks!
+  pod 'pop', '~> 1.0'
+end
+
+
