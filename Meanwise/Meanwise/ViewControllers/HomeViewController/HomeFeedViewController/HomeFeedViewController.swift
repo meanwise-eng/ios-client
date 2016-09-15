@@ -19,6 +19,8 @@ class HomeFeedViewController: BaseViewController {
     
     var lastContentOffset: CGFloat = 0.0
     var loadedCellIndexs: NSMutableArray!
+    var selectedIndexPath: NSIndexPath?
+    let transition = PopAnimator()
     
     // MARK: - View Lifecycle
     
@@ -29,8 +31,13 @@ class HomeFeedViewController: BaseViewController {
         tableViewSetup()
         cellRegister()
         
-        statusBarSetup()
         navigationBarSetup()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        statusBarSetup()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,6 +50,7 @@ class HomeFeedViewController: BaseViewController {
     
     func statusBarSetup() {
         UIApplication.sharedApplication().statusBarStyle = .Default
+        UIApplication.sharedApplication().statusBarHidden = false
         navigationController!.hidesBarsOnSwipe = true
     }
     
@@ -137,43 +145,48 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        let postImageView = UIImageView(frame: tableView.rectOfCellInSuperviewAtIndexPath(indexPath))
-        postImageView.image = UIImage(named: "SamplePostImage")
+        //        let postImageView = UIImageView(frame: tableView.rectOfCellInSuperviewAtIndexPath(indexPath))
+        //        postImageView.image = UIImage(named: "SamplePostImage")
+        //
+        //        view.addSubview(postImageView)
+        //        view.bringSubviewToFront(postImageView)
+        //
+        //        var frameImage = postImageView.frame
+        //
+        //        let newHeight = view.getHeight()
+        //        let newWidth = postImageView.getWidth() * newHeight / postImageView.getHeight()
+        //
+        //        frameImage = CGRectMake((postImageView.getWidth() - newWidth)/2.0, 0, newWidth, newHeight)
+        //
+        //        UIView.animateWithDuration(1.0, animations: {
+        //            postImageView.frame = frameImage
+        //        }) { _ in
+        //
+        //            postImageView.removeFromSuperview()
         
-        view.addSubview(postImageView)
-        view.bringSubviewToFront(postImageView)
+        var viewController: UIViewController
         
-        var frameImage = postImageView.frame
+        selectedIndexPath = indexPath
         
-        let newHeight = view.getHeight()
-        let newWidth = postImageView.getWidth() * newHeight / postImageView.getHeight()
-        
-        frameImage = CGRectMake((postImageView.getWidth() - newWidth)/2.0, 0, newWidth, newHeight)
-        
-        UIView.animateWithDuration(1.0, animations: {
-            postImageView.frame = frameImage
-        }) { _ in
+        if indexPath.row % 2 == 0{
+            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
             
-            postImageView.removeFromSuperview()
-            
-            var viewController: UIViewController
-            
-            if indexPath.row % 2 == 0{
-                let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
-                
-                imagePostExpandedViewController.backgroundImageName = "SampleExpandedImage"
-                
-                viewController = imagePostExpandedViewController
-
-            } else {
-                let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
-                viewController = videoPostViewController
-            }
+            let image = UIImage(named: "SamplePostImage")
             
             
-            self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
-            self.presentViewController(viewController, animated: false, completion: nil)
+            imagePostExpandedViewController.backgroundImage = image?.resizeImageForHeight(view.getHeight()).cropImageFromCentre(view.frame.size)
+            
+            viewController = imagePostExpandedViewController
+            
+        } else {
+            let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
+            viewController = videoPostViewController
         }
+        
+        viewController.transitioningDelegate = self
+        //            self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
+        self.presentViewController(viewController, animated: true, completion: nil)
+        //        }
         
     }
     
@@ -224,4 +237,23 @@ extension HomeFeedViewController: UIScrollViewDelegate {
         return CGRectContainsRect(tableView.frame, rectOfCellInSuperview)
     }
     
+}
+
+extension HomeFeedViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        transition.originFrame = tableView.rectOfCellInSuperviewAtIndexPath(selectedIndexPath!)
+        transition.image = UIImage(named: "SamplePostImage")
+        
+        transition.presenting = true
+        
+        return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        transition.image = UIImage(named: "SamplePostImage")!.resizeImageForHeight(view.getHeight())
+        return transition
+    }
 }

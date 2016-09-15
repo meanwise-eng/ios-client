@@ -17,6 +17,7 @@ class ImagePostExpandedViewController: BaseViewController {
     // MARK: - Variables
     
     var backgroundImageName: String?
+    var backgroundImage: UIImage?
     
     // MARK: - View Lifecycle
     
@@ -24,8 +25,15 @@ class ImagePostExpandedViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         uiSetup()
-        panGestureSetup()
     }
     
     // MARK: - Functions
@@ -37,7 +45,8 @@ class ImagePostExpandedViewController: BaseViewController {
     
     func uiSetup() {
         topBarSetup()
-        self.backgroundImageView.image = UIImage(named: backgroundImageName!)
+//        self.backgroundImageView.image = UIImage(named: backgroundImageName!)
+        self.backgroundImageView.image = backgroundImage!
     }
     
     // MARK: - Memory Management
@@ -57,16 +66,8 @@ class ImagePostExpandedViewController: BaseViewController {
 
 extension ImagePostExpandedViewController {
     
-    func panGestureSetup() {
-        let edgeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(ImagePostExpandedViewController.userSwipedFromEdge(_:)))
-        edgeGestureRecognizer.edges = UIRectEdge.Top
-        self.view.addGestureRecognizer(edgeGestureRecognizer)
-    }
-    
-    func userSwipedFromEdge(sender: UIScreenEdgePanGestureRecognizer) {
-        if sender.edges == UIRectEdge.Top {
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+    @IBAction func swipedDown(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

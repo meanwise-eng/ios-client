@@ -1,88 +1,58 @@
-/*
-* Copyright (c) 2015 Razeware LLC
-*
-* Permission is hereby granted, free of charge, to any person obtaining a copy
-* of this software and associated documentation files (the "Software"), to deal
-* in the Software without restriction, including without limitation the rights
-* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-* copies of the Software, and to permit persons to whom the Software is
-* furnished to do so, subject to the following conditions:
-*
-* The above copyright notice and this permission notice shall be included in
-* all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-* THE SOFTWARE.
-*/
-
+//
+//  PopAnimator.swift
+//  Meanwise
+//
+//  Created by Vishal on 08/09/16.
+//  Copyright © 2016 Squelo. All rights reserved.
+//
 import UIKit
 
 class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-
-  let duration    = 1.0
-  var presenting  = true
-  var originFrame = CGRect.zero
-  
-  func transitionDuration(transitionContext: UIViewControllerContextTransitioning?)-> NSTimeInterval {
-    return duration
-  }
-  
-  func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-
-    let containerView = transitionContext.containerView()!
-    let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-    let herbView = presenting ? toView : transitionContext.viewForKey(UITransitionContextFromViewKey)!
     
-    let initialFrame = presenting ? originFrame : herbView.frame
-    let finalFrame = presenting ? herbView.frame : originFrame
+    let duration    = 0.5
+    var presenting  = true
+    var originFrame = CGRect.zero
+    var image: UIImage!
     
-    let xScaleFactor = presenting ?
-      initialFrame.width / finalFrame.width :
-      finalFrame.width / initialFrame.width
-    
-    let yScaleFactor = presenting ?
-      initialFrame.height / finalFrame.height :
-      finalFrame.height / initialFrame.height
-    
-    let scaleTransform = CGAffineTransformMakeScale(xScaleFactor, yScaleFactor)
-    
-    if presenting {
-      herbView.transform = scaleTransform
-      herbView.center = CGPoint(
-        x: CGRectGetMidX(initialFrame),
-        y: CGRectGetMidY(initialFrame))
-      herbView.clipsToBounds = true
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?)-> NSTimeInterval {
+        return duration
     }
     
-    containerView.addSubview(toView)
-    containerView.bringSubviewToFront(herbView)
-    
-    UIView.animateWithDuration(duration, delay:0.0,
-      usingSpringWithDamping: 0.4,
-      initialSpringVelocity: 0.0,
-      options: [],
-      animations: {
-        herbView.transform = self.presenting ?
-          CGAffineTransformIdentity : scaleTransform
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
+        let containerView = transitionContext.containerView()
+        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
         
-        herbView.center = CGPoint(x: CGRectGetMidX(finalFrame),
-          y: CGRectGetMidY(finalFrame))
         
-      }, completion:{_ in
-        transitionContext.completeTransition(true)
-    })
+        let toVCFrame = toVC?.view.frame
+        let fromVCFrame = fromVC?.view.frame
+        
+        let imageView = UIImageView(image: image)
+        
+        let scaleFactor = presenting ? (toVCFrame?.size.height)! / originFrame.size.height : originFrame.size.height / (fromVCFrame?.size.height)!
+        
+        
+        let initialFrame = presenting ? originFrame : CGRectMake(((fromVCFrame?.size.width)! - image.size.width)/2.0, 0, image.size.width, image.size.height)
+        let finalFrame = presenting ? CGRectMake(((toVCFrame?.size.width)! - image.size.width * scaleFactor)/2.0, 0, image.size.width * scaleFactor, (toVCFrame?.size.height)!) : originFrame
+        
+        
+        if !presenting {
+            containerView?.addSubview((toVC?.view)!)
+        }
+        
+        imageView.frame = initialFrame
+        
+        containerView?.addSubview(imageView)
+        containerView?.bringSubviewToFront(imageView)
+        
+        UIView.animateWithDuration(duration, animations: {
+            imageView.frame = finalFrame
+        }) { (_) in
+            containerView?.addSubview((toVC?.view)!)
+            containerView?.bringSubviewToFront((toVC?.view)!)
+            imageView.removeFromSuperview()
+            transitionContext.completeTransition(true)
+        }
+    }
     
-    let round = CABasicAnimation(keyPath: "cornerRadius")
-    round.fromValue = presenting ? 20.0/xScaleFactor : 0.0
-    round.toValue = presenting ? 0.0 : 20.0/xScaleFactor
-    round.duration = duration / 2
-    herbView.layer.addAnimation(round, forKey: nil)
-    herbView.layer.cornerRadius = presenting ? 0.0 : 20.0/xScaleFactor
-  }
-  
 }

@@ -424,6 +424,9 @@
                             <constraint firstAttribute="trailing" secondItem="J30-t8-wwu" secondAttribute="trailing" id="XeP-0r-bmq"/>
                             <constraint firstItem="J30-t8-wwu" firstAttribute="leading" secondItem="bKx-mJ-mWw" secondAttribute="leading" id="dPP-OG-e9c"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="t5q-bf-z7E" appends="YES" id="snK-jL-6Ek"/>
+                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -431,6 +434,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRb-IB-P5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="t5q-bf-z7E">
+                    <connections>
+                        <action selector="swipedDown:" destination="jLR-lb-sRo" id="FMK-Sf-VjO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1741" y="-400"/>
         </scene>
