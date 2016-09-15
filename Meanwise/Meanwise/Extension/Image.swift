@@ -38,10 +38,12 @@ extension UIImage {
     }
     
     func cropImage(frame: CGRect) -> UIImage {
-        // Create bitmap image from context using the rect
         let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, frame)!
-        
-        // Create a new image based on the imageRef and rotate back to the original orientation
+        return UIImage(CGImage: imageRef, scale: scale, orientation: imageOrientation)
+    }
+    
+    func cropImageFromCentre(newSize: CGSize) -> UIImage {
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(self.CGImage, CGRectMake((size.width - newSize.width)/2.0, (size.height - newSize.height)/2.0, newSize.width, newSize.height))!
         return UIImage(CGImage: imageRef, scale: scale, orientation: imageOrientation)
     }
     
