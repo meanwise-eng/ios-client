@@ -29,6 +29,8 @@ class ImagePostExpandedViewController: BaseViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.backgroundImageView.image = backgroundImage!
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -46,7 +48,6 @@ class ImagePostExpandedViewController: BaseViewController {
     func uiSetup() {
         topBarSetup()
 //        self.backgroundImageView.image = UIImage(named: backgroundImageName!)
-        self.backgroundImageView.image = backgroundImage!
     }
     
     // MARK: - Memory Management
