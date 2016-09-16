@@ -13,6 +13,7 @@ class PostScrollViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - IBOutlets
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var topView: UIView!
     
     // MARK: - Variables
     
@@ -105,9 +106,8 @@ private extension PostScrollViewController {
         rightPostViewController = getImagePostFeedView() as! ImagePostExpandedViewController
     }
     
-    @IBAction func panGesture(sender: AnyObject) {
-        
-        
+    @IBAction func swipeDown(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

@@ -125,29 +125,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAG-ID-SzV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dek-zp-wEA" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAG-ID-SzV">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZPL-Qu-sHo" id="Rej-57-mhz"/>
+                                        </connections>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="EAG-ID-SzV" secondAttribute="bottom" id="Ek0-ma-30r"/>
+                                    <constraint firstAttribute="trailing" secondItem="EAG-ID-SzV" secondAttribute="trailing" id="Lvn-T4-pLI"/>
+                                    <constraint firstItem="EAG-ID-SzV" firstAttribute="top" secondItem="dek-zp-wEA" secondAttribute="top" id="OeV-8i-RhR"/>
+                                    <constraint firstItem="EAG-ID-SzV" firstAttribute="leading" secondItem="dek-zp-wEA" secondAttribute="leading" id="YvM-HX-mXq"/>
+                                </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="ZPL-Qu-sHo" id="Rej-57-mhz"/>
+                                    <outletCollection property="gestureRecognizers" destination="SwW-oK-uMS" appends="YES" id="iet-PQ-uxN"/>
                                 </connections>
-                            </scrollView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="EAG-ID-SzV" firstAttribute="leading" secondItem="iar-Sc-q9o" secondAttribute="leading" id="MC1-bd-wiC"/>
-                            <constraint firstAttribute="trailing" secondItem="EAG-ID-SzV" secondAttribute="trailing" id="Oie-Co-iLq"/>
-                            <constraint firstItem="V8k-LK-bP6" firstAttribute="top" secondItem="EAG-ID-SzV" secondAttribute="bottom" id="R4S-rb-Um3"/>
-                            <constraint firstItem="EAG-ID-SzV" firstAttribute="top" secondItem="iar-Sc-q9o" secondAttribute="top" id="dYJ-5b-YLx"/>
+                            <constraint firstAttribute="trailing" secondItem="dek-zp-wEA" secondAttribute="trailing" id="CFK-Mb-RQY"/>
+                            <constraint firstAttribute="bottom" secondItem="dek-zp-wEA" secondAttribute="bottom" id="o2K-V1-bEm"/>
+                            <constraint firstItem="dek-zp-wEA" firstAttribute="leading" secondItem="iar-Sc-q9o" secondAttribute="leading" id="sZ7-oS-wpA"/>
+                            <constraint firstItem="dek-zp-wEA" firstAttribute="top" secondItem="iar-Sc-q9o" secondAttribute="top" id="tol-F0-34k"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="scrollView" destination="EAG-ID-SzV" id="Lhw-qJ-FOk"/>
+                        <outlet property="topView" destination="dek-zp-wEA" id="Hui-Qe-aLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r98-sp-r23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="SwW-oK-uMS">
+                    <connections>
+                        <action selector="swipeDown:" destination="ZPL-Qu-sHo" id="13h-KO-7uv"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1747" y="-1081"/>
         </scene>
@@ -463,9 +485,6 @@
                             <constraint firstAttribute="trailing" secondItem="J30-t8-wwu" secondAttribute="trailing" id="XeP-0r-bmq"/>
                             <constraint firstItem="J30-t8-wwu" firstAttribute="leading" secondItem="bKx-mJ-mWw" secondAttribute="leading" id="dPP-OG-e9c"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="t5q-bf-z7E" appends="YES" id="snK-jL-6Ek"/>
-                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -473,11 +492,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRb-IB-P5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="t5q-bf-z7E">
-                    <connections>
-                        <action selector="swipedDown:" destination="jLR-lb-sRo" id="FMK-Sf-VjO"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1741" y="-400"/>
         </scene>
