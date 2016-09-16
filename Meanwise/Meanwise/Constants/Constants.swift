@@ -24,6 +24,7 @@ struct Constants {
     struct StoryboardId {
         static let ImagePostExpanded = "ImagePostExpandedViewController"
         static let VideoPost = "VideoPostViewController"
+        static let PostScroll = "PostScrollViewController"
     }
     
     struct TableViewCell {
@@ -59,6 +60,7 @@ struct Constants {
         static let LoginEmail = "ToLoginEmailViewController"
         static let ForgotPassword = "ToForgotPasswordViewController"
         static let ImagePostExpanded = "ToImagePostExpandedViewController"
+        static let PostScroll = "ToPostScrollVoewController"
     }
 
     struct UnWindSegueIdentifiers {

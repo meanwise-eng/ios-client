@@ -164,28 +164,30 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
         //
         //            postImageView.removeFromSuperview()
         
-        var viewController: UIViewController
+//        var viewController: UIViewController
         
         selectedIndexPath = indexPath
         
-        if indexPath.row % 2 == 0{
-            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
-            
-            let image = UIImage(named: "SamplePostImage")
-            
-            
-            imagePostExpandedViewController.backgroundImage = image?.resizeImageForHeight(view.getHeight()).cropImageFromCentre(view.frame.size)
-            
-            viewController = imagePostExpandedViewController
-            
-        } else {
-            let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
-            viewController = videoPostViewController
-        }
+//        if indexPath.row % 2 == 0{
+//            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
+//            
+//            let image = UIImage(named: "SamplePostImage")
+//            
+//            imagePostExpandedViewController.backgroundImage = image?.resizeImageForHeight(view.getHeight()).cropImageFromCentre(view.frame.size)
+//            
+//            viewController = imagePostExpandedViewController
+//            
+//        } else {
+//            let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
+//            viewController = videoPostViewController
+//        }
         
-        viewController.transitioningDelegate = self
+        
+        let postScrollViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.PostScroll) as! PostScrollViewController
+        
+        postScrollViewController.transitioningDelegate = self
         //            self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.presentViewController(postScrollViewController, animated: true, completion: nil)
         //        }
         
     }

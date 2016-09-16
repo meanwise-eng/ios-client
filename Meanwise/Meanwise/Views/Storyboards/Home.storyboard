@@ -106,11 +106,50 @@
                         <outlet property="tableView" destination="5oi-2A-rlx" id="h37-3P-f5t"/>
                         <segue destination="bFt-Kj-7H1" kind="showDetail" action="showViewController:sender:" id="rnv-Pc-Fsb"/>
                         <segue destination="jLR-lb-sRo" kind="show" identifier="ToImagePostExpandedViewController" id="OUa-Fr-GLi"/>
+                        <segue destination="ZPL-Qu-sHo" kind="show" identifier="ToPostScrollVoewController" id="YFf-tJ-WhR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCR-Bn-Ol6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="-400"/>
+        </scene>
+        <!--Post Scroll View Controller-->
+        <scene sceneID="A6e-je-8Eq">
+            <objects>
+                <viewController storyboardIdentifier="PostScrollViewController" id="ZPL-Qu-sHo" customClass="PostScrollViewController" customModule="Meanwise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lZU-qq-F99"/>
+                        <viewControllerLayoutGuide type="bottom" id="V8k-LK-bP6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iar-Sc-q9o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAG-ID-SzV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZPL-Qu-sHo" id="Rej-57-mhz"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="EAG-ID-SzV" firstAttribute="leading" secondItem="iar-Sc-q9o" secondAttribute="leading" id="MC1-bd-wiC"/>
+                            <constraint firstAttribute="trailing" secondItem="EAG-ID-SzV" secondAttribute="trailing" id="Oie-Co-iLq"/>
+                            <constraint firstItem="V8k-LK-bP6" firstAttribute="top" secondItem="EAG-ID-SzV" secondAttribute="bottom" id="R4S-rb-Um3"/>
+                            <constraint firstItem="EAG-ID-SzV" firstAttribute="top" secondItem="iar-Sc-q9o" secondAttribute="top" id="dYJ-5b-YLx"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="EAG-ID-SzV" id="Lhw-qJ-FOk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r98-sp-r23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747" y="-1081"/>
         </scene>
         <!--Image Post Expanded View Controller-->
         <scene sceneID="fm8-q0-m8R">
