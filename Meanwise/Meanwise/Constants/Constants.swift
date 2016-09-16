@@ -25,6 +25,7 @@ struct Constants {
         static let ImagePostExpanded = "ImagePostExpandedViewController"
         static let VideoPost = "VideoPostViewController"
         static let PostScroll = "PostScrollViewController"
+        static let NewPost = "NewPostViewController"
     }
     
     struct TableViewCell {

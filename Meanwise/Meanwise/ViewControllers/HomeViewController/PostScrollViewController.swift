@@ -106,11 +106,35 @@ private extension PostScrollViewController {
         rightPostViewController = getImagePostFeedView() as! ImagePostExpandedViewController
     }
     
+}
+
+// MARK: - IBAction
+
+extension PostScrollViewController {
+    
     @IBAction func swipeDown(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func createNewPostButtonTapped(sender: AnyObject) {
+        let newPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.NewPost) as! NewPostViewController
+        
+//        newPostViewController.transitioningDelegate = self
 
+        self.presentViewController(newPostViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func exploreButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func searchButtonTapped(sender: AnyObject) {
+        
+    }
+    
 }
+
+// MARK: - ScrollView Delegate
 
 extension PostScrollViewController: UIScrollViewDelegate {
     

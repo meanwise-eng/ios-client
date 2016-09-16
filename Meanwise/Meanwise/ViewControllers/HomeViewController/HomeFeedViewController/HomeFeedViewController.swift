@@ -145,50 +145,12 @@ extension HomeFeedViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        //        let postImageView = UIImageView(frame: tableView.rectOfCellInSuperviewAtIndexPath(indexPath))
-        //        postImageView.image = UIImage(named: "SamplePostImage")
-        //
-        //        view.addSubview(postImageView)
-        //        view.bringSubviewToFront(postImageView)
-        //
-        //        var frameImage = postImageView.frame
-        //
-        //        let newHeight = view.getHeight()
-        //        let newWidth = postImageView.getWidth() * newHeight / postImageView.getHeight()
-        //
-        //        frameImage = CGRectMake((postImageView.getWidth() - newWidth)/2.0, 0, newWidth, newHeight)
-        //
-        //        UIView.animateWithDuration(1.0, animations: {
-        //            postImageView.frame = frameImage
-        //        }) { _ in
-        //
-        //            postImageView.removeFromSuperview()
-        
-//        var viewController: UIViewController
-        
         selectedIndexPath = indexPath
-        
-//        if indexPath.row % 2 == 0{
-//            let imagePostExpandedViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.ImagePostExpanded) as! ImagePostExpandedViewController
-//            
-//            let image = UIImage(named: "SamplePostImage")
-//            
-//            imagePostExpandedViewController.backgroundImage = image?.resizeImageForHeight(view.getHeight()).cropImageFromCentre(view.frame.size)
-//            
-//            viewController = imagePostExpandedViewController
-//            
-//        } else {
-//            let videoPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.VideoPost) as! VideoPostViewController
-//            viewController = videoPostViewController
-//        }
-        
         
         let postScrollViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.PostScroll) as! PostScrollViewController
         
         postScrollViewController.transitioningDelegate = self
-        //            self.view.window?.layer.addAnimation(self.getPresentCustomAnimation(), forKey: kCATransition)
         self.presentViewController(postScrollViewController, animated: true, completion: nil)
-        //        }
         
     }
     
@@ -258,4 +220,13 @@ extension HomeFeedViewController: UIViewControllerTransitioningDelegate {
         transition.image = UIImage(named: "SamplePostImage")!.resizeImageForHeight(view.getHeight())
         return transition
     }
+}
+
+extension HomeFeedViewController {
+    
+    @IBAction func createNewPostButtonTapped(sender: AnyObject) {
+        let newPostViewController = self.storyboard!.instantiateViewControllerWithIdentifier(Constants.StoryboardId.NewPost) as! NewPostViewController
+        self.presentViewController(newPostViewController, animated: true, completion: nil)
+    }
+    
 }

@@ -70,6 +70,7 @@
 		FA35DE691D80B38600C66062 /* ImagePostExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35DE681D80B38600C66062 /* ImagePostExpandedViewController.swift */; };
 		FA3723A41D8AC9860085AF16 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3723A31D8AC9860085AF16 /* Image.swift */; };
 		FA3723AC1D8B3F560085AF16 /* PostScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */; };
+		FA553D891D8C24C1003F54A5 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */; };
 		FA71AA741D8012BF00595248 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA731D8012BF00595248 /* PostCell.swift */; };
 		FA71AA761D8012D600595248 /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA751D8012D600595248 /* ImagePostCell.swift */; };
 		FA71AA781D8012E700595248 /* VideoPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA771D8012E700595248 /* VideoPostCell.swift */; };
@@ -177,6 +178,7 @@
 		FA35DE681D80B38600C66062 /* ImagePostExpandedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePostExpandedViewController.swift; sourceTree = "<group>"; };
 		FA3723A31D8AC9860085AF16 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostScrollViewController.swift; sourceTree = "<group>"; };
+		FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		FA71AA731D8012BF00595248 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FA71AA751D8012D600595248 /* ImagePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
 		FA71AA771D8012E700595248 /* VideoPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostCell.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				FA35DE681D80B38600C66062 /* ImagePostExpandedViewController.swift */,
 				FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */,
 				FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */,
+				FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
 				0A19B9381D707EE700EC047E /* LoginViewController.swift in Sources */,
 				0AEC7CFC1D7D9DEB00613F50 /* RepliesTableViewCell.swift in Sources */,
+				FA553D891D8C24C1003F54A5 /* NewPostViewController.swift in Sources */,
 				0A19B9351D7023B900EC047E /* String.swift in Sources */,
 				953810D81D6C5B62005C4658 /* RootViewController.swift in Sources */,
 				95AF8B2C1D6F1C890040F54B /* SkillTableViewCell.swift in Sources */,
