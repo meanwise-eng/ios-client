@@ -135,13 +135,55 @@
                                             <outlet property="delegate" destination="ZPL-Qu-sHo" id="Rej-57-mhz"/>
                                         </connections>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8H-Jf-gOh" userLabel="BottomView">
+                                        <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mT-Bf-ig0" userLabel="ExploreButton">
+                                                <rect key="frame" x="50" y="9" width="42" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="Onc-iV-EiW"/>
+                                                    <constraint firstAttribute="width" constant="42" id="ygC-1j-c3R"/>
+                                                </constraints>
+                                                <state key="normal" image="GogglesIcon"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2H-2n-rzy" userLabel="CreatePostButton">
+                                                <rect key="frame" x="275" y="5" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="QtU-Fp-GPt"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Tdm-Ex-fji"/>
+                                                </constraints>
+                                                <state key="normal" image="PostIcon"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4B-Xm-Qe7" userLabel="SearchButton">
+                                                <rect key="frame" x="508" y="9" width="42" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="42" id="Ncd-ae-a8e"/>
+                                                    <constraint firstAttribute="height" constant="42" id="i4c-Ye-0Y2"/>
+                                                </constraints>
+                                                <state key="normal" image="SearchIcon"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1m0-Gh-eiV"/>
+                                            <constraint firstItem="i2H-2n-rzy" firstAttribute="centerY" secondItem="O8H-Jf-gOh" secondAttribute="centerY" id="F62-UW-Hau"/>
+                                            <constraint firstItem="i2H-2n-rzy" firstAttribute="centerX" secondItem="O8H-Jf-gOh" secondAttribute="centerX" id="a5V-jz-OwL"/>
+                                            <constraint firstItem="3mT-Bf-ig0" firstAttribute="centerY" secondItem="i2H-2n-rzy" secondAttribute="centerY" id="bXT-CP-EhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="N4B-Xm-Qe7" secondAttribute="trailing" constant="50" id="clA-bC-VmH"/>
+                                            <constraint firstItem="N4B-Xm-Qe7" firstAttribute="centerY" secondItem="i2H-2n-rzy" secondAttribute="centerY" id="qny-Sg-R90"/>
+                                            <constraint firstItem="3mT-Bf-ig0" firstAttribute="leading" secondItem="O8H-Jf-gOh" secondAttribute="leading" constant="50" id="uYF-5P-XeA"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="O8H-Jf-gOh" secondAttribute="trailing" id="AVr-2j-0lR"/>
+                                    <constraint firstItem="O8H-Jf-gOh" firstAttribute="leading" secondItem="dek-zp-wEA" secondAttribute="leading" id="Afn-Xh-6EP"/>
                                     <constraint firstAttribute="bottom" secondItem="EAG-ID-SzV" secondAttribute="bottom" id="Ek0-ma-30r"/>
                                     <constraint firstAttribute="trailing" secondItem="EAG-ID-SzV" secondAttribute="trailing" id="Lvn-T4-pLI"/>
                                     <constraint firstItem="EAG-ID-SzV" firstAttribute="top" secondItem="dek-zp-wEA" secondAttribute="top" id="OeV-8i-RhR"/>
+                                    <constraint firstAttribute="bottom" secondItem="O8H-Jf-gOh" secondAttribute="bottom" id="Ott-pc-GCb"/>
                                     <constraint firstItem="EAG-ID-SzV" firstAttribute="leading" secondItem="dek-zp-wEA" secondAttribute="leading" id="YvM-HX-mXq"/>
                                 </constraints>
                                 <connections>
@@ -401,7 +443,7 @@
                                             <constraint firstAttribute="bottom" secondItem="JaK-fT-Isq" secondAttribute="bottom" id="uLf-k4-06r"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-AV-TM9" userLabel="BottomView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR4-AV-TM9" userLabel="BottomView">
                                         <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvK-Wd-O8M" userLabel="ExploreButton">
