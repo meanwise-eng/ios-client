@@ -47,7 +47,24 @@ extension NewPostViewController: UITextViewDelegate {
     }
     
     @IBAction func postButtonTapped(sender: AnyObject) {
+    }
+    
+    @IBAction func swipeDown(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+// MARK: - ScrollView Delegate
+
+extension NewPostViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        let scrollOffset = scrollView.contentOffset.y;
+        
+        if (scrollOffset == 0 && scrollView.panGestureRecognizer.translationInView(scrollView.superview).y > 0) {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        
     }
     
 }

@@ -813,15 +813,22 @@
                                             <constraint firstItem="b3Q-m8-BgF" firstAttribute="leading" secondItem="RGi-YG-Tvd" secondAttribute="leading" id="lmv-21-wk2"/>
                                             <constraint firstAttribute="bottom" secondItem="b3Q-m8-BgF" secondAttribute="bottom" id="pRO-Y9-ZCS"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="1bh-Ln-auB" id="5M4-3X-21Z"/>
+                                        </connections>
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="RGi-YG-Tvd" secondAttribute="bottom" id="FC9-LJ-OMg"/>
                                     <constraint firstAttribute="trailing" secondItem="RGi-YG-Tvd" secondAttribute="trailing" id="FyD-aZ-ZRe"/>
                                     <constraint firstItem="RGi-YG-Tvd" firstAttribute="leading" secondItem="2pd-39-3WN" secondAttribute="leading" id="Z5T-ZN-Sn3"/>
                                     <constraint firstItem="RGi-YG-Tvd" firstAttribute="top" secondItem="2pd-39-3WN" secondAttribute="top" id="b9r-ts-ERz"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tA4-Gx-HvQ" appends="YES" id="iRL-jG-v8H"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -838,6 +845,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhA-f8-IbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="tA4-Gx-HvQ">
+                    <connections>
+                        <action selector="swipeDown:" destination="1bh-Ln-auB" id="Jcj-Hc-zBz"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2487" y="-1081"/>
         </scene>
