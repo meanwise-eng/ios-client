@@ -624,7 +624,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = Squelo;
+				ORGANIZATIONNAME = Meanwise;
 				TargetAttributes = {
 					953810821D6C3BAA005C4658 = {
 						CreatedOnToolsVersion = 7.3;
