@@ -80,6 +80,7 @@
 		FA7AEFC91D79F0270076792F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */; };
 		FA7DAABB1D82DE57002E4BB0 /* VideoPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */; };
 		FA7DAABE1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */; };
+		FA95A74E1D9011130020344A /* ChooseChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95A74D1D9011130020344A /* ChooseChannelViewController.swift */; };
 		FACEACBF1D883C74005DC77E /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACBE1D883C74005DC77E /* TableView.swift */; };
 		FACEACC11D8841DF005DC77E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACC01D8841DF005DC77E /* View.swift */; };
 		FACEACC31D889A4D005DC77E /* VideoPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */; };
@@ -188,6 +189,7 @@
 		FA7AEFC81D79F0270076792F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		FA7DAABA1D82DE57002E4BB0 /* VideoPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPostCell.xib; sourceTree = "<group>"; };
 		FA7DAABD1D82EC95002E4BB0 /* mag_app_reducedvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mag_app_reducedvid.mp4; sourceTree = "<group>"; };
+		FA95A74D1D9011130020344A /* ChooseChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseChannelViewController.swift; sourceTree = "<group>"; };
 		FACEACBE1D883C74005DC77E /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		FACEACC01D8841DF005DC77E /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				FACEACC21D889A4D005DC77E /* VideoPostViewController.swift */,
 				FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */,
 				FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */,
+				FA95A74D1D9011130020344A /* ChooseChannelViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				0A9A54551D6F320700DB9787 /* IntroductionViewController.swift in Sources */,
 				953810F01D6C81FC005C4658 /* SignupNameViewController.swift in Sources */,
 				953810C91D6C45F1005C4658 /* Network.swift in Sources */,
+				FA95A74E1D9011130020344A /* ChooseChannelViewController.swift in Sources */,
 				953810871D6C3BAA005C4658 /* AppDelegate.swift in Sources */,
 				0A37B2931D7ED6810097A1DB /* RepliesViewController.swift in Sources */,
 				950974B41D704A5E0068D457 /* TagListView.swift in Sources */,
