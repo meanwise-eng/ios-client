@@ -61,4 +61,28 @@ extension BaseViewController: UIGestureRecognizerDelegate {
     }
 }
 
+extension BaseViewController {
+    
+    func registerForNotifications() {
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BaseViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BaseViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
+        
+    }
+    
+    func deRegisterForNotification() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        
+    }
+
+}
+
 

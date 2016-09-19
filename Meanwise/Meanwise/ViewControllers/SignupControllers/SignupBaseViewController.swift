@@ -74,19 +74,7 @@ class SignupBaseViewController: SignupRootViewController {
 
 extension SignupBaseViewController {
     
-    func registerForNotifications() {
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
-        
-    }
-    
-    func deRegisterForNotification() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
+    override func keyboardWillShow(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
@@ -100,7 +88,7 @@ extension SignupBaseViewController {
         makeLowerCellVisible()
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    override func keyboardWillHide(notification: NSNotification) {
         
         bottomViewBottomConstraint.constant = 0
         

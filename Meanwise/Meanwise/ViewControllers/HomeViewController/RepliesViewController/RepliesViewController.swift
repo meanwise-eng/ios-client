@@ -36,20 +36,6 @@ class RepliesViewController: BaseViewController {
         deRegisterForNotification()
     }
     
-    // MARK: - Functions
-    
-    func registerForNotifications() {
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignupBaseViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
-        
-    }
-    
-    func deRegisterForNotification() {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
     // MARK: - Memory Management
     
     override func didReceiveMemoryWarning() {
@@ -92,7 +78,7 @@ extension RepliesViewController {
 
 extension RepliesViewController {
     
-    func keyboardWillShow(notification: NSNotification) {
+    override func keyboardWillShow(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
@@ -104,7 +90,7 @@ extension RepliesViewController {
         repliesTableView.scrollEnabled = true
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    override func keyboardWillHide(notification: NSNotification) {
         
         bottomViewBottomConstraint.constant = 0
         
