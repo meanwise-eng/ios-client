@@ -26,6 +26,7 @@ struct Constants {
         static let VideoPost = "VideoPostViewController"
         static let PostScroll = "PostScrollViewController"
         static let NewPost = "NewPostViewController"
+        static let ChooseChannel = "ChooseChannelViewController"
     }
     
     struct TableViewCell {
@@ -42,6 +43,7 @@ struct Constants {
         static let HomeFeed = "HomeFeedCell"
         static let ImagePost = "ImagePostCell"
         static let VideoPost = "VideoPostCell"
+        static let Channel = "ChannelTableViewCell"
     }
     
     struct AnimationDurations {

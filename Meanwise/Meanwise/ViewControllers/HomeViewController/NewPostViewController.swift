@@ -62,6 +62,12 @@ extension NewPostViewController: UITextViewDelegate {
     }
     
     @IBAction func postButtonTapped(sender: AnyObject) {
+  
+    }
+    
+    @IBAction func channelButtonTapped(sender: AnyObject) {
+        let chooseChannelViewController = ChooseChannelViewController.initFromStoryboard()
+        presentViewController(chooseChannelViewController, animated: true, completion: nil)
     }
     
     @IBAction func swipeDown(sender: AnyObject) {
