@@ -2,7 +2,7 @@
 //  NewPostViewController.swift
 //  Meanwise
 //
-//  Created by TechRacers on 16/09/16.
+//  Created by Vishal on 16/09/16.
 //  Copyright © 2016 Squelo. All rights reserved.
 //
 
@@ -14,6 +14,9 @@ class NewPostViewController: BaseViewController {
     
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 
     // MARK: - View Lifecycle
     
@@ -22,6 +25,18 @@ class NewPostViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         topBarSetup()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        registerForNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        deRegisterForNotification()
     }
     
     // MARK: - Functions
@@ -65,6 +80,34 @@ extension NewPostViewController: UIScrollViewDelegate {
             dismissViewControllerAnimated(true, completion: nil)
         }
         
+    }
+    
+}
+
+// MARK: - KeyBoard Notification Methods
+
+extension NewPostViewController {
+    
+    override func keyboardWillShow(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        scrollViewBottomConstraint.constant = keyboardFrame.size.height
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
+
+        scrollView.scrollRectToVisible(textField.frame, animated: true)
+    }
+    
+    override func keyboardWillHide(notification: NSNotification) {
+        
+        scrollViewBottomConstraint.constant = 0
+        
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
     }
     
 }

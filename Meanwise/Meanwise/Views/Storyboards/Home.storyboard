@@ -640,7 +640,7 @@
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="textColor" red="0.27058823529411763" green="0.3529411764705882" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="21"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="1bh-Ln-auB" id="Tct-jG-ojR"/>
                                                                 </connections>
@@ -689,7 +689,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.34901960784313724" green="0.80784313725490198" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewPostSeparator" translatesAutoresizingMaskIntoConstraints="NO" id="qb4-0F-7ZJ" userLabel="BottomSeparator">
                                                                 <rect key="frame" x="0.0" y="49" width="600" height="1"/>
@@ -841,6 +841,9 @@
                     </view>
                     <connections>
                         <outlet property="placeholderLabel" destination="5dE-R0-8vT" id="00B-pq-Yxo"/>
+                        <outlet property="scrollView" destination="RGi-YG-Tvd" id="05u-f7-tc4"/>
+                        <outlet property="scrollViewBottomConstraint" destination="FC9-LJ-OMg" id="avU-QT-vui"/>
+                        <outlet property="textField" destination="Ogd-MR-bBv" id="RJQ-rQ-DAm"/>
                         <outlet property="textView" destination="hhB-dm-xOV" id="6WY-ZN-O3t"/>
                     </connections>
                 </viewController>
