@@ -18,6 +18,7 @@ class NewPostViewController: BaseViewController {
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var scrollViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak private var collectionView: UICollectionView!
+    @IBOutlet weak private var remainingCharactersLabel: UILabel!
     
     // MARK: - Variables
     
@@ -109,12 +110,14 @@ extension NewPostViewController: UIScrollViewDelegate {
     
 }
 
-// MARK: - TextField Delegate
+// MARK: - TextField, TextView Delegate
 
 extension NewPostViewController: UITextFieldDelegate, UITextViewDelegate {
     
     func textViewDidChange(textView: UITextView) {
         placeholderLabel.hidden = textView.text.characters.count > 0
+        
+        remainingCharactersLabel.text = "\(200 - textView.text.characters.count)"
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
@@ -124,7 +127,9 @@ extension NewPostViewController: UITextFieldDelegate, UITextViewDelegate {
             return false
         }
         
-        return true
+        let newText = (textView.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
+        
+        return newText.characters.count < 201
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

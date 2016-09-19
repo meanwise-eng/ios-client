@@ -1128,6 +1128,7 @@
                     <connections>
                         <outlet property="collectionView" destination="DnR-AH-owO" id="0Ra-LX-5Jk"/>
                         <outlet property="placeholderLabel" destination="5dE-R0-8vT" id="00B-pq-Yxo"/>
+                        <outlet property="remainingCharactersLabel" destination="TF0-Hh-bXX" id="U5O-RH-TKZ"/>
                         <outlet property="scrollView" destination="RGi-YG-Tvd" id="05u-f7-tc4"/>
                         <outlet property="scrollViewBottomConstraint" destination="FC9-LJ-OMg" id="avU-QT-vui"/>
                         <outlet property="textField" destination="Ogd-MR-bBv" id="RJQ-rQ-DAm"/>
