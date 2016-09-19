@@ -12,12 +12,17 @@ class NewPostViewController: BaseViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var placeholderLabel: UILabel!
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak private var placeholderLabel: UILabel!
+    @IBOutlet weak private var textView: UITextView!
+    @IBOutlet weak private var textField: UITextField!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var scrollViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak private var collectionView: UICollectionView!
+    
+    // MARK: - Variables
+    
+    var imagesFromDevice: NSArray = []
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -33,6 +38,12 @@ class NewPostViewController: BaseViewController {
         registerForNotifications()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        getImagesFromDevice()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -46,6 +57,16 @@ class NewPostViewController: BaseViewController {
         UIApplication.sharedApplication().statusBarHidden = false
     }
     
+    func getImagesFromDevice() {
+        let mediaManager = MediaManager()
+        
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.imagesFromDevice = NSArray(array: mediaManager.getImages())
+            self.collectionView.reloadData()
+        }
+
+    }
+    
     // MARK: - Memory Management
 
     override func didReceiveMemoryWarning() {
@@ -55,11 +76,9 @@ class NewPostViewController: BaseViewController {
 
 }
 
-extension NewPostViewController: UITextViewDelegate {
-    
-    func textViewDidChange(textView: UITextView) {
-        placeholderLabel.hidden = textView.text.characters.count > 0
-    }
+// MARK: - IBAction
+
+extension NewPostViewController {
     
     @IBAction func postButtonTapped(sender: AnyObject) {
   
@@ -86,6 +105,68 @@ extension NewPostViewController: UIScrollViewDelegate {
             dismissViewControllerAnimated(true, completion: nil)
         }
         
+    }
+    
+}
+
+// MARK: - TextField Delegate
+
+extension NewPostViewController: UITextFieldDelegate, UITextViewDelegate {
+    
+    func textViewDidChange(textView: UITextView) {
+        placeholderLabel.hidden = textView.text.characters.count > 0
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField.text?.characters.count == 0 && string != "@" {
+            textField.text = "@\(string)"
+            return false
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        textView.becomeFirstResponder()
+        return true
+    }
+    
+}
+
+// MARK: - CollectionView DataSource Delegate
+
+extension NewPostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesFromDevice.count > 3 ? 3 : imagesFromDevice.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Constants.CollectionViewCell.Image, forIndexPath: indexPath)
+        let imageView = cell.viewWithTag(5) as! UIImageView
+        imageView.image = imagesFromDevice.objectAtIndex(indexPath.row) as? UIImage
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenWidth = UIScreen.mainScreen().bounds.width - 2.0
+        return CGSizeMake(screenWidth/3.0, screenWidth/3.0)
     }
     
 }

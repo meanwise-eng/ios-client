@@ -72,6 +72,7 @@
 		FA3723AC1D8B3F560085AF16 /* PostScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */; };
 		FA553D891D8C24C1003F54A5 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */; };
 		FA6D90C31D90205600BE660B /* ChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D90C21D90205600BE660B /* ChannelTableViewCell.swift */; };
+		FA6D90C61D9044C600BE660B /* GetMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D90C51D9044C600BE660B /* GetMediaData.swift */; };
 		FA71AA741D8012BF00595248 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA731D8012BF00595248 /* PostCell.swift */; };
 		FA71AA761D8012D600595248 /* ImagePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA751D8012D600595248 /* ImagePostCell.swift */; };
 		FA71AA781D8012E700595248 /* VideoPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71AA771D8012E700595248 /* VideoPostCell.swift */; };
@@ -182,6 +183,7 @@
 		FA3723AB1D8B3F560085AF16 /* PostScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostScrollViewController.swift; sourceTree = "<group>"; };
 		FA553D881D8C24C1003F54A5 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		FA6D90C21D90205600BE660B /* ChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelTableViewCell.swift; sourceTree = "<group>"; };
+		FA6D90C51D9044C600BE660B /* GetMediaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetMediaData.swift; sourceTree = "<group>"; };
 		FA71AA731D8012BF00595248 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		FA71AA751D8012D600595248 /* ImagePostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePostCell.swift; sourceTree = "<group>"; };
 		FA71AA771D8012E700595248 /* VideoPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPostCell.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 		95AF8B2F1D6F379C0040F54B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FA6D90C41D9044B700BE660B /* GetImagesVideos */,
 				FAD8603E1D87410300E2F936 /* Animation */,
 				950974AC1D704A5E0068D457 /* TagListView */,
 				95AF8B301D6F37A60040F54B /* iCarousel */,
@@ -542,6 +545,14 @@
 				5641DB22980B5756FC313DDE /* Pods_Meanwise.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA6D90C41D9044B700BE660B /* GetImagesVideos */ = {
+			isa = PBXGroup;
+			children = (
+				FA6D90C51D9044C600BE660B /* GetMediaData.swift */,
+			);
+			path = GetImagesVideos;
 			sourceTree = "<group>";
 		};
 		FA7AEFC71D79F0020076792F /* NavigationController */ = {
@@ -804,6 +815,7 @@
 				95C850201D748AD40026C297 /* InviteTableViewCell.swift in Sources */,
 				FA6D90C31D90205600BE660B /* ChannelTableViewCell.swift in Sources */,
 				FA71AA7A1D8012F800595248 /* TextPostCell.swift in Sources */,
+				FA6D90C61D9044C600BE660B /* GetMediaData.swift in Sources */,
 				95C1031A1D6DE04200DCA0A2 /* SignupBaseViewController.swift in Sources */,
 				953810C71D6C45DC005C4658 /* User.swift in Sources */,
 				0A19B9381D707EE700EC047E /* LoginViewController.swift in Sources */,

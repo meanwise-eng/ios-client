@@ -76,6 +76,7 @@ extension ChooseChannelViewController:UITableViewDelegate, UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
+        dismissViewControllerAnimated(true, completion: nil)        
     }
     
 }

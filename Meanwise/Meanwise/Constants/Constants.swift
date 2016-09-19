@@ -46,6 +46,10 @@ struct Constants {
         static let Channel = "ChannelTableViewCell"
     }
     
+    struct CollectionViewCell {
+        static let Image = "ImageCellIdentifier"
+    }
+    
     struct AnimationDurations {
         static let Fast: NSTimeInterval = 1.0
         static let Medium: NSTimeInterval = 3.0
